@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rmiserver;
+package RMI;
 
 /**
  *
  * @author meriam
  */
-public class Patient {
-  
+public class Appointment {
+    
 }
