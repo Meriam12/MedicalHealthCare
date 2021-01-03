@@ -10,5 +10,5 @@ package rmiserver;
  * @author meriam
  */
 public class Patient {
-    String Name;
+  
 }
