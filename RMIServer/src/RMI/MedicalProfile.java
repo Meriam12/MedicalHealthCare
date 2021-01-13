@@ -19,4 +19,65 @@ public class MedicalProfile {
     private ArrayList<Appointment> pastAppointments = new ArrayList();
     private ArrayList<Prescription> prescriptions = new ArrayList();
 
+    public MedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
+            String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions) {
+        this.drFollowup = drFollowup;
+        this.chronicDisease = chronicDisease;
+        this.medicines = medicines;
+        this.bloodType = bloodType;
+        this.pastAppointments = pastAppointments;
+        this.prescriptions = prescriptions;
+    }
+    
+    public ArrayList<String> getDrFollowup() {
+        return drFollowup;
+    }
+
+    public void setDrFollowup(ArrayList<String> drFollowup) {
+        this.drFollowup = drFollowup;
+    }
+
+    public ArrayList<String> getChronicDisease() {
+        return chronicDisease;
+    }
+
+    public void setChronicDisease(ArrayList<String> chronicDisease) {
+        this.chronicDisease = chronicDisease;
+    }
+
+    public ArrayList<Medicine> getMedicines() {
+        return medicines;
+    }
+
+    public void setMedicines(ArrayList<Medicine> medicines) {
+        this.medicines = medicines;
+    }
+
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
+    }
+
+    public ArrayList<Appointment> getPastAppointments() {
+        return pastAppointments;
+    }
+
+    public void setPastAppointments(ArrayList<Appointment> pastAppointments) {
+        this.pastAppointments = pastAppointments;
+    }
+
+    public ArrayList<Prescription> getPrescriptions() {
+        return prescriptions;
+    }
+
+    public void setPrescriptions(ArrayList<Prescription> prescriptions) {
+        this.prescriptions = prescriptions;
+    }
+
+
+
+    
 }
