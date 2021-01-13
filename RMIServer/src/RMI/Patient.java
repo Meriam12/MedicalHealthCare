@@ -11,7 +11,11 @@ import java.util.*;
  * @author meriam
  */
 
+<<<<<<< HEAD
 public class Patient extends User {
+=======
+public class Patient extends User{
+>>>>>>> 4c9e880da6fd1a8c0aa40ab8a80fb7e5029248b9
   private ArrayList<Appointment> comingAppointments;
   private MedicalProfile medicalProfile;
   private String medicalInsurance;
@@ -34,7 +38,22 @@ public class Patient extends User {
        
     }
 
+<<<<<<< HEAD
    
+=======
+    public Patient(ArrayList<Appointment> comingAppointments, MedicalProfile medicalProfile, String medicalInsurance, String creditCardNumber, String access, ArrayList<OrderMedicine> ordeMedicine, Account account, String name, String phonenumber, String birthdate, String email) {
+        super(name, phonenumber, birthdate, email);
+        this.comingAppointments = comingAppointments;
+        this.medicalProfile = medicalProfile;
+        this.medicalInsurance = medicalInsurance;
+        this.creditCardNumber = creditCardNumber;
+        this.access = access;
+        this.ordeMedicine = ordeMedicine;
+        this.account = account;
+    }
+
+    
+>>>>>>> 4c9e880da6fd1a8c0aa40ab8a80fb7e5029248b9
 
     public ArrayList<Appointment> getComingAppointments() {
         return comingAppointments;
@@ -90,9 +109,17 @@ public class Patient extends User {
     
     }
     
+<<<<<<< HEAD
     public void updateDetails(String message)
     {
     System.out.println( getName() + ", You have recieved a message that say: " + message);
     
+=======
+    public void update(String x){
+        
+    }
+    public void updateStatus(String y){
+        
+>>>>>>> 4c9e880da6fd1a8c0aa40ab8a80fb7e5029248b9
     }
 }

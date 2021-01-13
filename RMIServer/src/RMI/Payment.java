@@ -34,4 +34,21 @@ public class Payment {
         this.p = p;
     }
     
+    //FUNCTIONS
+    
+    public void refund(){
+        
+    }
+    
+    
+    public void makeAppointmentPayment(){
+        
+    }
+    
+   
+    public void payMedicine(){
+        
+    }
+    
+    
 }

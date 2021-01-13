@@ -5,10 +5,29 @@
  */
 package RMI;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Mariam
  */
 public class Inventory {
+    ArrayList<Medicine> medicines = new ArrayList();
+
+    public Inventory() {
+    }
+    
+    public Inventory(ArrayList<Medicine> medicines ) {
+        this.medicines = medicines;
+    }
+
+    public ArrayList<Medicine> getMedicines() {
+        return medicines;
+    }
+
+    public void setMedicines(ArrayList<Medicine> medicines) {
+        this.medicines = medicines;
+    }
+    
     
 }

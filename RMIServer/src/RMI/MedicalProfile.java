@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author meriam
  */
-public class MedicalProfile {
+public class MedicalProfile implements DoctorMedicalFunctionalities{
     private ArrayList<String> drFollowup = new ArrayList();
     private ArrayList<String> chronicDisease = new ArrayList();
     private ArrayList<Medicine> medicines = new ArrayList();
@@ -85,8 +85,8 @@ public class MedicalProfile {
         
     }
 
-    public void reviewMedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
-            String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions){
+    @Override
+    public void reviewMedicalProfile(){
         
     }
   
