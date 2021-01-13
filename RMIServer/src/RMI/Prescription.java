@@ -5,10 +5,29 @@
  */
 package RMI;
 
+import java.util.*;
+
 /**
  *
  * @author meriam
  */
 public class Prescription {
+    private ArrayList<String> prescription;
+
+    public Prescription(ArrayList<String> prescription) {
+        this.prescription = prescription;
+    }
+
+    public ArrayList<String> getPrescription() {
+        return prescription;
+    }
+
+    public void setPrescription(ArrayList<String> prescription) {
+        this.prescription = prescription;
+    }
+    // FUNCTIONS
     
+    public void uploadPrescription(ArrayList<String> x){
+        
+    }
 }
