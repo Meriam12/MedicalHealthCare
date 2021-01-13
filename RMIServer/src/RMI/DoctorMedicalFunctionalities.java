@@ -11,4 +11,7 @@ package RMI;
  */
 public interface DoctorMedicalFunctionalities {
     
+    public void reviewMedicalProfile();
+
 }
+

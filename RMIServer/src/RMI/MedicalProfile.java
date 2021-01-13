@@ -85,8 +85,7 @@ public class MedicalProfile {
         
     }
 
-    public void reviewMedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
-            String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions){
+    public void reviewMedicalProfile(){
         
     }
   
