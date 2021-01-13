@@ -9,6 +9,29 @@ package RMI;
  *
  * @author meriam
  */
-public class Payment {
+public class Payment implements PaymentMethod {
+    private String paymentMethod;
+    private PaymentMethod p;
+
+    public Payment(String paymentMethod, PaymentMethod p) {
+        this.paymentMethod = paymentMethod;
+        this.p = p;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public PaymentMethod getP() {
+        return p;
+    }
+
+    public void setP(PaymentMethod p) {
+        this.p = p;
+    }
     
 }
