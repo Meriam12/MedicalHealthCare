@@ -22,7 +22,7 @@ public class MedicalProfile implements DoctorMedicalFunctionalities{
     public MedicalProfile(){
 
     }
-
+    
     public MedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
             String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions) {
         this.drFollowup = drFollowup;
