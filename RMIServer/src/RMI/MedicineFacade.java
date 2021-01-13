@@ -19,7 +19,9 @@ public class MedicineFacade extends UnicastRemoteObject implements MedicineFacad
 //        c= new Course("", "", "");
 //    }
     
-    
+    public MedicineFacade() throws RemoteException {
+        m = new Medicine("","","",0,0);
+    }
     
     @Override
     public void SetMedicineData(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException {
