@@ -86,5 +86,10 @@ public class Patient {
         this.account = account;
     }
     
-    
+    public void update(String x){
+        
+    }
+    public void updateStatus(String y){
+        
+    }
 }

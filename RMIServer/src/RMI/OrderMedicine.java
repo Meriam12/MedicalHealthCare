@@ -65,4 +65,17 @@ public class OrderMedicine {
     public void setPayment(Payment payment) {
         this.payment = payment;
     }
+    
+    //Functions 
+    
+    public void orderMedicine(int x, String y){
+        
+    }
+    
+    public void checkMedicineAvailability(int x, ArrayList<Medicine> m, String y, Payment z){
+        
+    }
+    public int calculateOrderTotal(){
+        return 0;
+    }
 }
