@@ -18,20 +18,20 @@ public class Patient extends User implements PatientObserver {
   private MedicalProfile medicalProfile;
   private String medicalInsurance;
   private String creditCardNumber;
-  private String access;
+  private String address;
   private ArrayList<OrderMedicine> ordeMedicine;
  
 
     public Patient() {
     }
 
-    public Patient(ArrayList<Appointment> comingAppointments, MedicalProfile medicalProfile, String medicalInsurance, String creditCardNumber, String access, ArrayList<OrderMedicine> ordeMedicine, String name, String phonenumber, String birthdate, String email) {
+    public Patient(ArrayList<Appointment> comingAppointments, MedicalProfile medicalProfile, String medicalInsurance, String creditCardNumber, String address, ArrayList<OrderMedicine> ordeMedicine, String name, String phonenumber, String birthdate, String email) {
         super(name, phonenumber, birthdate, email);
         this.comingAppointments = comingAppointments;
         this.medicalProfile = medicalProfile;
         this.medicalInsurance = medicalInsurance;
         this.creditCardNumber = creditCardNumber;
-        this.access = access;
+        this.address = address;
         this.ordeMedicine = ordeMedicine;
        
     }
@@ -69,13 +69,15 @@ public class Patient extends User implements PatientObserver {
         this.creditCardNumber = creditCardNumber;
     }
 
-    public String getAccess() {
-        return access;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAccess(String access) {
-        this.access = access;
+    public void setAddress(String address) {
+        this.address = address;
     }
+
+   
 
     public ArrayList<OrderMedicine> getOrdeMedicine() {
         return ordeMedicine;
