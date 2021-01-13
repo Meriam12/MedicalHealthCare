@@ -49,9 +49,16 @@ public class RMIServer {
            // Getting the collections
            MongoCollection Doctor = MedicalHealthCare.getCollection("Doctor");
            
-            //Document Doc1 = new Document ("Fname","Meriam").append("Lname","Sherif").append("Position","DR");
-              
-            Document Doc2 = new Document ("Fname","Marina").append("Lname","Hatem").append("Position","DR");
+           // Inserting a new recrod its type is Document in the database 
+           //
+           Document Doc1 = new Document ("name","Hossam Ahmed").append("Phonenumber","0154949584").append("birthdate","1/3/1980")
+                   .append("email", "Hossam270@gmail.com").append("rating",4).append("levelOfExpertise", "Doctor").append("timeslots", "Mon 9-12");
+           
+           Document Doc2 = new Document ("name","Michael Magdy").append("Phonenumber","0122789584").append("birthdate","9/5/1970")
+                   .append("email", "Hossam270@gmail.com").append("rating",4).append("levelOfExpertise", "Doctor").append("timeslots", "Mon 9-12");
+           
+           
+            Document Doc3 = new Document ("Fname","Marina").append("Lname","Hatem").append("Position","DR");
            // Doctor.insertOne(Doc1);   
            Doctor.insertOne(Doc2);   
             // My remote object [Skeleton]
