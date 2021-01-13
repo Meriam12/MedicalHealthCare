@@ -16,4 +16,5 @@ public interface MedicineFacadeInterface extends Remote {
     
        public void SetMedicineData(String name, String type, String expiredDate, int amountInStock, int price)throws RemoteException;
        public String getMedicineData()throws RemoteException;
+       public MedicineDTO getMedicine() throws RemoteException;
 }

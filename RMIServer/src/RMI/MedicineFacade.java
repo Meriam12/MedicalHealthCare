@@ -38,5 +38,13 @@ public class MedicineFacade extends UnicastRemoteObject implements MedicineFacad
         String MedicineData = m.getName() + m.getType() + m.getExpiredDate() + m.getAmountInStock() + m.getPrice();
         return MedicineData;
     }
+
+    @Override
+    public MedicineDTO getMedicine() throws RemoteException {
+                
+        MedicineDTO dto=new MedicineDTO(m.getName() , m.getType() , m.getExpiredDate() , m.getAmountInStock() , m.getPrice());
+        return dto;
+        
+    }
     
 }

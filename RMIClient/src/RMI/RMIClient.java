@@ -32,9 +32,9 @@ public class RMIClient {
 //           String CourseInfo =f.getCouseData();
 //           System.out.println("Couse info  : "+CourseInfo);
             
-           f.SetMedicineData("s ", "s ", " ",2,3);
-           //CourseDTO c= f.getCourse();
-           // System.out.println("cousre name "+c.getName());
+           f.SetMedicineData("s ", "s ", " s",2,3);
+           MedicineDTO c= f.getMedicine();
+           System.out.println("Medicine name "+c.getName());
             
            
         } catch (Exception ex) {

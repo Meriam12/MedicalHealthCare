@@ -15,4 +15,6 @@ import java.rmi.RemoteException;
 public interface FacadeInterface {
        public void SetMedicineData(String name, String type, String expiredDate, int amountInStock, int price);
        public String getMedicineData();
+       public MedicineDTO getMedicine() throws RemoteException;
+
 }
