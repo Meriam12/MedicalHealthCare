@@ -5,9 +5,15 @@
  */
 package RMI;
 
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author meriam
@@ -21,6 +27,18 @@ public class RMIServer {
         // TODO code application logic here
         
         try {
+            Logger mongoLogger = Logger.getLogger( "org.mongodb.driver" );
+            mongoLogger.setLevel(Level.SEVERE); 
+           MongoClient mongoClient = new MongoClient();
+           MongoDatabase MedicalHealthCare= mongoClient.getDatabase("MedicalHealthCare");
+            //MedicalHealthCare.createCollection("Doctor");
+            MongoCollection Doctor = MedicalHealthCare.getCollection("Doctor");
+           
+            //Document Doc1 = new Document ("Fname","Meriam").append("Lname","Sherif").append("Position","DR");
+              
+            Document Doc2 = new Document ("Fname","Marina").append("Lname","Hatem").append("Position","DR");
+           // Doctor.insertOne(Doc1);   
+           Doctor.insertOne(Doc2);   
             // My remote object [Skeleton]
             MedicineFacadeInterface facade = new MedicineFacade();
             
