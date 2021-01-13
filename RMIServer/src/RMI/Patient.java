@@ -11,7 +11,7 @@ import java.util.*;
  * @author meriam
  */
 
-public class Patient {
+public class Patient extends User{
   private ArrayList<Appointment> comingAppointments;
   private MedicalProfile medicalProfile;
   private String medicalInsurance;
@@ -29,6 +29,19 @@ public class Patient {
         this.ordeMedicine = ordeMedicine;
         this.account = account;
     }
+
+    public Patient(ArrayList<Appointment> comingAppointments, MedicalProfile medicalProfile, String medicalInsurance, String creditCardNumber, String access, ArrayList<OrderMedicine> ordeMedicine, Account account, String name, String phonenumber, String birthdate, String email) {
+        super(name, phonenumber, birthdate, email);
+        this.comingAppointments = comingAppointments;
+        this.medicalProfile = medicalProfile;
+        this.medicalInsurance = medicalInsurance;
+        this.creditCardNumber = creditCardNumber;
+        this.access = access;
+        this.ordeMedicine = ordeMedicine;
+        this.account = account;
+    }
+
+    
 
     public ArrayList<Appointment> getComingAppointments() {
         return comingAppointments;
