@@ -19,6 +19,20 @@ public class RMIServer {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        try {
+            // My remote object [Skeleton]
+            MedicineFacadeInterface facade = new MedicineFacade();
+            
+            // My RMI Registry
+            Registry registry = LocateRegistry.createRegistry(1099);
+            
+            //Add my object to the RMI Registry
+            registry.bind("fac", facade);
+            System.out.println("My facade is ready...");   
+        } catch (Exception ex) {
+           System.out.println("Exception occured here ");
+        }  
     }
     
 }
