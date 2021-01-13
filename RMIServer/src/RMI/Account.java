@@ -10,8 +10,8 @@ package RMI;
  * @author meriam
  */
 public class Account {
-    String username;
-    String password;
+    private String username;
+    private String password;
 
     public Account() {
     }

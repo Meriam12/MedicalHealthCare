@@ -10,8 +10,8 @@ package RMI;
  * @author meriam
  */
 public class Admin extends User{
-    int id;
-     private static Admin admin;
+    private int id;
+    private static Admin admin;
 
     public Admin() {
     }
