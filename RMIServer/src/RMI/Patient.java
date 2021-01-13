@@ -86,14 +86,14 @@ public class Patient extends User implements PatientObserver {
     }
 
     @Override
-    public void updateConfirmation(String news)
+    public void notifyConfirmation(String news)
     {
         System.out.println( getName() + ", You have recieved a message that say: " + news);
     
     }
     
     @Override
-    public void updateDetails(String message)
+    public void notifyDetails(String message)
     {
     System.out.println( getName() + ", You have recieved a message that say: " + message);
     

@@ -11,12 +11,12 @@ package RMI;
  */
 public interface AppointmentSubject {
     
-     public void addObserver( PatientObserver p);
+    public void addObserver( PatientObserver p);
     
     public void RemoveObserver(PatientObserver m);
     
-    public void UpdateConfirmation(String s);
+    public void notifyConfirmation(String s);
     
-     public void UpdateDetails(String s);
+     public void notifyDetails(String s);
     
 }

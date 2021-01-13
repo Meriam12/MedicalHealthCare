@@ -67,18 +67,18 @@ public class Appointment implements AppointmentSubject{
     
     
     @Override
-    public void UpdateConfirmation(String s){
+    public void notifyConfirmation(String s){
         
      for (int i = 0; i < observers.size(); i++) {
-            observers.get(i).updateConfirmation(s);
+            observers.get(i).notifyConfirmation(s);
         }
     }
    
      @Override
-     public void UpdateDetails(String s){
+     public void notifyDetails(String s){
         
      for (int i = 0; i < observers.size(); i++) {
-            observers.get(i).updateDetails(s);
+            observers.get(i).notifyDetails(s);
         }
     }
 

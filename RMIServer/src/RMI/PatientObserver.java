@@ -11,7 +11,7 @@ package RMI;
  */
 public interface PatientObserver {
     
-    public void updateConfirmation(String news);
+    public void notifyConfirmation(String news);
     
-    public void updateDetails(String message);
+    public void notifyDetails(String message);
  }
