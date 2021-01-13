@@ -79,6 +79,17 @@ public class Doctor extends User{
         this.operationRooms = operationRooms;
     }
     
+    public void makeRating(int rating){
+        
+    }
+    
+    public Doctor selectDoctor() {
+        return null;
+    }
+    
+    public void editProfile(){
+        
+    }
     
 
 
