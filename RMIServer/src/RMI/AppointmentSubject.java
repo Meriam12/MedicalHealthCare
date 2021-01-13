@@ -14,8 +14,7 @@ public interface AppointmentSubject {
      public void addObserver( PatientObserver p);
     
     public void RemoveObserver(PatientObserver m);
-  
-  
+    
     public void UpdateConfirmation(String s);
     
      public void UpdateDetails(String s);
