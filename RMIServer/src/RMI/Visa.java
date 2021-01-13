@@ -9,9 +9,14 @@ package RMI;
  *
  * @author noura
  */
-public interface PaymentMethod {
+public class Visa implements PaymentMethod {
+    @Override
+    public void makeAppointmentPayment(){
+        
+    }
     
-    public void makeAppointmentPayment();
-    public void payMedicine();
-    
+    @Override
+    public void payMedicine(){
+        
+    }
 }

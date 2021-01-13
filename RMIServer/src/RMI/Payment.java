@@ -9,7 +9,7 @@ package RMI;
  *
  * @author meriam
  */
-public class Payment implements PaymentMethod {
+public class Payment {
     private String paymentMethod;
     private PaymentMethod p;
 
