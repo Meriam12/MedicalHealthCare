@@ -11,11 +11,10 @@ import java.util.ArrayList;
  *
  * @author meriam
  */
-public class Appointment {
+public class Appointment implements AppointmentSubject{
     private String timeslot;
     private Payment payment;
-    private ArrayList<Patient> ParientAppObservers = new ArrayList();
-     private ArrayList<Patient> ParientDeatilsObservers = new ArrayList();
+   private ArrayList <PatientObserver> observers = new ArrayList();
 
     public Appointment() {
     }
@@ -54,38 +53,32 @@ public class Appointment {
     {
     
     }
-    public void addAppObserver( Patient p)
+    
+    @Override
+    public void addObserver(PatientObserver p )
     {
-         ParientAppObservers.add(p);
+         observers.add(p);
+    }
+     @Override
+    public void RemoveObserver(PatientObserver m)
+    {
+         observers.remove(m);
     }
     
-    public void RemoveAppObserver(Patient m)
-    {
-         ParientAppObservers.remove(m);
-    }
     
-    
-    public void addDeatilsObserver( Patient o)
-    {
-         ParientDeatilsObservers.add(o);
-    }
-    
-    public void RemoveDetailsObserver(Patient i)
-    {
-         ParientDeatilsObservers.remove(i);
-    }
-    
+    @Override
     public void UpdateConfirmation(String s){
         
-     for (int i = 0; i < ParientAppObservers.size(); i++) {
-            ParientAppObservers.get(i).updateConfirmation(s);
+     for (int i = 0; i < observers.size(); i++) {
+            observers.get(i).updateConfirmation(s);
         }
     }
    
+     @Override
      public void UpdateDetails(String s){
         
-     for (int i = 0; i < ParientDeatilsObservers.size(); i++) {
-            ParientDeatilsObservers.get(i).updateConfirmation(s);
+     for (int i = 0; i < observers.size(); i++) {
+            observers.get(i).updateDetails(s);
         }
     }
 

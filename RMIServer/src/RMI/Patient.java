@@ -12,7 +12,7 @@ import java.util.*;
  */
 
 
-public class Patient extends User{
+public class Patient extends User implements PatientObserver {
 
   private ArrayList<Appointment> comingAppointments;
   private MedicalProfile medicalProfile;
@@ -85,12 +85,14 @@ public class Patient extends User{
         this.ordeMedicine = ordeMedicine;
     }
 
+    @Override
     public void updateConfirmation(String news)
     {
         System.out.println( getName() + ", You have recieved a message that say: " + news);
     
     }
     
+    @Override
     public void updateDetails(String message)
     {
     System.out.println( getName() + ", You have recieved a message that say: " + message);
