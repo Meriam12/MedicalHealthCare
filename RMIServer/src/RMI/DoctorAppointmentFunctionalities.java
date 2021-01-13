@@ -11,4 +11,6 @@ package RMI;
  */
 public interface DoctorAppointmentFunctionalities {
     
+    public void changeAppointment(Patient p, Doctor d , String timeslot);
+    
 }

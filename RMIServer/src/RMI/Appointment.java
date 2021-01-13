@@ -11,7 +11,8 @@ import java.util.ArrayList;
  *
  * @author meriam
  */
-public class Appointment implements AppointmentSubject{
+
+public class Appointment implements AppointmentSubject, DoctorAppointmentFunctionalities{
     private String timeslot;
     private Payment payment;
    private ArrayList <PatientObserver> observers = new ArrayList();
@@ -32,24 +33,25 @@ public class Appointment implements AppointmentSubject{
         this.timeslot = timeslot;
     }
     
-    void bookAnAppointment(Patient p, Doctor d, String timeslot )
+    public void bookAnAppointment(Patient p, Doctor d, String timeslot )
     {
     
     }
     
-    void CancelAppointment(Patient p, Doctor d , String timeslot)
+    public void CancelAppointment(Patient p, Doctor d , String timeslot)
     {
     }
     
-     void changeAppointment(Patient p, Doctor d , String timeslot)
+    @Override
+    public void changeAppointment(Patient p, Doctor d , String timeslot)
     {
     }
     
-    void sendUpdateInAppointmentDetailsNotification(String s)
+    public void sendUpdateInAppointmentDetailsNotification(String s)
     {
     
     }
-    void sendAppointmentConfirmationNotification(String s)
+    public void sendAppointmentConfirmationNotification(String s)
     {
     
     }
