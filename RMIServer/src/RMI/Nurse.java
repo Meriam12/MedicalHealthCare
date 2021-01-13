@@ -9,6 +9,38 @@ package RMI;
  *
  * @author meriam
  */
+import java.util.*;
+
 public class Nurse {
+    private String AssignedDoctor;
+    private Account account;
+
+    public Nurse() {
+    }
+
+    public Nurse(String AssignedDoctor, Account account) {
+        this.AssignedDoctor = AssignedDoctor;
+        this.account = account;
+    }
+
+    public String getAssignedDoctor() {
+        return AssignedDoctor;
+    }
+
+    public void setAssignedDoctor(String AssignedDoctor) {
+        this.AssignedDoctor = AssignedDoctor;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
     
+    public ArrayList<Doctor> selectSpecialization(String S){
+    
+        return null;
+    }
 }
