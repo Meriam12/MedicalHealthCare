@@ -25,12 +25,18 @@ public class MedicineFacade extends UnicastRemoteObject implements MedicineFacad
     
     @Override
     public void SetMedicineData(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException {
+        m.setName(name);
+        m.setType(type);
+        m.setExpiredDate(expiredDate);
+        m.setAmountInStock(amountInStock);
+        m.setPrice(price);
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public String getMedicineData() throws RemoteException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String MedicineData = m.getName() + m.getType() + m.getExpiredDate() + m.getAmountInStock() + m.getPrice();
+        return MedicineData;
     }
     
 }
