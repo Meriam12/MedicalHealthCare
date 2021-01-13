@@ -20,6 +20,10 @@ public class Doctor extends User{
     private ArrayList<OperationRoom> operationRooms = new ArrayList();
     private DoctorAppointmentFunctionalities doctorAppointmentFunctionalities;
     private DoctorMedicalFunctionalities doctorMedicalFunctionalities;
+    
+    public Doctor(){
+         
+     }
 
     public Doctor(int id, String name, String phonenumber, String birthdate, String email,int rating, String levelOfExpertise, ArrayList<Nurse> nurse,ArrayList<String> timeSlots,  Account account,ArrayList<OperationRoom> operationRooms) {
         super(name, phonenumber, birthdate, email);

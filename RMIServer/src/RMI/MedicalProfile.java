@@ -85,6 +85,7 @@ public class MedicalProfile implements DoctorMedicalFunctionalities{
         
     }
 
+    @Override
     public void reviewMedicalProfile(){
         
     }
