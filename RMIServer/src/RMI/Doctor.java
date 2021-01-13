@@ -30,7 +30,66 @@ public class Doctor extends User{
         this.account = account;
         this.operationRooms = operationRooms;
     }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public String getLevelOfExpertise() {
+        return levelOfExpertise;
+    }
+
+    public void setLevelOfExpertise(String levelOfExpertise) {
+        this.levelOfExpertise = levelOfExpertise;
+    }
+
+    public ArrayList<Nurse> getNurse() {
+        return nurse;
+    }
+
+    public void setNurse(ArrayList<Nurse> nurse) {
+        this.nurse = nurse;
+    }
+
+    public ArrayList<String> getTimeSlots() {
+        return timeSlots;
+    }
+
+    public void setTimeSlots(ArrayList<String> timeSlots) {
+        this.timeSlots = timeSlots;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+    public ArrayList<OperationRoom> getOperationRooms() {
+        return operationRooms;
+    }
+
+    public void setOperationRooms(ArrayList<OperationRoom> operationRooms) {
+        this.operationRooms = operationRooms;
+    }
     
+    public void makeRating(int rating){
+        
+    }
+    
+    public Doctor selectDoctor() {
+        return null;
+    }
+    
+    public void editProfile(){
+        
+    }
     
 
 
