@@ -9,6 +9,6 @@ package RMI;
  *
  * @author meriam
  */
-public class Docotr {
+public class Doctor {
     
 }
