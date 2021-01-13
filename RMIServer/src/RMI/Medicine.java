@@ -15,6 +15,10 @@ public class Medicine {
     private String expiredDate;
     private int amountInStock;
     private int price;
+    
+    public Medicine(){
+        
+    }
 
     public Medicine(String name, String type, String expiredDate, int amountInStock, int price) {
         this.name = name;
