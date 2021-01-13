@@ -12,6 +12,7 @@ import org.bson.Document;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -27,12 +28,26 @@ public class RMIServer {
         // TODO code application logic here
         
         try {
-            Logger mongoLogger = Logger.getLogger( "org.mongodb.driver" );
-            mongoLogger.setLevel(Level.SEVERE); 
+            
+           // Disables Mongo Logs
+           Logger mongoLogger = Logger.getLogger( "org.mongodb.driver" );
+           mongoLogger.setLevel(Level.SEVERE); 
+           
+           // Initialize the database
            MongoClient mongoClient = new MongoClient();
+           
+           //retrieve all Databases from MongoServer
+           List <String> DBs = mongoClient.getDatabaseNames(); 
+           System.out.print(DBs);
+           
            MongoDatabase MedicalHealthCare= mongoClient.getDatabase("MedicalHealthCare");
-            //MedicalHealthCare.createCollection("Doctor");
-            MongoCollection Doctor = MedicalHealthCare.getCollection("Doctor");
+           
+           // Creating collations
+           //MedicalHealthCare.createCollection("Doctor");
+           
+           
+           // Getting the collections
+           MongoCollection Doctor = MedicalHealthCare.getCollection("Doctor");
            
             //Document Doc1 = new Document ("Fname","Meriam").append("Lname","Sherif").append("Position","DR");
               
