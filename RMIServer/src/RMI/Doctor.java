@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author meriam
  */
-public class Doctor extends Account{
+public class Doctor extends User{
     private int rating;
     private String levelOfExpertise;
     private ArrayList<Nurse> nurse = new ArrayList();
@@ -20,6 +20,18 @@ public class Doctor extends Account{
     private ArrayList<OperationRoom> operationRooms = new ArrayList();
     private DoctorAppointmentFunctionalities doctorAppointmentFunctionalities;
     private DoctorMedicalFunctionalities doctorMedicalFunctionalities;
+
+    public Doctor(int id, String name, String phonenumber, String birthdate, String email,int rating, String levelOfExpertise, ArrayList<Nurse> nurse,ArrayList<String> timeSlots,  Account account,ArrayList<OperationRoom> operationRooms) {
+        super(name, phonenumber, birthdate, email);
+        this.rating = rating;
+        this.levelOfExpertise = levelOfExpertise;
+        this.nurse = nurse;
+        this.timeSlots = timeSlots;
+        this.account = account;
+        this.operationRooms = operationRooms;
+    }
+    
+    
 
 
 }
