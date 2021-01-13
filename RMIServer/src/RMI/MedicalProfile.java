@@ -18,6 +18,10 @@ public class MedicalProfile {
     private String bloodType;
     private ArrayList<Appointment> pastAppointments = new ArrayList();
     private ArrayList<Prescription> prescriptions = new ArrayList();
+    
+    public MedicalProfile(){
+
+    }
 
     public MedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
             String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions) {
