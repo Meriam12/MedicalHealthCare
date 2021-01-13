@@ -83,11 +83,11 @@ public class Doctor extends User{
         
     }
     
-    public Doctor selectDoctor() {
+    public Doctor selectDoctor(int id) {
         return null;
     }
     
-    public void editProfile(){
+    public void editProfile(String levelOfExpertise, ArrayList<Nurse> nurse,ArrayList<String> timeSlots,  Account account,ArrayList<OperationRoom> operationRooms){
         
     }
     
