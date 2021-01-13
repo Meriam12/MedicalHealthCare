@@ -14,7 +14,8 @@ import java.util.ArrayList;
 public class Appointment {
     private String timeslot;
     private Payment payment;
-    private ArrayList<Patient> ParientObservers = new ArrayList();
+    private ArrayList<Patient> ParientAppObservers = new ArrayList();
+     private ArrayList<Patient> ParientDeatilsObservers = new ArrayList();
 
     public Appointment() {
     }
@@ -37,6 +38,55 @@ public class Appointment {
     
     }
     
+    void CancelAppointment(Patient p, Doctor d , String timeslot)
+    {
+    }
+    
+     void changeAppointment(Patient p, Doctor d , String timeslot)
+    {
+    }
+    
+    void sendUpdateInAppointmentDetailsNotification(String s)
+    {
+    
+    }
+    void sendAppointmentConfirmationNotification(String s)
+    {
+    
+    }
+    public void addAppObserver( Patient p)
+    {
+         ParientAppObservers.add(p);
+    }
+    
+    public void RemoveAppObserver(Patient m)
+    {
+         ParientAppObservers.remove(m);
+    }
     
     
+    public void addDeatilsObserver( Patient o)
+    {
+         ParientDeatilsObservers.add(o);
+    }
+    
+    public void RemoveDetailsObserver(Patient i)
+    {
+         ParientDeatilsObservers.remove(i);
+    }
+    
+    public void UpdateConfirmation(String s){
+        
+     for (int i = 0; i < ParientAppObservers.size(); i++) {
+            ParientAppObservers.get(i).updateConfirmation(s);
+        }
+    }
+   
+     public void UpdateDetails(String s){
+        
+     for (int i = 0; i < ParientDeatilsObservers.size(); i++) {
+            ParientDeatilsObservers.get(i).updateConfirmation(s);
+        }
+    }
+
 }
