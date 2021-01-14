@@ -14,7 +14,7 @@ import java.util.*;
 public class OrderMedicine {
     private int amountNeeded;
     private String orderStatus;
-    private ArrayList<Medicine> med;
+    private ArrayList<Medicine> med = new ArrayList();
     private String patientName;
     private Payment payment;
 
@@ -85,5 +85,15 @@ public class OrderMedicine {
     }
     public int calculateOrderTotal(){
         return 0;
+    }
+    
+        public void addOrder(Medicine m) 
+    {
+        med.add(m);
+    }
+    
+     public void addPayment(Payment p)
+    {
+       this.payment=p ;
     }
 }

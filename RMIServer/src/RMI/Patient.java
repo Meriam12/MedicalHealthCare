@@ -14,7 +14,7 @@ import java.util.*;
 
 public class Patient extends User implements PatientObserver {
 
-  private ArrayList<Appointment> comingAppointments = new ArrayList();;
+  private ArrayList<Appointment> comingAppointments = new ArrayList();
   private MedicalProfile medicalProfile;
   private String medicalInsurance;
   private String creditCardNumber;

@@ -44,16 +44,28 @@ public class RMIServer {
             db.insertInventory(Inv);
             
             Account acc1=new Account("Hossam","1234","Patient");
+            Account acc2 = new Account("Amira","0987","Patient");
             
             db.insertAccount(acc1);
+            db.insertAccount(acc2);
             
             Patient p1 = new Patient("25673","234-456-329","167 Masr el gedida","Hossam Amr","012275767464","12/7/1960","Hossam23@yahoo.com");
             Patient p2 = new Patient("","908-543-094","90 El Giza","Amira Mostafa","01564545444","09/8/1970","Amira21@yahoo.com");
-            
+           
             Appointment a1 = new Appointment("1/2/2021 Monday at 9 am");
             Appointment a2 = new Appointment("12/2/2021 tusday at 1 pm");
             Appointment a3 = new Appointment("20/1/2021 Saturday at 11 am");
             Appointment a4 = new Appointment("21/4/2021 Sunday at 8 pm");
+            
+            Payment pay1= new Payment("Visa");
+            Payment pay2= new Payment("Cash");
+            db.insertPayment(pay1);
+            db.insertPayment(pay2);
+            
+            a1.addPayment(pay1);
+            a3.addPayment(pay1);
+            a2.addPayment(pay2);
+            a4.addPayment(pay2);
            
             db.insertAppointment(a1);
             db.insertAppointment(a2);
@@ -68,8 +80,15 @@ public class RMIServer {
             
             OrderMedicine o1= new OrderMedicine(1, "Arrived");
             
+            o1.addOrder(med2);
+            o1.addPayment(pay2);
+            
+            db.insertOrderMedicine(o1);
+            
             p1.addOrder(o1);
             p1.addAccount(acc1);
+            
+            p2.addAccount(acc2);
             
             db.insertPatient(p1);
             db.insertPatient(p2);

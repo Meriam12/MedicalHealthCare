@@ -18,6 +18,12 @@ public class Payment {
         this.p = p;
     }
 
+    public Payment(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+    
+    
+
     public String getPaymentMethod() {
         return paymentMethod;
     }
