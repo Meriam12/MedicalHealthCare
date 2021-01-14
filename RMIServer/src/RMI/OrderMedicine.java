@@ -26,6 +26,14 @@ public class OrderMedicine {
         this.payment = payment;
     }
 
+    public OrderMedicine(int amountNeeded, String orderStatus) {
+        this.amountNeeded = amountNeeded;
+        this.orderStatus = orderStatus;
+       
+    }
+    
+    
+
     public int getAmountNeeded() {
         return amountNeeded;
     }

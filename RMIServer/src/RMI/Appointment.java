@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Appointment implements AppointmentSubject, DoctorAppointmentFunctionalities{
     private String timeslot;
     private Payment payment;
-   private ArrayList <PatientObserver> observers = new ArrayList();
+    private ArrayList <PatientObserver> observers;
 
     public Appointment() {
     }

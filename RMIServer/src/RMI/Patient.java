@@ -14,12 +14,12 @@ import java.util.*;
 
 public class Patient extends User implements PatientObserver {
 
-  private ArrayList<Appointment> comingAppointments;
+  private ArrayList<Appointment> comingAppointments = new ArrayList();;
   private MedicalProfile medicalProfile;
   private String medicalInsurance;
   private String creditCardNumber;
   private String address;
-  private ArrayList<OrderMedicine> ordeMedicine;
+  private ArrayList<OrderMedicine> ordeMedicines = new ArrayList();;
   private Account a;
 
     public Patient() {
@@ -32,7 +32,7 @@ public class Patient extends User implements PatientObserver {
         this.medicalInsurance = medicalInsurance;
         this.creditCardNumber = creditCardNumber;
         this.address = address;
-        this.ordeMedicine = ordeMedicine;
+        this.ordeMedicines = ordeMedicine;
        
     }
 
@@ -87,11 +87,11 @@ public class Patient extends User implements PatientObserver {
    
 
     public ArrayList<OrderMedicine> getOrdeMedicine() {
-        return ordeMedicine;
+        return ordeMedicines;
     }
 
     public void setOrdeMedicine(ArrayList<OrderMedicine> ordeMedicine) {
-        this.ordeMedicine = ordeMedicine;
+        this.ordeMedicines = ordeMedicine;
     }
 
     @Override
@@ -115,7 +115,7 @@ public class Patient extends User implements PatientObserver {
     }
        
     public void addOrder(OrderMedicine o) {
-        ordeMedicine.add(o);
+        ordeMedicines.add(o);
     }
     
     public void addAccount(Account a)
