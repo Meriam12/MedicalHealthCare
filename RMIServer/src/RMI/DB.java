@@ -70,7 +70,7 @@ public class DB {
         collection11 = database.getCollection("OrderMedicine"); 
         collection12 = database.getCollection("Payment"); 
         collection13 = database.getCollection("Pharmacist"); 
-        collection14 = database.getCollection("Percription"); 
+        collection14 = database.getCollection("Prescription"); 
         collection15 = database.getCollection("Specialization"); 
       
     }
@@ -153,5 +153,16 @@ public class DB {
     {
         collection13.insertOne(Document.parse(gson.toJson(p)));
         System.out.println("Pharmacist is inserted.");
+    }
+      
+      public void insertPharmacist(Prescription p) 
+    {
+        collection14.insertOne(Document.parse(gson.toJson(p)));
+        System.out.println("Prescription is inserted.");
+    }
+      public void insertSpecialization(Specialization s) 
+    {
+        collection15.insertOne(Document.parse(gson.toJson(s)));
+        System.out.println("Specialization is inserted.");
     }
 }
