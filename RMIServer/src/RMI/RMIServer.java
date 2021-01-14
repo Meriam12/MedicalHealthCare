@@ -52,9 +52,15 @@ public class RMIServer {
             db.insertAccount(acc1);
             db.insertAccount(acc2);
             
+            Prescription pres1=new Prescription();
+            Prescription pres2=new Prescription();
             
+            pres1.adddPresciption("You should take this medicine for 1 month, after each meal and then come to meet agin the doctor");
+            pres2.adddPresciption("You should take this medicine for 2 weeks, amorning and night before sleeping and then come to meet agin the doctor");
             
-            
+            db.insertPrescription(pres1);
+            db.insertPrescription(pres2);
+                    
             Patient p1 = new Patient("25673","234-456-329","167 Masr el gedida","Hossam Amr","012275767464","12/7/1960","Hossam23@yahoo.com");
             Patient p2 = new Patient("","908-543-094","90 El Giza","Amira Mostafa","01564545444","09/8/1970","Amira21@yahoo.com");
            
@@ -69,13 +75,13 @@ public class RMIServer {
             prof1.addChronicDiseases("Diabetes");
             prof1.addMedicines(med3);
             prof1.addPastAppointments(a1);
-           // prof1.addPrescription(pres);
+           prof1.addPrescription(pres1);
            // prof1.adddFollowup(doctorName);
             
             prof2.addChronicDiseases("");
             prof2.addMedicines(med2);
             prof2.addPastAppointments(a4);
-           // prof2.addPrescription(pres);
+            prof2.addPrescription(pres2);
           //  prof2.adddFollowup(doctorName);
             
             

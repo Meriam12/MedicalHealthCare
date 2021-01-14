@@ -14,6 +14,11 @@ import java.util.*;
 public class Prescription {
     private ArrayList<String> prescription;
 
+    public Prescription() {
+    }
+
+    
+    
     public Prescription(ArrayList<String> prescription) {
         this.prescription = prescription;
     }
@@ -30,4 +35,9 @@ public class Prescription {
     public void uploadPrescription(ArrayList<String> x){
         
     }
+    
+     public void adddPresciption(String prescription)
+    {
+       this.prescription.add(prescription);
+    } 
 }

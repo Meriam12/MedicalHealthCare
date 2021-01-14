@@ -160,7 +160,7 @@ public class DB {
         System.out.println("Pharmacist is inserted.");
     }
       
-      public void insertPharmacist(Prescription p) 
+      public void insertPrescription(Prescription p) 
     {
         collection14.insertOne(Document.parse(gson.toJson(p)));
         System.out.println("Prescription is inserted.");
