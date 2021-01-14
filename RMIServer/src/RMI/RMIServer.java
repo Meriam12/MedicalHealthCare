@@ -28,8 +28,15 @@ public class RMIServer {
         // TODO code application logic here
         
         try {
+            //Calling the class for the database 
+            DB db = new DB();
+             //public Patient(ArrayList<Appointment> comingAppointments, MedicalProfile medicalProfile, String medicalInsurance, String creditCardNumber, String address, ArrayList<OrderMedicine> ordeMedicine, String name, String phonenumber, String birthdate, String email) {
+            Patient p = new Patient();
             
-           
+            
+            
+            
+            
             // My remote object [Skeleton]
             MedicineFacadeInterface facade = new MedicineFacade();
             
