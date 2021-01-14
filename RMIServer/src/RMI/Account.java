@@ -12,14 +12,18 @@ package RMI;
 public class Account {
     private String username;
     private String password;
+    private String AccountType;
 
     public Account() {
     }
 
-    public Account(String username, String password) {
+    public Account(String username, String password, String AccountType) {
         this.username = username;
         this.password = password;
+        this.AccountType = AccountType;
     }
+
+  
 
     public String getUsername() {
         return username;
@@ -36,6 +40,16 @@ public class Account {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getAccountType() {
+        return AccountType;
+    }
+
+    public void setAccountType(String AccountType) {
+        this.AccountType = AccountType;
+    }
+    
+    
     
     void login (String username, String Password)
     {
