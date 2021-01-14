@@ -126,8 +126,8 @@ public class RMIServer {
             pres1= new Prescription();
             pres2= new Prescription();
             
-            pres1.addPresciption("You should take this medicine for 1 month, after each meal and then come to meet agin the doctor");
-            pres2.addPresciption("You should take this medicine for 2 weeks, amorning and night before sleeping and then come to meet agin the doctor");
+            pres1.addPresciption("You should take this medicine ");
+            pres2.addPresciption("You should take this medicine ");
             
             db.insertPrescription(pres1);
             db.insertPrescription(pres2);

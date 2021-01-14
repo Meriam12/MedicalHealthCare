@@ -20,7 +20,7 @@ public class Prescription {
     
     
     public Prescription(ArrayList<String> prescription) {
-        this.prescriptions = prescription;
+       prescriptions = prescription;
     }
 
     public ArrayList<String> getPrescription() {
@@ -28,7 +28,7 @@ public class Prescription {
     }
 
     public void setPrescription(ArrayList<String> prescription) {
-        this.prescriptions = prescription;
+        prescriptions = prescription;
     }
     // FUNCTIONS
     
@@ -38,6 +38,6 @@ public class Prescription {
     
      public void addPresciption(String prescription)
     {
-       this.prescriptions.add(prescription);
+       prescriptions.add(prescription);
     } 
 }
