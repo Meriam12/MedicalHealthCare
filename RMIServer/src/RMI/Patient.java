@@ -123,4 +123,8 @@ public class Patient extends User implements PatientObserver {
        this.a=a ;
     }
    
+      public void addMedicalProfile(MedicalProfile medprof)
+    {
+       this.medicalProfile=medprof ;
+    }
 }

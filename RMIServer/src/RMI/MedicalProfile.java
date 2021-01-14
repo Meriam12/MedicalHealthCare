@@ -32,6 +32,12 @@ public class MedicalProfile implements DoctorMedicalFunctionalities{
         this.pastAppointments = pastAppointments;
         this.prescriptions = prescriptions;
     }
+
+    public MedicalProfile(String bloodType) {
+        this.bloodType = bloodType;
+    }
+    
+    
     
     public ArrayList<String> getDrFollowup() {
         return drFollowup;
@@ -95,6 +101,30 @@ public class MedicalProfile implements DoctorMedicalFunctionalities{
             String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions){
         
     }
-
     
+      public void addPrescription(Prescription pres)
+    {
+       prescriptions.add(pres);
+    }
+    
+     public void addPastAppointments(Appointment app)
+    {
+       pastAppointments.add(app);
+    }  
+     
+     public void addMedicines(Medicine med)
+    {
+       medicines.add(med);
+    } 
+     
+       public void addChronicDiseases(String chronicDiseases)
+    {
+       chronicDisease.add(chronicDiseases);
+    }  
+    
+      public void adddFollowup(String doctorName)
+    {
+       drFollowup.add(doctorName);
+    } 
+     
 }
