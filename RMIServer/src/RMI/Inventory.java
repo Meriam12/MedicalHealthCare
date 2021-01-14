@@ -29,5 +29,8 @@ public class Inventory {
         this.medicines = medicines;
     }
     
+   public void addMedicine(Medicine m) {
+        medicines.add(m);
+    }
     
 }
