@@ -36,7 +36,14 @@ public class Patient extends User implements PatientObserver {
        
     }
 
-   
+    public Patient(String medicalInsurance, String creditCardNumber, String address, String name, String phonenumber, String birthdate, String email) {
+        super(name, phonenumber, birthdate, email);
+        this.medicalInsurance = medicalInsurance;
+        this.creditCardNumber = creditCardNumber;
+        this.address = address;
+    }
+    
+    
     public ArrayList<Appointment> getComingAppointments() {
         return comingAppointments;
     }
