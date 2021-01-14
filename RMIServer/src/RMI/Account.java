@@ -12,15 +12,15 @@ package RMI;
 public class Account {
     private String username;
     private String password;
-    private String AccountType;
+    private String accountType;
 
     public Account() {
     }
 
-    public Account(String username, String password, String AccountType) {
+    public Account(String username, String password, String accountType) {
         this.username = username;
         this.password = password;
-        this.AccountType = AccountType;
+        this.accountType = accountType;
     }
 
   
@@ -42,11 +42,11 @@ public class Account {
     }
 
     public String getAccountType() {
-        return AccountType;
+        return accountType;
     }
 
-    public void setAccountType(String AccountType) {
-        this.AccountType = AccountType;
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
     
     
