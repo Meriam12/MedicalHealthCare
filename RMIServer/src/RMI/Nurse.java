@@ -11,13 +11,21 @@ package RMI;
  */
 import java.util.*;
 
-public class Nurse {
+public class Nurse extends User{
     private String AssignedDoctor;
     private Account account;
 
     public Nurse() {
     }
 
+    public Nurse(String AssignedDoctor, String name, String phonenumber, String birthdate, String email) {
+        super(name, phonenumber, birthdate, email);
+        this.AssignedDoctor = AssignedDoctor;
+    }
+
+   
+
+    
     public Nurse(String AssignedDoctor, Account account) {
         this.AssignedDoctor = AssignedDoctor;
         this.account = account;
@@ -42,5 +50,10 @@ public class Nurse {
     public ArrayList<Doctor> selectSpecialization(String S){
     
         return null;
+    }
+    
+        public void addAccount(Account a)
+    {
+       this.account=a ;
     }
 }

@@ -55,5 +55,9 @@ public class OperationRoom {
     
     }
     
+       public void addDoctor(Doctor d)
+    {
+       this.ReservedDoctor=d ;
+    }
     
 }

@@ -35,6 +35,14 @@ public class Doctor extends User{
         this.operationRooms = operationRooms;
     }
 
+    public Doctor(int rating, String levelOfExpertise, String name, String phonenumber, String birthdate, String email) {
+        super(name, phonenumber, birthdate, email);
+        this.rating = rating;
+        this.levelOfExpertise = levelOfExpertise;
+    }
+    
+    
+
     public int getRating() {
         return rating;
     }
@@ -95,5 +103,24 @@ public class Doctor extends User{
         
     }
     
+     public void addNurses(Nurse n) 
+     {
+        nurse.add(n);
+    }
+        
+     public void addOPR(OperationRoom o) 
+    {
+        operationRooms.add(o);
+    }
+       
+      public void adddTimeslots(String timeslots)
+    {
+       timeSlots.add(timeslots);
+    }  
+    
+     public void addAccount(Account a)
+    {
+       this.account=a ;
+    }
  
 }

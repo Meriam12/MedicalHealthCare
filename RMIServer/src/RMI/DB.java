@@ -26,7 +26,7 @@ public class DB {
     private MongoCollection<Document> collection1;
     private MongoCollection<Document> collection2;
     private MongoCollection<Document> collection3;
-    //private MongoCollection<Document> collection4;
+    private MongoCollection<Document> collection4;
     private MongoCollection<Document> collection5;
     private MongoCollection<Document> collection6;
     private MongoCollection<Document> collection7;
@@ -60,7 +60,7 @@ public class DB {
         //Collection for the Nurse
         collection3 = database.getCollection("Nurse"); 
          //Collection for the Admin
-        //collection4 = database.getCollection("Admin");
+        collection4 = database.getCollection("Admin");
         //Collection for the Account
         collection5 = database.getCollection("Account"); 
         //Collection for the Appointment
@@ -69,13 +69,19 @@ public class DB {
         collection7 = database.getCollection("Inventory"); 
         //Collection for the MedicalProfile
         collection8 = database.getCollection("MedicalProfile"); 
-        
+        //Collection for the Medicine
         collection9 = database.getCollection("Medicine"); 
-        collection10 = database.getCollection("OperationRoom"); 
+        //Collection for the Operation Room
+        collection10 = database.getCollection("OperationRoom");
+        //Collection for the OrderMedicine
         collection11 = database.getCollection("OrderMedicine"); 
+        //Collection for the Payment
         collection12 = database.getCollection("Payment"); 
+        //Collection for the Pharmacist
         collection13 = database.getCollection("Pharmacist"); 
-        collection14 = database.getCollection("Prescription"); 
+        //Collection for the Prescription
+        collection14 = database.getCollection("Prescription");
+        //Collection for the Specializtion
         collection15 = database.getCollection("Specialization"); 
       
     }
@@ -99,11 +105,11 @@ public class DB {
         System.out.println("Nurse is inserted.");
     } 
     
-//    public void insertAdmin(Admin a) 
-//    {
-//        collection4.insertOne(Document.parse(gson.toJson(a)));
-//        System.out.println("Admin is inserted.");
-//    } 
+    public void insertAdmin(Admin a) 
+    {
+        collection4.insertOne(Document.parse(gson.toJson(a)));
+        System.out.println("Admin is inserted.");
+    } 
     
     
     public void insertAccount(Account a) 

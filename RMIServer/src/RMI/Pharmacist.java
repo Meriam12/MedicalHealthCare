@@ -9,6 +9,19 @@ package RMI;
  *
  * @author meriam
  */
-public class Pharmacist {
+public class Pharmacist extends User {
+    Account account;
+
+    public Pharmacist() {
+    }
+
+    public Pharmacist(String name, String phonenumber, String birthdate, String email) {
+        super(name, phonenumber, birthdate, email);
+    }
+    
+     public void addAccount(Account a)
+    {
+       this.account=a ;
+    }
     
 }

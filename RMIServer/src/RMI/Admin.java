@@ -12,14 +12,19 @@ package RMI;
 public class Admin extends User{
     private int id;
     private static Admin admin;
-
-    private Admin() {
+    private Account account;
+ 
+    private Admin() 
+    {
+        admin= new Admin(1,"Morad Ossman","0123434343","19/2/1992","MoradF2@yahoo.com");
     }
 
-//    public Admin(int id, String name, String phonenumber, String birthdate, String email) {
-//        super(name, phonenumber, birthdate, email);
-//        this.id = id;
-//    }
+    private Admin(int id, String name, String phonenumber, String birthdate, String email) {
+        super(name, phonenumber, birthdate, email);
+        this.id = id;
+    }
+
+  
 
    public static Admin getInstance()
     {
@@ -39,6 +44,9 @@ public class Admin extends User{
     }
    
    
-     
+     public void addAccount(Account a)
+    {
+       this.account=a ;
+    }
      
 }
