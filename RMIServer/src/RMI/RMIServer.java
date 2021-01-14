@@ -95,7 +95,7 @@ public class RMIServer {
             acc6 = new Account("Michael","1095","Doctor");
             acc7 = new Account("Mina","1945","Pharmacist");
             acc8 = new Account("Dalia","3645","Pharmacist");
-            acc9 = new Account("Hossam","3954","Admin");
+            acc9 = new Account("Morad","3954","Admin");
             
             
             db.insertAccount(acc1);
