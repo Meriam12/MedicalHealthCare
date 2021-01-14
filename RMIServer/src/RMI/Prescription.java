@@ -12,7 +12,7 @@ import java.util.*;
  * @author meriam
  */
 public class Prescription {
-    private ArrayList<String> prescription;
+    private ArrayList<String> prescriptions;
 
     public Prescription() {
     }
@@ -20,15 +20,15 @@ public class Prescription {
     
     
     public Prescription(ArrayList<String> prescription) {
-        this.prescription = prescription;
+        this.prescriptions = prescription;
     }
 
     public ArrayList<String> getPrescription() {
-        return prescription;
+        return prescriptions;
     }
 
     public void setPrescription(ArrayList<String> prescription) {
-        this.prescription = prescription;
+        this.prescriptions = prescription;
     }
     // FUNCTIONS
     
@@ -36,8 +36,8 @@ public class Prescription {
         
     }
     
-     public void adddPresciption(String prescription)
+     public void addPresciption(String prescription)
     {
-       this.prescription.add(prescription);
+       this.prescriptions.add(prescription);
     } 
 }

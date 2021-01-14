@@ -75,7 +75,7 @@ public class RMIServer {
            
             med1 =  new Medicine("fucidine","cream","23/10/2022",100,25);
             med2 =  new Medicine("fucicort","cream","23/10/2023",150,30);
-            med3 = new Medicine("Meglitinides","Tablets","22/10/2023",95,35);
+            med3 =  new Medicine("Meglitinides","Tablets","22/10/2023",95,35);
             
             db.insertMedicine(med1);
             db.insertMedicine(med2);
@@ -123,11 +123,11 @@ public class RMIServer {
             db.insertNurse(n2);
             
             
-            pres1=new Prescription();
-            pres2=new Prescription();
+            pres1= new Prescription();
+            pres2= new Prescription();
             
-            pres1.adddPresciption("You should take this medicine for 1 month, after each meal and then come to meet agin the doctor");
-            pres2.adddPresciption("You should take this medicine for 2 weeks, amorning and night before sleeping and then come to meet agin the doctor");
+            pres1.addPresciption("You should take this medicine for 1 month, after each meal and then come to meet agin the doctor");
+            pres2.addPresciption("You should take this medicine for 2 weeks, amorning and night before sleeping and then come to meet agin the doctor");
             
             db.insertPrescription(pres1);
             db.insertPrescription(pres2);
@@ -143,13 +143,20 @@ public class RMIServer {
             doc1= new Doctor(5,"Profssor","Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
             doc2= new Doctor(5,"Doctor","Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
             
+                        
+            or1 = new OperationRoom(1,'A',doc1);
+            or2= new OperationRoom(1,'C',doc2);
+            
+            db.insertOperationRoom(or1);
+            db.insertOperationRoom(or2);
+            
             doc1.addNurses(n2);
-            //doc1.addOPR(o);
+            doc1.addOPR(or1);
             doc1.adddTimeslots("Sunday from 9 AM to 11 AM");
             doc1.adddTimeslots("Tusday from 1 PM to 3 PM");
             
             doc2.addNurses(n1);
-            //doc1.addOPR(o);
+            doc2.addOPR(or2);
             doc2.adddTimeslots("Saturday from 10 AM to 12 PM");
             doc2.adddTimeslots("Monday from 8 AM to 10 AM");
             
@@ -223,12 +230,7 @@ public class RMIServer {
             
             db.insertPharmacist(pharma1);
             db.insertPharmacist(pharma2);
-            
-            or1 = new OperationRoom(1,'A',doc1);
-            or2= new OperationRoom(1,'C',doc2);
-            
-            db.insertOperationRoom(or1);
-            db.insertOperationRoom(or2);
+
             
             
             
