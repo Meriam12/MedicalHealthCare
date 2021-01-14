@@ -61,6 +61,9 @@ public class RMIServer {
         OperationRoom or1;
         OperationRoom or2;
         Admin ad;
+        Specialization spe1;
+        Specialization spe2;
+                
         
         try {
             //Calling the class for the database 
@@ -153,8 +156,17 @@ public class RMIServer {
             db.insertDoctor(doc1);
             db.insertDoctor(doc2);
             
-            prof1= new MedicalProfile("A+");
-            prof2= new MedicalProfile("AB+");
+            spe1 = new Specialization("Dermatologists");
+            spe2 = new Specialization("Ophthalmologists");
+            
+            spe1.addDoctor(doc1);
+            spe1.addDoctor(doc2);
+            
+            db.insertSpecialization(spe1);
+            db.insertSpecialization(spe2);
+            
+            prof1 = new MedicalProfile("A+");
+            prof2 = new MedicalProfile("AB+");
             
             prof1.addChronicDiseases("Diabetes");
             prof1.addMedicines(med3);
@@ -217,6 +229,12 @@ public class RMIServer {
             
             db.insertOperationRoom(or1);
             db.insertOperationRoom(or2);
+            
+            
+            
+            
+            
+            
             
             // My remote object [Skeleton]
             MedicineFacadeInterface facade = new MedicineFacade();

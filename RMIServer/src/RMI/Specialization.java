@@ -19,6 +19,11 @@ public class Specialization {
     public Specialization() {
     }
 
+    public Specialization(String Name) {
+        this.Name = Name;
+    }
+
+    
     public Specialization(String Name, ArrayList<Doctor> Doc) {
         this.Name = Name;
         this.Doc = Doc;
@@ -38,6 +43,10 @@ public class Specialization {
 
     public void setDoc(ArrayList<Doctor> Doc) {
         this.Doc = Doc;
+    }
+    
+     public void addDoctor(Doctor doc) {
+        Doc.add(doc);
     }
     
   
