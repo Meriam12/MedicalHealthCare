@@ -107,5 +107,15 @@ public class Patient extends User implements PatientObserver {
     System.out.println( getName() + ", You have recieved a message that say: " + message);
     
     }
+    
+     public void addAppointments(Appointment a) 
+     
+    {
+        comingAppointments.add(a);
+    }
+       
+    public void addOrder(OrderMedicine o) {
+        ordeMedicine.add(o);
+    }
    
 }
