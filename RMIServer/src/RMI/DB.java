@@ -60,11 +60,16 @@ public class DB {
         //Collection for the Nurse
         collection3 = database.getCollection("Nurse"); 
          //Collection for the Admin
-        //collection4 = database.getCollection("Admin"); 
+        //collection4 = database.getCollection("Admin");
+        //Collection for the Account
         collection5 = database.getCollection("Account"); 
-        collection6 = database.getCollection("Appointment"); 
+        //Collection for the Appointment
+        collection6 = database.getCollection("Appointment");
+        //Collection for the Inventory
         collection7 = database.getCollection("Inventory"); 
+        //Collection for the MedicalProfile
         collection8 = database.getCollection("MedicalProfile"); 
+        
         collection9 = database.getCollection("Medicine"); 
         collection10 = database.getCollection("OperationRoom"); 
         collection11 = database.getCollection("OrderMedicine"); 
@@ -164,5 +169,9 @@ public class DB {
     {
         collection15.insertOne(Document.parse(gson.toJson(s)));
         System.out.println("Specialization is inserted.");
+    }
+       public void close() 
+    {
+        mongoClient.close();
     }
 }
