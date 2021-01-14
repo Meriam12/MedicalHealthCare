@@ -13,13 +13,13 @@ public class Admin extends User{
     private int id;
     private static Admin admin;
 
-    public Admin() {
+    private Admin() {
     }
 
-    public Admin(int id, String name, String phonenumber, String birthdate, String email) {
-        super(name, phonenumber, birthdate, email);
-        this.id = id;
-    }
+//    public Admin(int id, String name, String phonenumber, String birthdate, String email) {
+//        super(name, phonenumber, birthdate, email);
+//        this.id = id;
+//    }
 
    public static Admin getInstance()
     {
