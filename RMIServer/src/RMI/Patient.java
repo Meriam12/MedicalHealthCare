@@ -20,7 +20,7 @@ public class Patient extends User implements PatientObserver {
   private String creditCardNumber;
   private String address;
   private ArrayList<OrderMedicine> ordeMedicine;
- 
+  private Account a;
 
     public Patient() {
     }
@@ -116,6 +116,11 @@ public class Patient extends User implements PatientObserver {
        
     public void addOrder(OrderMedicine o) {
         ordeMedicine.add(o);
+    }
+    
+    public void addAccount(Account a)
+    {
+       this.a=a ;
     }
    
 }

@@ -25,6 +25,11 @@ public class Appointment implements AppointmentSubject, DoctorAppointmentFunctio
         this.payment = payment;
     }
 
+    public Appointment(String timeslot) {
+        this.timeslot = timeslot;
+    }
+ 
+    
     public String getTimeslot() {
         return timeslot;
     }
