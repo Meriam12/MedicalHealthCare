@@ -29,38 +29,7 @@ public class RMIServer {
         
         try {
             
-           // Disables Mongo Logs
-           Logger mongoLogger = Logger.getLogger( "org.mongodb.driver" );
-           mongoLogger.setLevel(Level.SEVERE); 
            
-           // Initialize the database
-           MongoClient mongoClient = new MongoClient();
-           
-           //retrieve all Databases from MongoServer
-           List <String> DBs = mongoClient.getDatabaseNames(); 
-           System.out.print(DBs);
-           
-           MongoDatabase MedicalHealthCare= mongoClient.getDatabase("MedicalHealthCare");
-           
-           // Creating collations
-           //MedicalHealthCare.createCollection("Doctor");
-           
-           
-           // Getting the collections
-           MongoCollection Doctor = MedicalHealthCare.getCollection("Doctor");
-           
-           // Inserting a new recrod its type is Document in the database 
-           //
-           Document Doc1 = new Document ("name","Hossam Ahmed").append("Phonenumber","0154949584").append("birthdate","1/3/1980")
-                   .append("email", "Hossam270@gmail.com").append("rating",4).append("levelOfExpertise", "Doctor").append("timeslots", "Mon 9-12");
-           
-           Document Doc2 = new Document ("name","Michael Magdy").append("Phonenumber","0122789584").append("birthdate","9/5/1970")
-                   .append("email", "Hossam270@gmail.com").append("rating",4).append("levelOfExpertise", "Doctor").append("timeslots", "Mon 9-12");
-           
-           
-            Document Doc3 = new Document ("Fname","Marina").append("Lname","Hatem").append("Position","DR");
-           // Doctor.insertOne(Doc1);   
-           Doctor.insertOne(Doc2);   
             // My remote object [Skeleton]
             MedicineFacadeInterface facade = new MedicineFacade();
             
