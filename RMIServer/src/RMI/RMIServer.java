@@ -33,10 +33,18 @@ public class RMIServer {
              //public Patient(ArrayList<Appointment> comingAppointments, MedicalProfile medicalProfile, String medicalInsurance, String creditCardNumber, String address, ArrayList<OrderMedicine> ordeMedicine, String name, String phonenumber, String birthdate, String email) {
             Patient p = new Patient();
             
+            Inventory Inv = new Inventory();
+            Medicine med1 =  new Medicine("fucidine","cream","23/10/2022",100,25);
+            Medicine med2 =  new Medicine("fucicort","cream","23/10/2023",150,30);
+            Inv.addMedicine(med1);
+            Inv.addMedicine(med2);
+
+            db.insertInventory(Inv);
             
             
             
             
+         
             // My remote object [Skeleton]
             MedicineFacadeInterface facade = new MedicineFacade();
             
