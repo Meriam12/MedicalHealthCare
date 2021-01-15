@@ -20,5 +20,4 @@ public interface MedicineInterface extends Remote {
 
         public void editMedicine(String name) throws RemoteException;
         
-        public void orderMedicine(String name) throws RemoteException;
 }

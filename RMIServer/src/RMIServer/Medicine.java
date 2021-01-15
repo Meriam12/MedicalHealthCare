@@ -110,9 +110,6 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
         
     }
 
-    @Override
-    public void orderMedicine(String name) throws RemoteException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
 }
