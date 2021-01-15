@@ -132,7 +132,7 @@ public class RMIServer {
             
             ad = Admin.getInstance();
             ad.addAccount(acc9);
-             db.insertAdmin(ad);
+            db.insertAdmin(ad);
 
             n1 = new Nurse("Dr. Farida Magdy","Marina Hany","0158908089","23/12/1990","MarinaH12@gmail.com");
             n2= new Nurse("Dr.Michael Samy","Farid Essam","0121909889","1/12/1993","FaridEss@gmail.com");
