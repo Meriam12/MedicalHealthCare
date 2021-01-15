@@ -9,7 +9,7 @@ package RMIServer;
  *
  * @author meriam
  */
-public class Payment {
+public class Payment  {
     private String paymentType;
     private PaymentMethod p;
     private int cost;

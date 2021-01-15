@@ -5,7 +5,7 @@
  */
 package RMIServer;
 
-import RMIServer.PaymentMethod;
+//import RMIServer.PaymentMethod;
 
 /**
  *
