@@ -9,53 +9,85 @@ package RMIServer;
  *
  * @author meriam
  */
-import java.util.*;
+import RMI.MedicineInterface;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import com.google.gson.Gson;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.bson.Document;
 
-public class OperationRoom {
+public class OperationRoom  extends UnicastRemoteObject {
     private int ID;
     private char Type;
     private Doctor ReservedDoctor; 
 
-    public OperationRoom() {
+    DB db = new DB();
+    public OperationRoom()throws RemoteException{
+                // Disables Mongo Logs
+        Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+        mongoLogger.setLevel(Level.SEVERE);
+
+        // Initialize
+       db.mongoClient = new MongoClient();
+        db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     }
     
+    
+  public OperationRoom(int ID, char Type)  throws RemoteException{
+        this.ID = ID;
+        this.Type = Type;
+    }
 
-    public OperationRoom(int ID, char Type, Doctor ReservedDoctor) {
+    public OperationRoom(int ID, char Type, Doctor ReservedDoctor) throws RemoteException {
         this.ID = ID;
         this.Type = Type;
         this.ReservedDoctor = ReservedDoctor;
     }
 
-    public int getID() {
+    public int getID() throws RemoteException{
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(int ID)throws RemoteException {
         this.ID = ID;
     }
 
-    public char getType() {
+    public char getType() throws RemoteException{
         return Type;
     }
 
-    public void setType(char Type) {
+    public void setType(char Type) throws RemoteException{
         this.Type = Type;
     }
 
-    public Doctor getReservedDoctor() {
+    public Doctor getReservedDoctor()throws RemoteException {
         return ReservedDoctor;
     }
 
-    public void setReservedDoctor(Doctor ReservedDoctor) {
+    public void setReservedDoctor(Doctor ReservedDoctor)throws RemoteException {
         this.ReservedDoctor = ReservedDoctor;
     }
     
-    public void RequestOperationRoom(int id, char type,Doctor RD){
-    
-    
+    public void RequestOperationRoom(int id, char type,String DrName)throws RemoteException{
+                OperationRoom r = new OperationRoom(id,type);
+                Document doc = db.collection1.find(Filters.eq("name", DrName)).first();
+                Doctor theDoctor = db.gson.fromJson(doc.toJson(), Doctor.class);
+
+                //ArrayList<OperationRoom> roomsOfTheDr = new ArrayList();
+                theDoctor.addOPR(r);
+                            
+                  Document UpdatedDoc =Document.parse(db.gson.toJson(theDoctor));
+
+                 db.collection1.replaceOne(Filters.eq("name", DrName), UpdatedDoc);
     }
     
-       public void addDoctor(Doctor d)
+       public void addDoctor(Doctor d)throws RemoteException
     {
        this.ReservedDoctor=d ;
     }
