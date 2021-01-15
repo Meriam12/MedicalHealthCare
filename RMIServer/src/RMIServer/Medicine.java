@@ -35,7 +35,14 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     private Gson gson = new Gson();
     
     public Medicine() throws RemoteException{
-        
+        // Disables Mongo Logs
+        Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+        mongoLogger.setLevel(Level.SEVERE);
+
+        // Initialize
+        client = new MongoClient();
+        database = client.getDatabase("MedicalHealthCare"); // Database name
+        collection = database.getCollection("Medicine"); // Collection name
     }
 
     public Medicine(String name, String type, String expiredDate, int amountInStock, int price)  throws RemoteException  {
@@ -88,7 +95,9 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     
     @Override
     public void postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException{
-        
+        Medicine newMedicineObject = new Medicine(name,type,expiredDate,amountInStock,price);
+        collection.insertOne(Document.parse(gson.toJson(newMedicineObject)));
+        System.out.println("Medicine Posted!.");
     }
     
     @Override
