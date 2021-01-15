@@ -18,7 +18,6 @@ public interface MedicineInterface extends Remote {
     
         public void deleteMedicine(String name) throws RemoteException;
 
-        public void editMedicine(String name) throws RemoteException;
+        public void editMedicine(String name,String type, String expiredDate, int amountInStock, int price) throws RemoteException;
         
-        public void orderMedicine(String name) throws RemoteException;
 }
