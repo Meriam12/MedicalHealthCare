@@ -31,55 +31,55 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
         this.price = price;
     }
 
-    public String getName() {
+    public String getName() throws RemoteException{
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)  throws RemoteException{
         this.name = name;
     }
 
-    public String getType() {
+    public String getType() throws RemoteException{
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(String type) throws RemoteException {
         this.type = type;
     }
 
-    public String getExpiredDate() {
+    public String getExpiredDate() throws RemoteException{
         return expiredDate;
     }
 
-    public void setExpiredDate(String expiredDate) {
+    public void setExpiredDate(String expiredDate) throws RemoteException {
         this.expiredDate = expiredDate;
     }
 
-    public int getAmountInStock() {
+    public int getAmountInStock() throws RemoteException{
         return amountInStock;
     }
 
-    public void setAmountInStock(int amountInStock) {
+    public void setAmountInStock(int amountInStock) throws RemoteException{
         this.amountInStock = amountInStock;
     }
 
-    public int getPrice() {
+    public int getPrice() throws RemoteException{
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(int price) throws RemoteException{
         this.price = price;
     }
     
-    public void postMedicine(String name, String type, String expiredDate, int amountInStock, int price){
+    public void postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException{
         
     }
     
-    public void deleteMedicine(String name){
+    public void deleteMedicine(String name) throws RemoteException{
         
     }
     
-    public void editMedicine(String name){
+    public void editMedicine(String name) throws RemoteException{
         
     }
 
