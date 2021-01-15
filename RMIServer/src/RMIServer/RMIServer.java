@@ -77,6 +77,16 @@ public class RMIServer {
            
            //Calling the class for the database 
            DB db = new DB();
+           
+                       
+            
+            MedicineInterface medicineinterface = new Medicine();     
+            // My RMI Registry
+            Registry registry = LocateRegistry.createRegistry(1099);
+            registry.bind("MedicineInterface", medicineinterface);
+            medicineinterface.postMedicine("pp", "Cream", "900-", 90, 35);
+            System.out.println("medicine posted");
+            
             
             Inv = new Inventory();
            
@@ -242,7 +252,7 @@ public class RMIServer {
             
             
             
-            MedicineInterface medicineinterface = new Medicine();
+    //        MedicineInterface medicineinterface = new Medicine();
             
             
             
@@ -251,11 +261,11 @@ public class RMIServer {
             MedicineFacadeInterface facade = new MedicineFacade();
             
             // My RMI Registry
-            Registry registry = LocateRegistry.createRegistry(1099);
+ //           Registry registry = LocateRegistry.createRegistry(1099);
             
             //Add my object to the RMI Registry
             registry.bind("facade", facade);
-            registry.bind("MedicineInterface", medicineinterface);
+  //          registry.bind("MedicineInterface", medicineinterface);
             
             // medicineinterface.postMedicine("Cream", "mllk", "900-", 90, 35);
             
