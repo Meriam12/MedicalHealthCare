@@ -106,7 +106,7 @@ public class Doctor extends User implements UserObserver{
     
     public void viewDoctor(String name) throws RemoteException {
      
-       Document Result =(Document)db.collection1.find(Filters.all("name",name));
+       Document Result =(Document)db.collection1.find(Filters.eq("name",name));
        System.out.println(Result);
        
     }
