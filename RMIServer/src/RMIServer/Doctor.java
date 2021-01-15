@@ -139,5 +139,12 @@ public class Doctor extends User implements UserObserver{
     {
        this.account=a ;
     }
+     
+//     public Doctor findDrByName(String name){
+//         for (){
+//             
+//         }
+//         return null;
+//     }
  
 }
