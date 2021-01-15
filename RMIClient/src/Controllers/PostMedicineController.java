@@ -32,8 +32,8 @@ public class PostMedicineController {
         // This registers the button with our action listener below (the inner class)
        
 
-// gui.getjButton1().addActionListener(new postMedicineClass() );
-        
+ gui.getjButton1().addActionListener(new postMedicineClass() );
+    }
         
             // This class is responsible for handling the button click
        class postMedicineClass implements ActionListener {
@@ -79,7 +79,7 @@ public class PostMedicineController {
         
     }
     
-    }
+
 
 
     
