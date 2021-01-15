@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RMI;
+package RMIInterfaces;
 
-import RMIInterfaces.FacadeInterface;
+import RMI.FacadeInterface;
+import RMI.MedicineDTO;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 

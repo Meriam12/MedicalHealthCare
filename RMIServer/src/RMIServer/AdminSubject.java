@@ -3,13 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RMI;
+package RMIServer;
 
 /**
  *
  * @author meriam
  */
-public interface UserObserver {
-
-    public void update(String message);
- }
+public interface AdminSubject {
+    
+    public void addObserver( UserObserver p);
+    
+    public void removeObserver(UserObserver m);
+    
+    public void notifyAll(String s);
+    
+     
+    
+}
