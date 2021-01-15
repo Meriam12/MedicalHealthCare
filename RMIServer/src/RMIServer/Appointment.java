@@ -45,11 +45,17 @@ public class Appointment implements DoctorAppointmentFunctionalities{
     
     public void CancelAppointment(Patient p, Doctor d , String timeslot)
     {
+        /**
+        collection.deleteOne(Filters.eq("name", name));
+        */
     }
+    
+   
     
     @Override
     public void changeAppointment(Patient p, Doctor d , String timeslot)
     {
+        
     }
     
     public void sendUpdateInAppointmentDetailsNotification(String s)
