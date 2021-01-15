@@ -34,20 +34,20 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     
 //    private Gson gson = new Gson();
     
-   private MongoClient client = DB.mongoClient;
-   private MongoDatabase database = DB.database;
-   private Gson gson = DB.gson;
-    private MongoCollection<Document> collection;
-    
-    public Medicine() throws RemoteException{
+//   private MongoClient client = DB.mongoClient;
+//   private MongoDatabase database = DB.database;
+//   private Gson gson = DB.gson;
+//    private MongoCollection<Document> collection;
+      DB db = new DB();
+      public Medicine() throws RemoteException{
         // Disables Mongo Logs
         Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
         mongoLogger.setLevel(Level.SEVERE);
 
         // Initialize
-        client = new MongoClient();
-        database = client.getDatabase("MedicalHealthCare"); // Database name
-        collection = database.getCollection("Medicine"); // Collection name
+       db.mongoClient = new MongoClient();
+        db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
+//        db.collection9 = db.database.getCollection("Medicine"); // Collection name
     }
 
     public Medicine(String name, String type, String expiredDate, int amountInStock, int price)  throws RemoteException  {
@@ -101,20 +101,20 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     @Override
     public void postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException{
         Medicine newMedicineObject = new Medicine(name,type,expiredDate,amountInStock,price);
-        collection.insertOne(Document.parse(gson.toJson(newMedicineObject)));
+       db.collection9.insertOne(Document.parse(db.gson.toJson(newMedicineObject)));
         System.out.println("Medicine Posted!.");
     }
     
     @Override
     public void deleteMedicine(String name) throws RemoteException{
-        collection.deleteOne(Filters.eq("name", name));
+       db.collection9.deleteOne(Filters.eq("name", name));
     }
     
     @Override
     public void editMedicine(String name,String type, String expiredDate, int amountInStock, int price) throws RemoteException{
                 Medicine newMedicineObject = new Medicine(name,type,expiredDate,amountInStock,price);
-                Document doc = Document.parse(gson.toJson(newMedicineObject));
-               collection.replaceOne(Filters.eq("name", newMedicineObject.getName()), doc);
+                Document doc = Document.parse(db.gson.toJson(newMedicineObject));
+               db.collection9.replaceOne(Filters.eq("name", newMedicineObject.getName()), doc);
            
     }
 

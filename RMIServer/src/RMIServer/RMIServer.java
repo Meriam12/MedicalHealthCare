@@ -172,6 +172,21 @@ public class RMIServer {
             db.insertSpecialization(spe1);
             db.insertSpecialization(spe2);
             
+            a1 = new Appointment("1/2/2019 Monday at 9 am");
+            a2 = new Appointment("12/2/2021 tusday at 1 pm");
+            a3 = new Appointment("20/1/2021 Saturday at 11 am");
+            a4 = new Appointment("21/4/2018a Sunday at 8 pm");
+ 
+            a1.addPayment(pay1);
+            a3.addPayment(pay1);
+            a2.addPayment(pay2);
+            a4.addPayment(pay2);
+           
+            db.insertAppointment(a1);
+            db.insertAppointment(a2);
+            db.insertAppointment(a3);
+            db.insertAppointment(a4);
+            
             prof1 = new MedicalProfile("A+");
             prof2 = new MedicalProfile("AB+");
             
@@ -189,26 +204,15 @@ public class RMIServer {
            
             db.insertMedicalProfile(prof1);
              db.insertMedicalProfile(prof2);
+             
+             
             pay1= new Payment("Visa");
             pay2= new Payment("Cash");
             
             db.insertPayment(pay1);
             db.insertPayment(pay2);
             
-            a1 = new Appointment("1/2/2019 Monday at 9 am");
-            a2 = new Appointment("12/2/2021 tusday at 1 pm");
-            a3 = new Appointment("20/1/2021 Saturday at 11 am");
-            a4 = new Appointment("21/4/2018a Sunday at 8 pm");
- 
-            a1.addPayment(pay1);
-            a3.addPayment(pay1);
-            a2.addPayment(pay2);
-            a4.addPayment(pay2);
            
-            db.insertAppointment(a1);
-            db.insertAppointment(a2);
-            db.insertAppointment(a3);
-            db.insertAppointment(a4);
             
             o1= new OrderMedicine(1, "Arrived");
             
@@ -245,7 +249,10 @@ public class RMIServer {
             
             
             MedicineInterface medicineinterface = new Medicine();
+//            Medicine m= new Medicine();
+//            m.postMedicine("Cream", "mllk", "900-", 90, 35);
             
+         
             // My remote object [Skeleton]
             MedicineFacadeInterface facade = new MedicineFacade();
             
@@ -258,7 +265,8 @@ public class RMIServer {
             
             
       
-            System.out.println("My facade is ready...");   
+            System.out.println("My facade is ready..."); 
+            db.close();
         } catch (Exception ex) {
            System.out.println("Exception occured here ");
         }  

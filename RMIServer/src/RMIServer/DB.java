@@ -19,26 +19,26 @@ import org.bson.Document;
  */
 public class DB {
     
-    public static MongoClient mongoClient;
+   public static MongoClient mongoClient;
     
-     public static MongoDatabase database;
+   public static MongoDatabase database;
     
-    private MongoCollection<Document> collection1;
-    private MongoCollection<Document> collection2;
-    private MongoCollection<Document> collection3;
-    private MongoCollection<Document> collection4;
-    private MongoCollection<Document> collection5;
-    private MongoCollection<Document> collection6;
-    private MongoCollection<Document> collection7;
-    private MongoCollection<Document> collection8;
-    private MongoCollection<Document> collection9;
-    private MongoCollection<Document> collection10;
-    private MongoCollection<Document> collection11;
-    private MongoCollection<Document> collection12;
-    private MongoCollection<Document> collection13;
-    private MongoCollection<Document> collection14;
-    private MongoCollection<Document> collection15;
-    private MongoCollection<Document> collection16;
+   MongoCollection<Document> collection1;
+   MongoCollection<Document> collection2;
+   MongoCollection<Document> collection3;
+   MongoCollection<Document> collection4;
+   MongoCollection<Document> collection5;
+   MongoCollection<Document> collection6;
+   MongoCollection<Document> collection7;
+   MongoCollection<Document> collection8;
+   MongoCollection<Document> collection9;
+   MongoCollection<Document> collection10;
+   MongoCollection<Document> collection11;
+   MongoCollection<Document> collection12;
+   MongoCollection<Document> collection13;
+   MongoCollection<Document> collection14;
+   MongoCollection<Document> collection15;
+   MongoCollection<Document> collection16;
     
      public static Gson gson = new Gson();
     
