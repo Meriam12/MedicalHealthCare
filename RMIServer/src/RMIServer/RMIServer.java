@@ -75,7 +75,8 @@ public class RMIServer {
             //Calling the class for the database 
             DB db = new DB();
         
-           
+           Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+           mongoLogger.setLevel(Level.SEVERE);
             
             Inv = new Inventory();
            
