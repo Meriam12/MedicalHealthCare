@@ -6,24 +6,7 @@
 package RMIServer;
 
 import RMI.MedicineInterface;
-import RMIServer.Specialization;
-import RMIServer.OperationRoom;
-import RMIServer.MedicalProfile;
-import RMIServer.Pharmacist;
-import RMIServer.Appointment;
-import RMIServer.Account;
-import RMIServer.Inventory;
-import RMIServer.DB;
-import RMIServer.Medicine;
-import RMIServer.Doctor;
-import RMIServer.Payment;
 import RMI.MedicineFacadeInterface;
-import RMIServer.MedicineFacade;
-import RMIServer.OrderMedicine;
-import RMIServer.Prescription;
-import RMIServer.Admin;
-import RMIServer.Nurse;
-import RMIServer.Patient;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -132,7 +115,7 @@ public class RMIServer {
             
             ad = Admin.getInstance();
             ad.addAccount(acc9);
-             db.insertAdmin(ad);
+            db.insertAdmin(ad);
 
             n1 = new Nurse("Dr. Farida Magdy","Marina Hany","0158908089","23/12/1990","MarinaH12@gmail.com");
             n2= new Nurse("Dr.Michael Samy","Farid Essam","0121909889","1/12/1993","FaridEss@gmail.com");
