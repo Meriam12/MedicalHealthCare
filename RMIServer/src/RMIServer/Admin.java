@@ -19,7 +19,7 @@ public class Admin extends User implements AdminSubject{
  
     private Admin() 
     {
-        admin= new Admin(1,"Morad Ossman","0123434343","19/2/1992","MoradF2@yahoo.com");
+        admin = new Admin(1,"Morad Ossman","0123434343","19/2/1992","MoradF2@yahoo.com");
     }
 
     private Admin(int id, String name, String phonenumber, String birthdate, String email) {

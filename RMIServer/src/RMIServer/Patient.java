@@ -19,7 +19,7 @@ public class Patient extends User implements UserObserver {
   private String medicalInsurance;
   private String creditCardNumber;
   private String address;
-  private ArrayList<OrderMedicine> ordeMedicines = new ArrayList();;
+  private ArrayList<OrderMedicine> ordeMedicines = new ArrayList();
   private Account a;
 
     public Patient() {

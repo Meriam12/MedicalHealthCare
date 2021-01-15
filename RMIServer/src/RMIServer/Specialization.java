@@ -15,7 +15,7 @@ import java.util.*;
 
 public class Specialization {
     private String Name;
-    private ArrayList<Doctor> Doc;
+    private ArrayList<Doctor> Doc = new ArrayList();
 
     public Specialization() {
     }

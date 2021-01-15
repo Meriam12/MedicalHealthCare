@@ -44,45 +44,48 @@ public class RMIServer {
     /**
      * @param args the command line arguments
      */
+    
+       static Nurse n1 ;
+       static Nurse n2;
+       static Inventory Inv;
+       static Medicine med1;
+       static Medicine med2;
+       static Medicine med3;
+       static  Account acc1;
+       static  Account acc2;
+       static  Account acc3;
+       static  Account acc4;
+       static  Account acc5;
+       static  Account acc6;
+       static  Account acc7;
+       static  Account acc8;
+       static Account acc9;
+       static  Prescription pres1;
+       static  Prescription pres2;
+       static Patient p1;
+       static Patient p2;
+       static Appointment a1;
+       static Appointment a2;
+       static Appointment a3;
+       static Appointment a4;
+       static  Doctor doc1;
+       static  Doctor doc2;       
+       static  MedicalProfile prof1;
+       static  MedicalProfile prof2;
+       static  Payment pay1;
+       static  Payment pay2;
+       static  OrderMedicine o1;
+       static  Pharmacist pharma1;
+       static  Pharmacist pharma2;
+       static  OperationRoom or1;
+       static  OperationRoom or2;
+       static  Admin ad;
+       static  Specialization spe1;
+       static Specialization spe2;
+       
     public static void main(String[] args)   throws RemoteException, AlreadyBoundException{
         // TODO code application logic here
-        Nurse n1 ;
-        Nurse n2;
-        Inventory Inv;
-        Medicine med1;
-        Medicine med2;
-        Medicine med3;
-        Account acc1;
-        Account acc2;
-        Account acc3;
-        Account acc4;
-        Account acc5;
-        Account acc6;
-        Account acc7;
-        Account acc8;
-        Account acc9;
-        Prescription pres1;
-        Prescription pres2;
-        Patient p1;
-        Patient p2;
-        Appointment a1;
-        Appointment a2;
-        Appointment a3;
-        Appointment a4;
-        Doctor doc1;
-        Doctor doc2;       
-        MedicalProfile prof1;
-        MedicalProfile prof2;
-        Payment pay1;
-        Payment pay2;
-        OrderMedicine o1;
-        Pharmacist pharma1;
-        Pharmacist pharma2;
-        OperationRoom or1;
-        OperationRoom or2;
-        Admin ad;
-        Specialization spe1;
-        Specialization spe2;
+
                 
         
         try {
@@ -116,8 +119,7 @@ public class RMIServer {
             acc7 = new Account("Mina","1945","Pharmacist");
             acc8 = new Account("Dalia","3645","Pharmacist");
             acc9 = new Account("Morad","3954","Admin");
-            
-            
+           
             db.insertAccount(acc1);
             db.insertAccount(acc2);
             db.insertAccount(acc3);
@@ -128,11 +130,10 @@ public class RMIServer {
             db.insertAccount(acc8);
             db.insertAccount(acc9);
             
-            ad= Admin.getInstance();
+            ad = Admin.getInstance();
             ad.addAccount(acc9);
-            
-            db.insertAdmin(ad);
-            
+             db.insertAdmin(ad);
+
             n1 = new Nurse("Dr. Farida Magdy","Marina Hany","0158908089","23/12/1990","MarinaH12@gmail.com");
             n2= new Nurse("Dr.Michael Samy","Farid Essam","0121909889","1/12/1993","FaridEss@gmail.com");
             
@@ -152,23 +153,18 @@ public class RMIServer {
             db.insertPrescription(pres1);
             db.insertPrescription(pres2);
                     
-            p1 = new Patient("25673","234-456-329","167 Masr el gedida","Hossam Amr","012275767464","12/7/1960","Hossam23@yahoo.com");
-            p2 = new Patient("","908-543-094","90 El Giza","Amira Mostafa","01564545444","09/8/1970","Amira21@yahoo.com");
-           
-            a1 = new Appointment("1/2/2019 Monday at 9 am");
-            a2 = new Appointment("12/2/2021 tusday at 1 pm");
-            a3 = new Appointment("20/1/2021 Saturday at 11 am");
-            a4 = new Appointment("21/4/2018a Sunday at 8 pm");
-            
-            doc1= new Doctor(5,"Profssor","Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
-            doc2= new Doctor(5,"Doctor","Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
-            
-                        
+                                    
             or1 = new OperationRoom(1,'A',doc1);
             or2= new OperationRoom(1,'C',doc2);
             
             db.insertOperationRoom(or1);
             db.insertOperationRoom(or2);
+            
+
+            doc1= new Doctor(5,"Profssor","Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
+            doc2= new Doctor(5,"Doctor","Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
+            
+
             
             doc1.addNurses(n2);
             doc1.addOPR(or1);
@@ -206,13 +202,20 @@ public class RMIServer {
             prof2.addPastAppointments(a4);
             prof2.addPrescription(pres2);
             prof2.adddFollowup("Dr.Michael Samy");
-
+           
+            db.insertMedicalProfile(prof1);
+             db.insertMedicalProfile(prof2);
             pay1= new Payment("Visa");
             pay2= new Payment("Cash");
-           
+            
             db.insertPayment(pay1);
             db.insertPayment(pay2);
             
+            a1 = new Appointment("1/2/2019 Monday at 9 am");
+            a2 = new Appointment("12/2/2021 tusday at 1 pm");
+            a3 = new Appointment("20/1/2021 Saturday at 11 am");
+            a4 = new Appointment("21/4/2018a Sunday at 8 pm");
+ 
             a1.addPayment(pay1);
             a3.addPayment(pay1);
             a2.addPayment(pay2);
@@ -223,10 +226,6 @@ public class RMIServer {
             db.insertAppointment(a3);
             db.insertAppointment(a4);
             
-            p1.addAppointments(a2);
-      
-            p2.addAppointments(a3);
-            
             o1= new OrderMedicine(1, "Arrived");
             
             o1.addOrder(med2);
@@ -234,10 +233,15 @@ public class RMIServer {
             
             db.insertOrderMedicine(o1);
             
+            p1 = new Patient("25673","234-456-329","167 Masr el gedida","Hossam Amr","012275767464","12/7/1960","Hossam23@yahoo.com");
+            p2 = new Patient("","908-543-094","90 El Giza","Amira Mostafa","01564545444","09/8/1970","Amira21@yahoo.com");
+            
+            p1.addAppointments(a2);
             p1.addOrder(o1);
             p1.addAccount(acc1);
             p1.addMedicalProfile(prof1);
-            
+      
+            p2.addAppointments(a3);
             p2.addMedicalProfile(prof2);
             p2.addAccount(acc2);
            

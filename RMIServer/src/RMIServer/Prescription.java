@@ -12,7 +12,7 @@ import java.util.*;
  * @author meriam
  */
 public class Prescription {
-    private ArrayList<String> prescriptions;
+    private ArrayList<String> prescriptions= new ArrayList();
 
     public Prescription() {
     }
