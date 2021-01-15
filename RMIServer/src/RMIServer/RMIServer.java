@@ -206,7 +206,7 @@ public class RMIServer {
             prof2.adddFollowup("Dr.Michael Samy");
            
             db.insertMedicalProfile(prof1);
-             db.insertMedicalProfile(prof2);
+            db.insertMedicalProfile(prof2);
             
             o1= new OrderMedicine(1, "Arrived");
             
