@@ -83,7 +83,7 @@ public class PostMedicineController {
                 
 
 
-               gui.getjLabel2().setText("Medicine posted");
+               gui.getjLabel7().setText("Medicine posted");
 
                
             } catch (RemoteException ex) {
