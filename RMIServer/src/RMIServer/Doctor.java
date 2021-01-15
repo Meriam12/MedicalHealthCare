@@ -49,8 +49,17 @@ public class Doctor extends User implements UserObserver{
         this.rating = rating;
         this.levelOfExpertise = levelOfExpertise;
     }
-    
-    
+
+    public Doctor(String name, String levelOfExpertise,  String phonenumber, String email) {
+        super(name, phonenumber, email);
+        this.levelOfExpertise = levelOfExpertise;
+        
+    }
+
+    public Doctor(int rating, String name) {
+        super(name);
+        this.rating = rating;
+    }
 
     public int getRating() {
         return rating;
@@ -100,19 +109,35 @@ public class Doctor extends User implements UserObserver{
         this.operationRooms = operationRooms;
     }
     
-    public void makeRating(int rating){
-        
+    public void makeRating(int rating, String name){
+                Doctor newDocObject = new Doctor(rating, name);
+                Document doc = Document.parse(db.gson.toJson(newDocObject));
+                db.collection1.replaceOne(Filters.eq("name", newDocObject.getName()), doc);
+                System.out.println("The rating has been Saved.");
     }
     
-    public void viewDoctor(String name) throws RemoteException {
-     
-       Document Result =(Document)db.collection1.find(Filters.all("name",name));
-       System.out.println(Result);
+//    public void viewDoctor(String name) throws RemoteException {
+//        
+//       Document Result =(Document)db.collection1.find(Filters.eq("name",name)).;
+//       System.out.println(Result);
+//       
        
-    }
-    
-    public void editProfile(String levelOfExpertise, ArrayList<Nurse> nurse,ArrayList<String> timeSlots,  Account account,ArrayList<OperationRoom> operationRooms){
+//       db.collection1.find({​​​​​​​"name": name}​​​​​​​).forEach(printjson);
         
+//     ArrayList<Doctor> result = new ArrayList();
+//     ArrayList<Document> docs = db.collection1.find(Filters.all("name",name)).into(new ArrayList<Document>());
+//     for (int i =0; i<docs.size(); i++)
+//     {
+//         result.add(db.gson.fromJson(docs.get(i).toJson(), Doctor.class));
+//     }
+//         return result;
+//    }
+    
+    public void editProfile(String name, String levelOfExpertise,  String phonenumber, String email){
+                Doctor newDocObject = new Doctor(name, levelOfExpertise, phonenumber, email);
+                Document doc = Document.parse(db.gson.toJson(newDocObject));
+               db.collection1.replaceOne(Filters.eq("name", newDocObject.getName()), doc);
+               System.out.println("The Profile has been updated.");
     }
     
      @Override
@@ -141,11 +166,5 @@ public class Doctor extends User implements UserObserver{
        this.account=a ;
     }
      
-//     public Doctor findDrByName(String name){
-//         for (){
-//             
-//         }
-//         return null;
-//     }
- 
+
 }

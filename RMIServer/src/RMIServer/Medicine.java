@@ -105,7 +105,7 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     @Override
     public void postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException{
         Medicine newMedicineObject = new Medicine(name,type,expiredDate,amountInStock,price);
-       db.collection9.insertOne(Document.parse(db.gson.toJson(newMedicineObject)));
+        db.collection9.insertOne(Document.parse(db.gson.toJson(newMedicineObject)));
         System.out.println("Medicine Posted!.");
         inv.addMedicine(newMedicineObject);
     }
@@ -117,9 +117,9 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     
     @Override
     public void editMedicine(String name,String type, String expiredDate, int amountInStock, int price) throws RemoteException{
-                Medicine newMedicineObject = new Medicine(name,type,expiredDate,amountInStock,price);
-                Document doc = Document.parse(db.gson.toJson(newMedicineObject));
-               db.collection9.replaceOne(Filters.eq("name", newMedicineObject.getName()), doc);
+       Medicine newMedicineObject = new Medicine(name,type,expiredDate,amountInStock,price);
+       Document doc = Document.parse(db.gson.toJson(newMedicineObject));
+       db.collection9.replaceOne(Filters.eq("name", newMedicineObject.getName()), doc);
            
     }
 

@@ -50,10 +50,5 @@ public class Specialization {
         Doc.add(doc);
     }
     
-    public ArrayList<Doctor> selectSpecialization(String name) {
-       
-        
-      return Doc;
-    }
-  
+    
 }

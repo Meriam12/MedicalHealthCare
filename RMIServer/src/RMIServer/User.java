@@ -19,6 +19,16 @@ public class User {
     public User() {
     }
 
+    public User(String name) {
+        this.name = name;
+    }
+
+    public User(String name, String phonenumber, String email) {
+        this.name = name;
+        this.phonenumber = phonenumber;
+        this.email = email;
+    }
+
     public User(String name, String phonenumber, String birthdate, String email) {
         this.name = name;
         this.phonenumber = phonenumber;
