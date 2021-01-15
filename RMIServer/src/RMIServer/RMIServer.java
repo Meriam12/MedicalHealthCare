@@ -67,32 +67,32 @@ public class RMIServer {
        static Specialization spe2;
        
     public static void main(String[] args)   throws RemoteException, AlreadyBoundException{
-        // TODO code application logic here
-
-                
+  
         
         try {
-            //Calling the class for the database 
-            DB db = new DB();
-        
+            
+                    
            Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
            mongoLogger.setLevel(Level.SEVERE);
+           
+           //Calling the class for the database 
+           DB db = new DB();
             
             Inv = new Inventory();
            
-            med1 =  new Medicine("fucidine","cream","23/10/2022",100,25);
-            med2 =  new Medicine("fucicort","cream","23/10/2023",150,30);
-            med3 =  new Medicine("Meglitinides","Tablets","22/10/2023",95,35);
-            
-            db.insertMedicine(med1);
-            db.insertMedicine(med2);
-            db.insertMedicine(med3);
-            
-            Inv.addMedicine(med1);
-            Inv.addMedicine(med2);
-            Inv.addMedicine(med3);
-            
-            db.insertInventory(Inv);
+//            med1 =  new Medicine("fucidine","cream","23/10/2022",100,25);
+//            med2 =  new Medicine("fucicort","cream","23/10/2023",150,30);
+//            med3 =  new Medicine("Meglitinides","Tablets","22/10/2023",95,35);
+//            
+//            db.insertMedicine(med1);
+//            db.insertMedicine(med2);
+//            db.insertMedicine(med3);
+//            
+//            Inv.addMedicine(med1);
+//            Inv.addMedicine(med2);
+//            Inv.addMedicine(med3);
+//            
+//            db.insertInventory(Inv);
             
             acc1 = new Account("Hossam","1234","Patient");
             acc2 = new Account("Amira","0987","Patient");
