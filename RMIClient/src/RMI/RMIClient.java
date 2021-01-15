@@ -5,6 +5,7 @@
  */
 package RMI;
 
+import RMIInterfaces.FacadeInterface;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
