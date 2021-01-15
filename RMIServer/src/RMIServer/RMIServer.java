@@ -81,6 +81,7 @@ public class RMIServer {
            
                        
             
+<<<<<<< HEAD
 //            MedicineInterface medicineinterface = new Medicine();     
 //            // My RMI Registry
 //            Registry registry = LocateRegistry.createRegistry(1099);
@@ -92,6 +93,19 @@ public class RMIServer {
 //            room.RequestOperationRoom(1, 'A', "Dr.Farida Magdy");
 //            System.out.println("room requested");
 //            
+=======
+            MedicineInterface medicineinterface = new Medicine();     
+            // My RMI Registry
+            Registry registry = LocateRegistry.createRegistry(1099);
+            registry.bind("MedicineInterface", medicineinterface);
+            medicineinterface.postMedicine("pp", "Cream", "900-", 90, 35);
+            System.out.println("medicine posted");
+            
+            OperationRoom room = new OperationRoom();
+            room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
+            System.out.println("room requested");
+            
+>>>>>>> 6663eb714ae13da9fb3b7a59c8e4c56849ff1a23
             
             Inv = new Inventory();
            
