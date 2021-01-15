@@ -8,6 +8,15 @@ package RMIServer;
 import RMI.MedicineInterface;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import com.google.gson.Gson;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.bson.Document;
 
 /**
  *
@@ -20,8 +29,20 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     private int amountInStock;
     private int price;
     
+    private MongoClient client;
+    private MongoDatabase database;
+    private MongoCollection<Document> collection;
+    private Gson gson = new Gson();
+    
     public Medicine() throws RemoteException{
-        
+        // Disables Mongo Logs
+        Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+        mongoLogger.setLevel(Level.SEVERE);
+
+        // Initialize
+        client = new MongoClient();
+        database = client.getDatabase("MedicalHealthCare"); // Database name
+        collection = database.getCollection("Medicine"); // Collection name
     }
 
     public Medicine(String name, String type, String expiredDate, int amountInStock, int price)  throws RemoteException  {
@@ -74,17 +95,24 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     
     @Override
     public void postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException{
-        
+        Medicine newMedicineObject = new Medicine(name,type,expiredDate,amountInStock,price);
+        collection.insertOne(Document.parse(gson.toJson(newMedicineObject)));
+        System.out.println("Medicine Posted!.");
     }
     
     @Override
     public void deleteMedicine(String name) throws RemoteException{
-        
+        collection.deleteOne(Filters.eq("name", name));
     }
     
     @Override
     public void editMedicine(String name) throws RemoteException{
         
+    }
+
+    @Override
+    public void orderMedicine(String name) throws RemoteException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

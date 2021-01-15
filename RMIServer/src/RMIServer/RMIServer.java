@@ -17,7 +17,7 @@ import RMIServer.DB;
 import RMIServer.Medicine;
 import RMIServer.Doctor;
 import RMIServer.Payment;
-import RMIServer.MedicineFacadeInterface;
+import RMI.MedicineFacadeInterface;
 import RMIServer.MedicineFacade;
 import RMIServer.OrderMedicine;
 import RMIServer.Prescription;
