@@ -5,22 +5,25 @@
  */
 package RMI;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
 /**
  *
  * @author meriam
  */
-public class Medicine {
+public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     private String name;
     private String type;
     private String expiredDate;
     private int amountInStock;
     private int price;
     
-    public Medicine(){
+    public Medicine() throws RemoteException{
         
     }
 
-    public Medicine(String name, String type, String expiredDate, int amountInStock, int price) {
+    public Medicine(String name, String type, String expiredDate, int amountInStock, int price)  throws RemoteException  {
         this.name = name;
         this.type = type;
         this.expiredDate = expiredDate;
