@@ -237,7 +237,12 @@ public class RMIServer {
             db.insertPharmacist(pharma1);
             db.insertPharmacist(pharma2);
 
+//            Doctor d = new Doctor();
+//            d.viewDoctor("Dr.Michael Samy");
+//             
             
+            Appointment a = new Appointment();
+            a.CancelAppointment("1/2/2019 Monday at 9 am");
             
             
             
@@ -259,7 +264,7 @@ public class RMIServer {
             
             // medicineinterface.postMedicine("Cream", "mllk", "900-", 90, 35);
             
-      
+       
             System.out.println("My facade is ready..."); 
             db.close();
         } catch (Exception ex) {

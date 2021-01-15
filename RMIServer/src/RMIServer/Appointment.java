@@ -5,7 +5,11 @@
  */
 package RMIServer;
 
+import com.mongodb.MongoClient;
+import com.mongodb.client.model.Filters;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
+import org.bson.Document;
 
 /**
  *
@@ -16,8 +20,11 @@ public class Appointment implements DoctorAppointmentFunctionalities{
     private String timeslot;
     private Payment payment;
     
+    DB db = new DB();
 
     public Appointment() {
+           db.mongoClient = new MongoClient();
+        db.database = db.mongoClient.getDatabase("MedicalHealthCare");
     }
 
     public Appointment(String timeslot, Payment payment) {
@@ -40,31 +47,38 @@ public class Appointment implements DoctorAppointmentFunctionalities{
     
     public void bookAnAppointment(Patient p, Doctor d, String timeslot )
     {
+        String message = "Your appointment has been booked successfully.";
     
+    
+    
+    
+        sendAppointmentConfirmationNotification(message);
     }
     
-    public void CancelAppointment(Patient p, Doctor d , String timeslot)
+    public void CancelAppointment(String timeslot) throws RemoteException
     {
-        /**
-        collection.deleteOne(Filters.eq("timeslot", timeslot));
-        */
+        db.collection6.deleteOne(Filters.eq("timeslot", timeslot));
+        System.out.println("Your appointment has been canceled.");
     }
-    
-   
     
     @Override
-    public void changeAppointment(Patient p, Doctor d , String timeslot)
+    public void changeAppointment(String timeslot) throws RemoteException
     {
+     Appointment newAppObject = new Appointment (timeslot);
+                Document doc = Document.parse(db.gson.toJson(newAppObject));
+               db.collection9.replaceOne(Filters.eq("timeslot", newAppObject.getTimeslot()), doc);
         
+     String s= "Your appointment has been updated successfully.";
+    sendUpdateInAppointmentDetailsNotification(s); 
     }
     
     public void sendUpdateInAppointmentDetailsNotification(String s)
     {
-    
+     System.out.println("Your appointment has been updated successfully.");
     }
-    public void sendAppointmentConfirmationNotification(String s)
+    public void sendAppointmentConfirmationNotification(String message)
     {
-    
+     System.out.println("Your appointment has been booked successfully.");
     }
 
      public void addPayment(Payment p)

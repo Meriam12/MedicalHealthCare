@@ -5,12 +5,14 @@
  */
 package RMIServer;
 
+import java.rmi.RemoteException;
+
 /**
  *
  * @author Mariam
  */
-public interface DoctorAppointmentFunctionalities {
+public interface DoctorAppointmentFunctionalities  {
     
-    public void changeAppointment(Patient p, Doctor d , String timeslot);
+    public void changeAppointment( String timeslot)throws RemoteException;
     
 }

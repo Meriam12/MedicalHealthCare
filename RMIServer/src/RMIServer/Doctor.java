@@ -5,7 +5,10 @@
  */
 package RMIServer;
 
+import com.mongodb.MongoClient;
+import com.mongodb.client.model.Filters;
 import java.util.ArrayList;
+import org.bson.Document;
 
 /**
  *
@@ -21,19 +24,24 @@ public class Doctor extends User implements UserObserver{
     private DoctorAppointmentFunctionalities doctorAppointmentFunctionalities;
     private DoctorMedicalFunctionalities doctorMedicalFunctionalities;
     
+    DB db = new DB();
+    
     public Doctor(){
-         
+        db.mongoClient = new MongoClient();
+        db.database = db.mongoClient.getDatabase("MedicalHealthCare");
+
      }
 
-    public Doctor(int id, String name, String phonenumber, String birthdate, String email,int rating, String levelOfExpertise, ArrayList<Nurse> nurse,ArrayList<String> timeSlots,  Account account,ArrayList<OperationRoom> operationRooms) {
+    public Doctor(int rating, String levelOfExpertise, Account account, DoctorAppointmentFunctionalities doctorAppointmentFunctionalities, DoctorMedicalFunctionalities doctorMedicalFunctionalities, String name, String phonenumber, String birthdate, String email) {
         super(name, phonenumber, birthdate, email);
         this.rating = rating;
         this.levelOfExpertise = levelOfExpertise;
-        this.nurse = nurse;
-        this.timeSlots = timeSlots;
         this.account = account;
-        this.operationRooms = operationRooms;
+        this.doctorAppointmentFunctionalities = doctorAppointmentFunctionalities;
+        this.doctorMedicalFunctionalities = doctorMedicalFunctionalities;
     }
+
+  
 
     public Doctor(int rating, String levelOfExpertise, String name, String phonenumber, String birthdate, String email) {
         super(name, phonenumber, birthdate, email);
@@ -95,10 +103,11 @@ public class Doctor extends User implements UserObserver{
         
     }
     
-    public Doctor selectDoctor(int id) {
-        
-        
-        return null;
+    public void viewDoctor(String name) {
+     
+       Document Result =(Document)db.collection1.find(Filters.eq("name",name));
+       System.out.println(Result);
+       
     }
     
     public void editProfile(String levelOfExpertise, ArrayList<Nurse> nurse,ArrayList<String> timeSlots,  Account account,ArrayList<OperationRoom> operationRooms){
