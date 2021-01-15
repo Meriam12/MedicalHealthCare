@@ -6,24 +6,7 @@
 package RMIServer;
 
 import RMI.MedicineInterface;
-import RMIServer.Specialization;
-import RMIServer.OperationRoom;
-import RMIServer.MedicalProfile;
-import RMIServer.Pharmacist;
-import RMIServer.Appointment;
-import RMIServer.Account;
-import RMIServer.Inventory;
-import RMIServer.DB;
-import RMIServer.Medicine;
-import RMIServer.Doctor;
-import RMIServer.Payment;
 import RMI.MedicineFacadeInterface;
-import RMIServer.MedicineFacade;
-import RMIServer.OrderMedicine;
-import RMIServer.Prescription;
-import RMIServer.Admin;
-import RMIServer.Nurse;
-import RMIServer.Patient;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
