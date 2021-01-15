@@ -5,10 +5,18 @@
  */
 package RMI;
 
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 /**
  *
  * @author Mariam
  */
-public interface MedicineInterface {
+public interface MedicineInterface extends Remote {
     
+        public void postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException;
+    
+        public void deleteMedicine(String name) throws RemoteException;
+
+        public void editMedicine(String name) throws RemoteException;
 }
