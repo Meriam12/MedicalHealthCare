@@ -76,15 +76,27 @@ public class OperationRoom  extends UnicastRemoteObject {
     
     public void RequestOperationRoom(int id, char type,String DrName)throws RemoteException{
                 OperationRoom r = new OperationRoom(id,type);
+                                  System.out.println("debug1");
+
                 Document doc = db.collection1.find(Filters.eq("name", DrName)).first();
-                Doctor theDoctor = db.gson.fromJson(doc.toJson(), Doctor.class);
+                                  System.out.println("debug1");
+
+          //     Doctor theDoctor = db.gson.fromJson(doc.toJson(), Doctor.class);
+
+                 Doctor theDoctor = db.gson.fromJson(doc.toJson(), Doctor.class);
+                 System.out.println("debug1");
 
                 //ArrayList<OperationRoom> roomsOfTheDr = new ArrayList();
                 theDoctor.addOPR(r);
+                                  System.out.println("debug1");
+
                             
                   Document UpdatedDoc =Document.parse(db.gson.toJson(theDoctor));
+                  System.out.println("debug1");
 
                  db.collection1.replaceOne(Filters.eq("name", DrName), UpdatedDoc);
+                                   System.out.println("debug2");
+
     }
     
        public void addDoctor(Doctor d)throws RemoteException
