@@ -85,8 +85,10 @@ public class OperationRoom  extends UnicastRemoteObject {
                 //ArrayList<OperationRoom> roomsOfTheDr = new ArrayList();
                 theDoctor.addOPR(r);
                             System.out.println("debug 4");
+                            
+                  Document UpdatedDoc =Document.parse(db.gson.toJson(theDoctor));
 
-                 db.collection1.replaceOne(Filters.eq("operationRooms", theDoctor.getOperationRooms()), doc);
+                 db.collection1.replaceOne(Filters.eq("name", DrName), UpdatedDoc);
                              System.out.println("debug 5");
     }
     
