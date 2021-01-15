@@ -33,6 +33,7 @@ public class RMIClient {
             gui.setLocationRelativeTo(null); // This makes the window appears centered
             gui.setVisible(true); // This shows the gui
         
+
         
             // Connecting to the RMI Registry created on the server
             Registry registry = LocateRegistry.getRegistry(1099);
@@ -40,8 +41,12 @@ public class RMIClient {
             
             PostMedicineController gui_controller = new PostMedicineController(gui, registry);
 
-            // Search for the stub "calc"
-            MedicineFacadeInterface f = (MedicineFacadeInterface) registry.lookup("fac");
+          
+
+
+//  MedicineFacadeInterface f = (MedicineFacadeInterface) registry.lookup("fac");
+
+
 
              //Invoke the remote methods on the remote object
 //           f.SetCourseData("AOOSE ", "10110ch ", " Advanced object oriented SE");
@@ -52,9 +57,9 @@ public class RMIClient {
 
             
             
-           f.SetMedicineData("s ", "s ", " s",2,3);
-           MedicineDTO c= f.getMedicine();
-           System.out.println("Medicine name "+c.getName());
+       //    f.SetMedicineData("s ", "s ", " s",2,3);
+      //     MedicineDTO c= f.getMedicine();
+         //  System.out.println("Medicine name "+c.getName());
             
            
         } catch (Exception ex) {
