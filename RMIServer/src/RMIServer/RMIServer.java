@@ -89,7 +89,7 @@ public class RMIServer {
             System.out.println("medicine posted");
             
             OperationRoom room = new OperationRoom();
-            room.RequestOperationRoom(1, 'A', "Dr.Farida Magdy");
+            room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
             System.out.println("room requested");
             
             
