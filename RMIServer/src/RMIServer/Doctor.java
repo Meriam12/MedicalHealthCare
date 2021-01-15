@@ -96,6 +96,8 @@ public class Doctor extends User implements UserObserver{
     }
     
     public Doctor selectDoctor(int id) {
+        
+        
         return null;
     }
     

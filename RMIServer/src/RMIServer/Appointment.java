@@ -46,7 +46,7 @@ public class Appointment implements DoctorAppointmentFunctionalities{
     public void CancelAppointment(Patient p, Doctor d , String timeslot)
     {
         /**
-        collection.deleteOne(Filters.eq("name", name));
+        collection.deleteOne(Filters.eq("timeslot", timeslot));
         */
     }
     
