@@ -9,7 +9,7 @@ package RMI;
  *
  * @author meriam
  */
-public class Pharmacist extends User {
+public class Pharmacist extends User implements UserObserver{
     Account account;
 
     public Pharmacist() {
@@ -17,6 +17,12 @@ public class Pharmacist extends User {
 
     public Pharmacist(String name, String phonenumber, String birthdate, String email) {
         super(name, phonenumber, birthdate, email);
+    }
+    
+     @Override
+    public void update(String message)
+    {
+       System.out.println(getName() + " recevied an email that says: " + message);
     }
     
      public void addAccount(Account a)

@@ -12,7 +12,7 @@ import java.util.*;
  */
 
 
-public class Patient extends User implements PatientObserver {
+public class Patient extends User implements UserObserver {
 
   private ArrayList<Appointment> comingAppointments = new ArrayList();
   private MedicalProfile medicalProfile;
@@ -93,20 +93,13 @@ public class Patient extends User implements PatientObserver {
     public void setOrdeMedicine(ArrayList<OrderMedicine> ordeMedicine) {
         this.ordeMedicines = ordeMedicine;
     }
-
+     
     @Override
-    public void notifyConfirmation(String news)
+    public void update(String message)
     {
-        System.out.println( getName() + ", You have recieved a message that say: " + news);
-    
+       System.out.println(getName() + " recevied an email that says: " + message);
     }
-    
-    @Override
-    public void notifyDetails(String message)
-    {
-    System.out.println( getName() + ", You have recieved a message that say: " + message);
-    
-    }
+ 
     
      public void addAppointments(Appointment a) 
      

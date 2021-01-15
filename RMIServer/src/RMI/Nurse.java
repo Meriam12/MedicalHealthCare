@@ -11,7 +11,7 @@ package RMI;
  */
 import java.util.*;
 
-public class Nurse extends User{
+public class Nurse extends User implements UserObserver{
     private String AssignedDoctor;
     private Account account;
 
@@ -50,6 +50,12 @@ public class Nurse extends User{
     public ArrayList<Doctor> selectSpecialization(String S){
     
         return null;
+    }
+    
+     @Override
+    public void update(String message)
+    {
+       System.out.println(getName() + " recevied an email that says: " + message);
     }
     
         public void addAccount(Account a)

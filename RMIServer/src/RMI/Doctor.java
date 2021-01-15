@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author meriam
  */
-public class Doctor extends User{
+public class Doctor extends User implements UserObserver{
     private int rating;
     private String levelOfExpertise;
     private ArrayList<Nurse> nurse = new ArrayList();
@@ -101,6 +101,12 @@ public class Doctor extends User{
     
     public void editProfile(String levelOfExpertise, ArrayList<Nurse> nurse,ArrayList<String> timeSlots,  Account account,ArrayList<OperationRoom> operationRooms){
         
+    }
+    
+     @Override
+    public void update(String message)
+    {
+       System.out.println(getName() + " recevied an email that says: " + message);
     }
     
      public void addNurses(Nurse n) 

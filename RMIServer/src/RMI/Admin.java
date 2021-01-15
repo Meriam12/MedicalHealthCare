@@ -5,14 +5,17 @@
  */
 package RMI;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author meriam
  */
-public class Admin extends User{
+public class Admin extends User implements AdminSubject{
     private int id;
     private static Admin admin;
     private Account account;
+    private ArrayList<UserObserver> observers = new ArrayList();
  
     private Admin() 
     {
@@ -48,5 +51,33 @@ public class Admin extends User{
     {
        this.account=a ;
     }
+     
+    public void SendNotification(String message)
+    {
+        System.out.println("Getting Messages...");
+       notifyAll(message);
+    }
+    
+     
+    @Override
+    public void addObserver(UserObserver o) 
+    {
+        observers.add(o);
+    }
+    
+    @Override
+    public void removeObserver(UserObserver o)
+    {
+        observers.remove(o);
+    }
+    
+    @Override
+    public void notifyAll(String message)
+    {
+        for (int i = 0; i < observers.size(); i++) {
+            observers.get(i).update(message);
+        }
+    }
+    
      
 }

@@ -9,9 +9,14 @@ package RMI;
  *
  * @author meriam
  */
-public interface PatientObserver {
+public interface AdminSubject {
     
-    public void notifyConfirmation(String news);
+    public void addObserver( UserObserver p);
     
-    public void notifyDetails(String message);
- }
+    public void removeObserver(UserObserver m);
+    
+    public void notifyAll(String s);
+    
+     
+    
+}

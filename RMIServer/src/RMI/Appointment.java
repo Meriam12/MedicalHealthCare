@@ -12,10 +12,10 @@ import java.util.ArrayList;
  * @author meriam
  */
 
-public class Appointment implements AppointmentSubject, DoctorAppointmentFunctionalities{
+public class Appointment implements DoctorAppointmentFunctionalities{
     private String timeslot;
     private Payment payment;
-    //private ArrayList <PatientObserver> observers;
+    
 
     public Appointment() {
     }
@@ -60,35 +60,7 @@ public class Appointment implements AppointmentSubject, DoctorAppointmentFunctio
     {
     
     }
-    
-    @Override
-    public void addObserver(PatientObserver p )
-    {
-       //  observers.add(p);
-    }
-     @Override
-    public void RemoveObserver(PatientObserver m)
-    {
-        // observers.remove(m);
-    }
-    
-    
-    @Override
-    public void notifyConfirmation(String s){
-        
-//     for (int i = 0; i < observers.size(); i++) {
-//            observers.get(i).notifyConfirmation(s);
-//        }
-    }
-   
-     @Override
-     public void notifyDetails(String s){
-        
-//     for (int i = 0; i < observers.size(); i++) {
-//            observers.get(i).notifyDetails(s);
-//        }
-    }
-     
+
      public void addPayment(Payment p)
     {
        this.payment=p ;
