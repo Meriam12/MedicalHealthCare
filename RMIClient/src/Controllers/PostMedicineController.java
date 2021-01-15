@@ -42,11 +42,15 @@ public class PostMedicineController {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
+                        System.out.println("debug1");
 
                 // We try to obtain a remote reference to the grade remote object
                 // that lives on the client. (using the registry object obtained from
                 // the constructor above)
-                PostMedicine g = (PostMedicine) r.lookup("MedicineInterface");
+                
+                MedicineInterface p = (MedicineInterface) r.lookup("MedicineInterface");
+                                        System.out.println("debug2");
+
                 
                 // Get the grade (in numbers) as it is written inside the text field
                 // Please note that we are able to interact with the gui elements through
@@ -54,21 +58,33 @@ public class PostMedicineController {
                 
                 // Also we are parsing to int below because by default, the text field
                 // will return a string
-                int grade = Integer.parseInt(gui.getjTextField1().getText());
+                
+                
+                String name = gui.getjTextField1().getText();
+                String type = gui.getjTextField2().getText();
+                 String expiredDate = gui.getjTextField3().getText();
+                int amount = Integer.parseInt(gui.getjTextField4().getText());
+                int price = Integer.parseInt(gui.getjTextField5().getText());
+                                        System.out.println("debug3");
+
                 
                 // Once we have the grade as numbers, we can pass it to the remote
                 // function getGrade using our remote reference g
                
                 
 
-//String result = g.getGrade(grade);
+              p.postMedicine(name,type,expiredDate,amount,price);
+                                      System.out.println("debug4");
+
                 
                 // Once we got the result from our remote object, we can set it to
                 // appear inside the gui using the jLabel
                 
 
 
-//gui.getjLabel1().setText(result);
+               gui.getjLabel1().setText("Medicine posted");
+                                       System.out.println("debug5");
+
                
             } catch (RemoteException ex) {
                 Logger.getLogger(PostMedicineController.class.getName()).log(Level.SEVERE, null, ex);

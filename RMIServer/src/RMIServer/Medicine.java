@@ -39,6 +39,8 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
 //   private Gson gson = DB.gson;
 //    private MongoCollection<Document> collection;
       DB db = new DB();
+      Inventory inv = new Inventory();
+
       
       public Medicine() throws RemoteException{
         // Disables Mongo Logs
@@ -46,7 +48,7 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
         mongoLogger.setLevel(Level.SEVERE);
 
         // Initialize
-       db.mongoClient = new MongoClient();
+        db.mongoClient = new MongoClient();
         db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
 //        db.collection9 = db.database.getCollection("Medicine"); // Collection name
     }
@@ -99,11 +101,13 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
         this.price = price;
     }
     
+    
     @Override
     public void postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException{
         Medicine newMedicineObject = new Medicine(name,type,expiredDate,amountInStock,price);
        db.collection9.insertOne(Document.parse(db.gson.toJson(newMedicineObject)));
         System.out.println("Medicine Posted!.");
+        inv.addMedicine(newMedicineObject);
     }
     
     @Override
