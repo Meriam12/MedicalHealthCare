@@ -8,6 +8,7 @@ package RMI;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import java.rmi.AlreadyBoundException;
 import org.bson.Document;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -24,7 +25,7 @@ public class RMIServer {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)   throws RemoteException, AlreadyBoundException{
         // TODO code application logic here
         Nurse n1 ;
         Nurse n2;
