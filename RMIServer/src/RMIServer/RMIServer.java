@@ -198,8 +198,8 @@ public class RMIServer {
             db.insertSpecialization(spe1);
             db.insertSpecialization(spe2);
             
-            pay1= new Payment("Visa");
-            pay2= new Payment("Cash");
+            pay1= new Payment("Visa",2300);
+            pay2= new Payment("Cash",12);
             
             db.insertPayment(pay1);
             db.insertPayment(pay2);
