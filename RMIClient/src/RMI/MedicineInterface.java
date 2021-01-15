@@ -5,6 +5,7 @@
  */
 package RMI;
 
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 /**
@@ -18,4 +19,6 @@ public interface MedicineInterface extends Remote {
         public void deleteMedicine(String name) throws RemoteException;
 
         public void editMedicine(String name) throws RemoteException;
+        
+        public void orderMedicine(String name) throws RemoteException;
 }

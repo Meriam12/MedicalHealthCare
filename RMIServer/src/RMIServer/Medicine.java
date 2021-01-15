@@ -102,12 +102,17 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     
     @Override
     public void deleteMedicine(String name) throws RemoteException{
-        
+        collection.deleteOne(Filters.eq("name", name));
     }
     
     @Override
     public void editMedicine(String name) throws RemoteException{
         
+    }
+
+    @Override
+    public void orderMedicine(String name) throws RemoteException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
