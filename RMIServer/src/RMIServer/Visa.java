@@ -12,6 +12,8 @@ package RMIServer;
  * @author noura
  */
 public class Visa implements PaymentMethod {
+    
+    
     @Override
     public void makeAppointmentPayment(){
         
