@@ -70,7 +70,8 @@ public class RMIServer {
   
         
         try {
-            
+
+                    
                     
            Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
            mongoLogger.setLevel(Level.SEVERE);
@@ -86,6 +87,10 @@ public class RMIServer {
             registry.bind("MedicineInterface", medicineinterface);
             medicineinterface.postMedicine("pp", "Cream", "900-", 90, 35);
             System.out.println("medicine posted");
+            
+            OperationRoom room = new OperationRoom();
+            room.RequestOperationRoom(1, 'A', "Dr.Farida Magdy");
+            System.out.println("room requested");
             
             
             Inv = new Inventory();
