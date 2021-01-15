@@ -9,27 +9,38 @@ package RMIServer;
  *
  * @author meriam
  */
-public class Payment {
-    private String paymentMethod;
+public class Payment  {
+    private String paymentType;
     private PaymentMethod p;
+    private int cost;
 
-    public Payment(String paymentMethod, PaymentMethod p) {
-        this.paymentMethod = paymentMethod;
+    public Payment(String paymentMethod, PaymentMethod p, int cost) {
+        this.paymentType = paymentMethod;
         this.p = p;
+        this.cost = cost;
     }
 
-    public Payment(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
+    public Payment(String paymentMethod, int cost) {
+        this.paymentType = paymentMethod;
+        this.cost = cost;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
     
     
 
     public String getPaymentMethod() {
-        return paymentMethod;
+        return paymentType;
     }
 
     public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
+        this.paymentType = paymentMethod;
     }
 
     public PaymentMethod getP() {

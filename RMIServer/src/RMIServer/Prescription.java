@@ -32,7 +32,7 @@ public class Prescription {
     }
     // FUNCTIONS
     
-    public void uploadPrescription(ArrayList<String> x){
+    public void uploadPrescription(ArrayList<String> x, Patient p){
         
     }
     

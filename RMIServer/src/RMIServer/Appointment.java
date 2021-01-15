@@ -59,6 +59,17 @@ public class Appointment implements DoctorAppointmentFunctionalities{
         System.out.println("Your appointment has been canceled.");
     }
     
+    public void bookThePatientFollowUpAppointment(Patient p, Doctor d, String timeslot){
+        //HEREEEE COLLECTION6
+        Payment pay = new Payment("Cash", new Cash(), 0);
+        ArrayList<Appointment> appoint = new ArrayList<Appointment>();
+        appoint.add(new Appointment(timeslot, pay));
+        db.collection6.insertOne(Document.parse(db.gson.toJson(new Appointment(timeslot))));
+        p.setComingAppointments(appoint);
+        String message = "Follow-up appointment successfully booked.";
+        sendAppointmentConfirmationNotification(message);
+    }
+    
     @Override
     public void changeAppointment(String timeslot) throws RemoteException
     {

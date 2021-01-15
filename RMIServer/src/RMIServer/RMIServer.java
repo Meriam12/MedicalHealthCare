@@ -101,9 +101,9 @@ public class RMIServer {
             medicineinterface.postMedicine("pp", "Cream", "900-", 90, 35);
             System.out.println("medicine posted");
             
-            OperationRoom room = new OperationRoom();
-            room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
-            System.out.println("room requested");
+          //  OperationRoom room = new OperationRoom();
+           // room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
+           // System.out.println("room requested");
             
 
             
@@ -198,8 +198,8 @@ public class RMIServer {
             db.insertSpecialization(spe1);
             db.insertSpecialization(spe2);
             
-            pay1= new Payment("Visa");
-            pay2= new Payment("Cash");
+            pay1= new Payment("Visa",2300);
+            pay2= new Payment("Cash",12);
             
             db.insertPayment(pay1);
             db.insertPayment(pay2);

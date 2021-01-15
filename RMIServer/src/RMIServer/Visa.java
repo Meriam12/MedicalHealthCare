@@ -5,13 +5,15 @@
  */
 package RMIServer;
 
-import RMIServer.PaymentMethod;
+//import RMIServer.PaymentMethod;
 
 /**
  *
  * @author noura
  */
 public class Visa implements PaymentMethod {
+    
+    
     @Override
     public void makeAppointmentPayment(){
         
