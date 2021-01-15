@@ -19,9 +19,9 @@ import org.bson.Document;
  */
 public class DB {
     
-    private MongoClient mongoClient;
+    public static MongoClient mongoClient;
     
-    private MongoDatabase database;
+     public static MongoDatabase database;
     
     private MongoCollection<Document> collection1;
     private MongoCollection<Document> collection2;
@@ -40,7 +40,7 @@ public class DB {
     private MongoCollection<Document> collection15;
     private MongoCollection<Document> collection16;
     
-    private Gson gson = new Gson();
+     public static Gson gson = new Gson();
     
     
      public DB() 

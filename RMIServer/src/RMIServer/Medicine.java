@@ -29,12 +29,15 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     private int amountInStock;
     private int price;
     
-    private MongoClient client;
-    private MongoDatabase database;
-    private MongoCollection<Document> collection;
-    private Gson gson = new Gson();
+//    private MongoClient client;
+//    private MongoDatabase database;
     
-   // private MongoClient client = DB.mongoClient;
+//    private Gson gson = new Gson();
+    
+   private MongoClient client = DB.mongoClient;
+   private MongoDatabase database = DB.database;
+   private Gson gson = DB.gson;
+    private MongoCollection<Document> collection;
     
     public Medicine() throws RemoteException{
         // Disables Mongo Logs
