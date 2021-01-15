@@ -7,6 +7,7 @@ package RMIServer;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.model.Filters;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import org.bson.Document;
 
@@ -26,7 +27,7 @@ public class Doctor extends User implements UserObserver{
     
     DB db = new DB();
     
-    public Doctor(){
+    public Doctor() throws RemoteException {
         db.mongoClient = new MongoClient();
         db.database = db.mongoClient.getDatabase("MedicalHealthCare");
 
@@ -103,7 +104,7 @@ public class Doctor extends User implements UserObserver{
         
     }
     
-    public void viewDoctor(String name) {
+    public void viewDoctor(String name) throws RemoteException {
      
        Document Result =(Document)db.collection1.find(Filters.eq("name",name));
        System.out.println(Result);

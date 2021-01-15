@@ -45,13 +45,11 @@ public class Appointment implements DoctorAppointmentFunctionalities{
         this.timeslot = timeslot;
     }
     
-    public void bookAnAppointment(Patient p, Doctor d, String timeslot )
+    public void bookAnAppointment(String timeslot) throws RemoteException
     {
+        Appointment newAppObject = new Appointment (timeslot);
+        db.collection6.insertOne(Document.parse(db.gson.toJson(newAppObject)));
         String message = "Your appointment has been booked successfully.";
-    
-    
-    
-    
         sendAppointmentConfirmationNotification(message);
     }
     
@@ -68,7 +66,7 @@ public class Appointment implements DoctorAppointmentFunctionalities{
                 Document doc = Document.parse(db.gson.toJson(newAppObject));
                db.collection9.replaceOne(Filters.eq("timeslot", newAppObject.getTimeslot()), doc);
         
-     String s= "Your appointment has been updated successfully.";
+    String s= "Your appointment has been updated successfully.";
     sendUpdateInAppointmentDetailsNotification(s); 
     }
     

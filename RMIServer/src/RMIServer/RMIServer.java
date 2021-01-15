@@ -81,6 +81,19 @@ public class RMIServer {
            
                        
             
+
+//            MedicineInterface medicineinterface = new Medicine();     
+//            // My RMI Registry
+//            Registry registry = LocateRegistry.createRegistry(1099);
+//            registry.bind("MedicineInterface", medicineinterface);
+//            medicineinterface.postMedicine("pp", "Cream", "900-", 90, 35);
+//            System.out.println("medicine posted");
+//            
+//            OperationRoom room = new OperationRoom();
+//            room.RequestOperationRoom(1, 'A', "Dr.Farida Magdy");
+//            System.out.println("room requested");
+//            
+
             MedicineInterface medicineinterface = new Medicine();     
             // My RMI Registry
             Registry registry = LocateRegistry.createRegistry(1099);
@@ -92,6 +105,7 @@ public class RMIServer {
            // room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
            // System.out.println("room requested");
             
+
             
             Inv = new Inventory();
            
@@ -252,9 +266,9 @@ public class RMIServer {
             db.insertPharmacist(pharma1);
             db.insertPharmacist(pharma2);
 
-//            Doctor d = new Doctor();
-//            d.viewDoctor("Dr.Michael Samy");
-//             
+            Doctor d = new Doctor();
+            d.viewDoctor("Dr.Michael Samy");
+             
             
             Appointment a = new Appointment();
             a.CancelAppointment("1/2/2019 Monday at 9 am");
@@ -271,10 +285,10 @@ public class RMIServer {
             MedicineFacadeInterface facade = new MedicineFacade();
             
             // My RMI Registry
- //           Registry registry = LocateRegistry.createRegistry(1099);
+            // Registry registry = LocateRegistry.createRegistry(1099);
             
             //Add my object to the RMI Registry
-            registry.bind("facade", facade);
+//            registry.bind("facade", facade);
   //          registry.bind("MedicineInterface", medicineinterface);
             
             // medicineinterface.postMedicine("Cream", "mllk", "900-", 90, 35);
