@@ -13,7 +13,7 @@ import java.rmi.RemoteException;
  *
  * @author Mariam
  */
-public interface FacadeInterface {
+public interface MedicineFacadeInterface {
        public void SetMedicineData(String name, String type, String expiredDate, int amountInStock, int price);
        public String getMedicineData();
        public MedicineDTO getMedicine() throws RemoteException;

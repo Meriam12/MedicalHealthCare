@@ -5,10 +5,10 @@
  */
 package RMIClient;
 
-import RMI.FacadeInterface;
 import RMI.MedicineDTO;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import RMI.MedicineFacadeInterface;
 
 /**
  *
@@ -26,7 +26,7 @@ public class RMIClient {
             Registry registry = LocateRegistry.getRegistry(1099);
 
             // Search for the stub "calc"
-            FacadeInterface f = (FacadeInterface) registry.lookup("fac");
+            MedicineFacadeInterface f = (MedicineFacadeInterface) registry.lookup("fac");
 
              //Invoke the remote methods on the remote object
 //           f.SetCourseData("AOOSE ", "10110ch ", " Advanced object oriented SE");
