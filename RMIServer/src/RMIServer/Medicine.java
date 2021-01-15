@@ -8,6 +8,15 @@ package RMIServer;
 import RMI.MedicineInterface;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import com.google.gson.Gson;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.bson.Document;
 
 /**
  *
@@ -19,6 +28,11 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     private String expiredDate;
     private int amountInStock;
     private int price;
+    
+    private MongoClient client;
+    private MongoDatabase database;
+    private MongoCollection<Document> collection;
+    private Gson gson = new Gson();
     
     public Medicine() throws RemoteException{
         

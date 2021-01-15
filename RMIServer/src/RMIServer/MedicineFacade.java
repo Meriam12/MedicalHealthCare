@@ -5,6 +5,7 @@
  */
 package RMIServer;
 
+import RMI.MedicineFacadeInterface;
 import RMI.MedicineDTO;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
