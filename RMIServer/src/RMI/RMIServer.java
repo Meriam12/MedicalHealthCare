@@ -237,7 +237,7 @@ public class RMIServer {
             
             
             
-            
+            MedicineInterface medicineinterface = new Medicine();
             
             // My remote object [Skeleton]
             MedicineFacadeInterface facade = new MedicineFacade();
@@ -246,7 +246,11 @@ public class RMIServer {
             Registry registry = LocateRegistry.createRegistry(1099);
             
             //Add my object to the RMI Registry
-            registry.bind("fac", facade);
+            registry.bind("facade", facade);
+            registry.bind("MedicineInterface", medicineinterface);
+            
+            
+      
             System.out.println("My facade is ready...");   
         } catch (Exception ex) {
            System.out.println("Exception occured here ");
