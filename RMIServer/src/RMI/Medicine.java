@@ -71,14 +71,17 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
         this.price = price;
     }
     
+    @Override
     public void postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException{
         
     }
     
+    @Override
     public void deleteMedicine(String name) throws RemoteException{
         
     }
     
+    @Override
     public void editMedicine(String name) throws RemoteException{
         
     }
