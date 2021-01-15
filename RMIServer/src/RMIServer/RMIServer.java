@@ -136,20 +136,10 @@ public class RMIServer {
             
             db.insertPrescription(pres1);
             db.insertPrescription(pres2);
-                    
-                                    
-            or1 = new OperationRoom(1,'A',doc1);
-            or2= new OperationRoom(1,'C',doc2);
             
-            db.insertOperationRoom(or1);
-            db.insertOperationRoom(or2);
-            
-
             doc1= new Doctor(5,"Profssor","Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
             doc2= new Doctor(5,"Doctor","Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
-            
 
-            
             doc1.addNurses(n2);
             doc1.addOPR(or1);
             doc1.adddTimeslots("Sunday from 9 AM to 11 AM");
@@ -163,14 +153,27 @@ public class RMIServer {
             db.insertDoctor(doc1);
             db.insertDoctor(doc2);
             
+            or1 = new OperationRoom(1,'A',doc1);
+            or2= new OperationRoom(1,'C',doc2);
+            
+            db.insertOperationRoom(or1);
+            db.insertOperationRoom(or2);
+          
+            
             spe1 = new Specialization("Dermatologists");
             spe2 = new Specialization("Ophthalmologists");
             
             spe1.addDoctor(doc1);
-            spe1.addDoctor(doc2);
+            spe2.addDoctor(doc2);
             
             db.insertSpecialization(spe1);
             db.insertSpecialization(spe2);
+            
+            pay1= new Payment("Visa");
+            pay2= new Payment("Cash");
+            
+            db.insertPayment(pay1);
+            db.insertPayment(pay2);
             
             a1 = new Appointment("1/2/2019 Monday at 9 am");
             a2 = new Appointment("12/2/2021 tusday at 1 pm");
@@ -204,15 +207,6 @@ public class RMIServer {
            
             db.insertMedicalProfile(prof1);
              db.insertMedicalProfile(prof2);
-             
-             
-            pay1= new Payment("Visa");
-            pay2= new Payment("Cash");
-            
-            db.insertPayment(pay1);
-            db.insertPayment(pay2);
-            
-           
             
             o1= new OrderMedicine(1, "Arrived");
             
@@ -221,11 +215,11 @@ public class RMIServer {
             
             db.insertOrderMedicine(o1);
             
-            p1 = new Patient("25673","234-456-329","167 Masr el gedida","Hossam Amr","012275767464","12/7/1960","Hossam23@yahoo.com");
+            p1 = new Patient("25673","234-456-329","167 Masr el gedida",o1,"Hossam Amr","012275767464","12/7/1960","Hossam23@yahoo.com");
             p2 = new Patient("","908-543-094","90 El Giza","Amira Mostafa","01564545444","09/8/1970","Amira21@yahoo.com");
             
             p1.addAppointments(a2);
-            p1.addOrder(o1);
+            //p1.addOrder(o1);
             p1.addAccount(acc1);
             p1.addMedicalProfile(prof1);
       

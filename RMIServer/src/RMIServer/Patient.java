@@ -19,21 +19,29 @@ public class Patient extends User implements UserObserver {
   private String medicalInsurance;
   private String creditCardNumber;
   private String address;
-  private ArrayList<OrderMedicine> ordeMedicines = new ArrayList();
+  private OrderMedicine order;
   private Account a;
 
     public Patient() {
     }
 
-    public Patient(ArrayList<Appointment> comingAppointments, MedicalProfile medicalProfile, String medicalInsurance, String creditCardNumber, String address, ArrayList<OrderMedicine> ordeMedicine, String name, String phonenumber, String birthdate, String email) {
+    public Patient(ArrayList<Appointment> comingAppointments, MedicalProfile medicalProfile, String medicalInsurance, String creditCardNumber, String address, OrderMedicine order, String name, String phonenumber, String birthdate, String email) {
         super(name, phonenumber, birthdate, email);
         this.comingAppointments = comingAppointments;
         this.medicalProfile = medicalProfile;
         this.medicalInsurance = medicalInsurance;
         this.creditCardNumber = creditCardNumber;
         this.address = address;
-        this.ordeMedicines = ordeMedicine;
+        this.order = order;
        
+    }
+
+    public Patient(String medicalInsurance, String creditCardNumber, String address, OrderMedicine order, String name, String phonenumber, String birthdate, String email) {
+        super(name, phonenumber, birthdate, email);
+        this.medicalInsurance = medicalInsurance;
+        this.creditCardNumber = creditCardNumber;
+        this.address = address;
+        this.order = order;
     }
 
     public Patient(String medicalInsurance, String creditCardNumber, String address, String name, String phonenumber, String birthdate, String email) {
@@ -42,6 +50,9 @@ public class Patient extends User implements UserObserver {
         this.creditCardNumber = creditCardNumber;
         this.address = address;
     }
+
+   
+
     
     
     public ArrayList<Appointment> getComingAppointments() {
@@ -84,15 +95,17 @@ public class Patient extends User implements UserObserver {
         this.address = address;
     }
 
+    public OrderMedicine getOrder() {
+        return order;
+    }
+
+    public void setOrder(OrderMedicine order) {
+        this.order = order;
+    }
+
    
 
-    public ArrayList<OrderMedicine> getOrdeMedicine() {
-        return ordeMedicines;
-    }
 
-    public void setOrdeMedicine(ArrayList<OrderMedicine> ordeMedicine) {
-        this.ordeMedicines = ordeMedicine;
-    }
      
     @Override
     public void update(String message)
@@ -107,9 +120,9 @@ public class Patient extends User implements UserObserver {
         comingAppointments.add(a);
     }
        
-    public void addOrder(OrderMedicine o) {
-        ordeMedicines.add(o);
-    }
+//    public void addOrder(OrderMedicine o) {
+//        ordeMedicines.add(o);
+//    }
     
     public void addAccount(Account a)
     {

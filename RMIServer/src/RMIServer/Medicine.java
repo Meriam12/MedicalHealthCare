@@ -39,6 +39,7 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
 //   private Gson gson = DB.gson;
 //    private MongoCollection<Document> collection;
       DB db = new DB();
+      
       public Medicine() throws RemoteException{
         // Disables Mongo Logs
         Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
