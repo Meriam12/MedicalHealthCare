@@ -106,8 +106,11 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     }
     
     @Override
-    public void editMedicine(String name) throws RemoteException{
-        
+    public void editMedicine(String name,String type, String expiredDate, int amountInStock, int price) throws RemoteException{
+                Medicine newMedicineObject = new Medicine(name,type,expiredDate,amountInStock,price);
+                Document doc = Document.parse(gson.toJson(newMedicineObject));
+               collection.replaceOne(Filters.eq("name", newMedicineObject.getName()), doc);
+           
     }
 
 
