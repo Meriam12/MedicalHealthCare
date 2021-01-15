@@ -46,7 +46,7 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
         mongoLogger.setLevel(Level.SEVERE);
 
         // Initialize
-       db.mongoClient = new MongoClient();
+        db.mongoClient = new MongoClient();
         db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
 //        db.collection9 = db.database.getCollection("Medicine"); // Collection name
     }
