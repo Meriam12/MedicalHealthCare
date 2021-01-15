@@ -21,6 +21,7 @@ public class Appointment implements DoctorAppointmentFunctionalities{
     private Payment payment;
     
     DB db = new DB();
+   
 
     public Appointment() {
            db.mongoClient = new MongoClient();
@@ -57,6 +58,7 @@ public class Appointment implements DoctorAppointmentFunctionalities{
     {
         db.collection6.deleteOne(Filters.eq("timeslot", timeslot));
         System.out.println("Your appointment has been canceled.");
+        payment.refund();
     }
     
     public void bookThePatientFollowUpAppointment(Patient p, Doctor d, String timeslot){

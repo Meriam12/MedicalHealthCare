@@ -53,8 +53,8 @@ public class Payment  {
     
     //FUNCTIONS
     
-    public void refund(){
-        
+    public String refund(){
+        return "Your money is refunded in your visa";
     }
     
     
@@ -64,7 +64,7 @@ public class Payment  {
     
    
     public void payMedicine(){
-        
+
     }
     
     
