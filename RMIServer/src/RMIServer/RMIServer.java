@@ -263,7 +263,7 @@ public class RMIServer {
             registry.bind("facade", facade);
             registry.bind("MedicineInterface", medicineinterface);
             
-             medicineinterface.postMedicine("Cream", "mllk", "900-", 90, 35);
+            // medicineinterface.postMedicine("Cream", "mllk", "900-", 90, 35);
             
       
             System.out.println("My facade is ready..."); 
