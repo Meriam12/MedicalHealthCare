@@ -140,6 +140,16 @@ public class Doctor extends User implements UserObserver{
        this.account=a ;
     }
      
+    public  Doctor getDrByName(String name){
+//                Document doc = collection.find(Filters.eq("email", email)).first();
+//        Student result = gson.fromJson(doc.toJson(), Student.class);
+//        return result;
+                    Document doc = db.collection1.find(Filters.eq("name", name)).first();
+                    Doctor result = db.gson.fromJson(doc.toJson(), Doctor.class);
+                    return result;
+    }
+
+     
 //     public Doctor findDrByName(String name){
 //         for (){
 //             

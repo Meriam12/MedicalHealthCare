@@ -88,9 +88,9 @@ public class RMIServer {
             medicineinterface.postMedicine("pp", "Cream", "900-", 90, 35);
             System.out.println("medicine posted");
             
-            OperationRoom room = new OperationRoom();
-            room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
-            System.out.println("room requested");
+          //  OperationRoom room = new OperationRoom();
+           // room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
+           // System.out.println("room requested");
             
             
             Inv = new Inventory();
