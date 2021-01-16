@@ -148,9 +148,11 @@ public class RMIServer {
            // room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
            // System.out.println("room requested");
             
-           Cash cashh = new Cash();
+        //   Cash cashh = new Cash();
      //     System.out.println(cashh.payMedicine());
-            
+     
+     
+ 
 
             Inv = new Inventory();
            
@@ -350,7 +352,8 @@ public class RMIServer {
             db.insertPharmacist(pharma2);
             
             
-            
+                       PaymentMethod p = new Visa();
+            System.out.println(p.makeAppointmentPayment("n", 100, "123"));
             
 
             

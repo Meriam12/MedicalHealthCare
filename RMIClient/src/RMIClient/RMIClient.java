@@ -10,6 +10,7 @@ import Controllers.DeleteAccountController;
 import Controllers.DeleteMedicineController;
 import Controllers.EditMedicineController;
 import Controllers.LoginController;
+import Controllers.PayForAppointController;
 import RMI.MedicineDTO;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -119,10 +120,14 @@ public class RMIClient {
                         
             ReviewMedicalProfileGUI ReviewMedicalProfile = new ReviewMedicalProfileGUI();
             ReviewMedicalProfile.setLocationRelativeTo(null); // This makes the window appears centered
-            ReviewMedicalProfile.setVisible(true); // This shows the gui
+            ReviewMedicalProfile.setVisible(false); // This shows the gui
             ReviewMedicalProfileController ReviewMedicalProfile_cont = new ReviewMedicalProfileController(ReviewMedicalProfile, registry);
           
-
+            PayForAppoint PayForAppointGUI = new PayForAppoint();
+            PayForAppointGUI.setLocationRelativeTo(null); // This makes the window appears centered
+            PayForAppointGUI.setVisible(true); // This shows the gui
+            PayForAppointController PayForAppoint_controller = new PayForAppointController(PayForAppointGUI, registry);
+            
 //
 //
 //            EditMedicineGUI EditMedgui = new EditMedicineGUI();
@@ -145,11 +150,14 @@ public class RMIClient {
 //            makeRatingGUI.setLocationRelativeTo(null); // This makes the window appears centered
 //            makeRatingGUI.setVisible(true); // This shows the gui
 //            makeDRRatingController makeDRRating_Controller = new makeDRRatingController(makeRatingGUI, registry);
-          
-            Login login2 = new Login();
-            login2.setLocationRelativeTo(null); 
-            login2.setVisible(true); // This shows the gui
-            LoginController Accountinf = new LoginController(login2, registry);
+
+
+
+//          
+//            Login login2 = new Login();
+//            login2.setLocationRelativeTo(null); 
+//            login2.setVisible(true); // This shows the gui
+//            LoginController Accountinf = new LoginController(login2, registry);
 
             
             
