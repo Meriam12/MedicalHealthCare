@@ -300,7 +300,7 @@ public class RMIServer {
             db.insertPharmacist(pharma2);
 
             
-<<<<<<< Updated upstream
+
    //         Doctor d = new Doctor();
    //         d.viewDoctor("Dr.Michael Samy");
             
@@ -309,13 +309,13 @@ public class RMIServer {
 
 
 
-=======
+
 //            Doctor d = new Doctor();
 //            d.viewDoctor("Dr.Michael Samy");
 //            
 //            Account a= new Account();
 //            a.login("Hossam", "1234");
->>>>>>> Stashed changes
+
 //             
 //            
 //            Appointment a = new Appointment();
