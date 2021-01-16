@@ -24,6 +24,8 @@ public class JUnitTesting  {
         OperationRoom o = new OperationRoom();
         String result = o.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
         assertEquals("Room is requested successfully", result);
+//        String result2 = o.RequestOperationRoom(1, 'A', "Dr.M@yahoo.com");
+//        assertEquals("Room is requested successfully", result2);
     }
 
 
