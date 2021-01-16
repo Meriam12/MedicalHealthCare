@@ -203,13 +203,13 @@ public class RMIServer {
             doc2.adddTimeslots("Saturday from 10 AM to 12 PM");
             doc2.adddTimeslots("Monday from 8 AM to 10 AM");
             
-<<<<<<< HEAD
+
             or1 = new OperationRoom(1,'A',doc1);
             or2= new OperationRoom(1,'C',doc2);
-=======
+
               or1 = new OperationRoom(1,'A',doc1);
             or2= new OperationRoom(2,'C',doc2);
->>>>>>> 13a2b7a8b6d26eae6e34db6a0a7a1a0f5020b8af
+
             
             db.insertOperationRoom(or1);
             db.insertOperationRoom(or2);
