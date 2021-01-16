@@ -11,6 +11,16 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import org.bson.Document;
 import java.util.*;
+import com.google.gson.Gson;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.bson.Document;
+
 
 /**
  *
@@ -18,8 +28,20 @@ import java.util.*;
  */
 public class Prescription {
     private ArrayList<String> prescriptions= new ArrayList();
-DB db = new DB();
+DB db;
     public Prescription() {
+        // Disables Mongo Logs
+Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+mongoLogger.setLevel(Level.SEVERE);
+
+
+
+// Initialize
+db = new DB();
+db.mongoClient = new MongoClient();
+db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
+// db.collection9 = db.database.getCollection("Medicine"); // Collection name
+        
     }
 
     
@@ -37,19 +59,29 @@ DB db = new DB();
     }
     // FUNCTIONS
     
-    public void uploadPrescription(ArrayList<String> x, String pName){
-        Document coll = db.collection2.find(Filters.eq("name", pName)).first();
+    public void uploadPrescription(ArrayList<String> x, String email){
+        System.out.println("fits");
+        Document coll = db.collection2.find(Filters.eq("email", email)).first();
+        System.out.println(coll);
         Patient pat = db.gson.fromJson(coll.toJson(), Patient.class);
+        //db.gson.fromJson(ORdoc.toJson(), OperationRoom.class)
+        System.out.println("third");
         MedicalProfile medpro = new MedicalProfile();
+        System.out.println("44");
         medpro = pat.getMedicalProfile();
+        System.out.println("55");
         
         ArrayList<Prescription> pres = new ArrayList<Prescription>();
+        System.out.println("66");
         pres.add(new Prescription(x));
+        System.out.println("77");
         medpro.setPrescriptions(pres);
+        System.out.println("88");
        pat.setMedicalProfile(medpro);
+        System.out.println("99");
        Document result = Document.parse(db.gson.toJson(pat));
         System.out.println("processed");
-       db.collection2.replaceOne(Filters.eq("name", pName), result);
+       db.collection2.replaceOne(Filters.eq("email", email), result);
         System.out.println("done");
     
                
