@@ -5,6 +5,8 @@
  */
 package Controllers;
 
+import RMI.AccountInterface;
+import RMI.AdminInterface;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.NotBoundException;
@@ -13,8 +15,10 @@ import java.rmi.registry.Registry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.MedicineInterface;
+import RMI.PaymentMethod;
 import RMIClient.DeleteMedicineGUI;
 import RMIClient.PayForAppoint;
+import java.rmi.registry.LocateRegistry;
 
 /**
  *
@@ -47,9 +51,10 @@ public class PayForAppointController {
                 // We try to obtain a remote reference to the grade remote object
                 // that lives on the client. (using the registry object obtained from
                 // the constructor above)
-                
-                MedicineInterface p = (MedicineInterface) r.lookup("MedicineInterface");
 
+                
+                PaymentMethod p = (PaymentMethod) r.lookup("visa");
+                PaymentMethod pp = (PaymentMethod) r.lookup("cash");
                 
                 // Get the grade (in numbers) as it is written inside the text field
                 // Please note that we are able to interact with the gui elements through
@@ -59,10 +64,19 @@ public class PayForAppointController {
                 // will return a string
                 
                 
-                String name = gui.getjTextField1().getText();
+                //    public String makeAppointmentPayment(String pName, int price, String cardno) throws RemoteException;
 
+                
+                String visaorcash = gui.getjTextField1().getText();
 
-
+                if (visaorcash.equals("visa")){
+                    p.makeAppointmentPayment("",100,"12");
+                     gui.getjLabel6().setText(p.makeAppointmentPayment("",100,"12"));
+                }
+                else if(visaorcash.equals("cash")){
+                    p.makeAppointmentPayment("",100,"12");
+                     gui.getjLabel6().setText(p.makeAppointmentPayment("",100,"12"));
+                }
 
                 
                 // Once we have the grade as numbers, we can pass it to the remote
@@ -70,7 +84,7 @@ public class PayForAppointController {
                
                 
 
-              p.deleteMedicine(name);
+        //      p.deleteMedicine(name);
 
                 
                 // Once we got the result from our remote object, we can set it to
@@ -78,7 +92,7 @@ public class PayForAppointController {
                 
 
 
-               //gui.getjLabel7().setText("Medicine deleted");
+              
 
                
             } catch (RemoteException ex) {
