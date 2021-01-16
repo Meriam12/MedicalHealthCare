@@ -5,7 +5,10 @@
  */
 package RMIServer;
 
+import com.mongodb.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.*;
 
 /**
  *
@@ -18,9 +21,18 @@ public class MedicalProfile implements DoctorMedicalFunctionalities{
     private String bloodType;
     private ArrayList<Appointment> pastAppointments = new ArrayList();
     private ArrayList<Prescription> prescriptions = new ArrayList();
-    
+    DB db;
     public MedicalProfile(){
+Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+mongoLogger.setLevel(Level.SEVERE);
 
+
+
+// Initialize
+db = new DB();
+db.mongoClient = new MongoClient();
+db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
+// db.collection9 = db.database.getCollection("Medicine"); // Collection name
     }
     
     public MedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
