@@ -75,9 +75,9 @@ public class Account {
            Document userDoc = db.collection5.find(Filters.eq("username", username)).first();
            Account result = db.gson.fromJson(userDoc.toJson(), Account.class);
               
-           if(result.password.equals(Password) )
+           if(result.username.equals(username) && result.password.equals(Password) )
            {
-              System.out.println("You have entered.");
+              System.out.println("You have login successfully.");
            }
            else 
            {
