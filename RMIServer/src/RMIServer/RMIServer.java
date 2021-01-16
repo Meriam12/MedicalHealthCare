@@ -118,7 +118,7 @@ public class RMIServer {
 
             MedicineInterface medicineinterface = new Medicine();     
             OperationRoomInterface operationRoomInterface= new OperationRoom();
-            DoctorInterface DoctorInterface = new Doctor() ;
+            DoctorInterface DoctorInterface = new Appointment() ;
             
             // My RMI Registry
             //Registry registry = LocateRegistry.createRegistry(1099);
@@ -443,8 +443,8 @@ public class RMIServer {
             // medicineinterface.postMedicine("Cream", "mllk", "900-", 90, 35);
             
             
-            Doctor drr= new Doctor();
-            drr.makeRating(2, "Dr. Ahmed Osama");
+      //      Doctor drr= new Doctor();
+      //      drr.makeRating(2, "Dr. Ahmed Osama");
             
        
             System.out.println("My facade is ready..."); 

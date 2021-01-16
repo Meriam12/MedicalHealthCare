@@ -27,7 +27,7 @@ import org.bson.Document;
  *
  * @author meriam
  */
-public class Doctor extends User implements UserObserver, DoctorInterface{
+public class Doctor extends User implements UserObserver{
     private int rating;
     private String levelOfExpertise;
     private ArrayList<Nurse> nurse = new ArrayList();
@@ -146,48 +146,7 @@ public class Doctor extends User implements UserObserver, DoctorInterface{
     
 
     
-    @Override
-    public void makeRating(int rating, String name) throws RemoteException{
-//                Doctor newDocObject = new Doctor(rating, name);
-//                Document doc = Document.parse(db.gson.toJson(newDocObject));
-//                db.collection1.replaceOne(Filters.eq("name", newDocObject.getName()), doc);
-                Document doc = db.collection1.find(Filters.eq("name", name)).first();
-                Doctor DRresult =    db.gson.fromJson(doc.toJson(), Doctor.class);  
-                DRresult.setRating((DRresult.rating+rating)/2);
-                Document UpdatedDoc =Document.parse(db.gson.toJson(DRresult));       
-                 db.collection1.replaceOne(Filters.eq("name", name), UpdatedDoc);     
-                System.out.println("The rating has been Saved.");
-    }
-    
-//    public void viewDoctor(String name) throws RemoteException {
-//        
-//       Document Result =(Document)db.collection1.find(Filters.eq("name",name)).;
-//       System.out.println(Result);
-//       
-    @Override
-    public void viewDoctor(String name) throws RemoteException {
-     
-       Document doc = db.collection1.find(Filters.eq("name", name)).first();
-        System.out.println(doc);
-    }       
-//       db.collection1.find({​​​​​​​"name": name}​​​​​​​).forEach(printjson);
-        
-//     ArrayList<Doctor> result = new ArrayList();
-//     ArrayList<Document> docs = db.collection1.find(Filters.all("name",name)).into(new ArrayList<Document>());
-//     for (int i =0; i<docs.size(); i++)
-//     {
-//         result.add(db.gson.fromJson(docs.get(i).toJson(), Doctor.class));
-//     }
-//         return result;
-//    }
-    
-    @Override
-    public void editProfile(String name, String levelOfExpertise,  String phonenumber, String email) throws RemoteException{
-                Doctor newDocObject = new Doctor(name, levelOfExpertise, phonenumber, email);
-                Document doc = Document.parse(db.gson.toJson(newDocObject));
-               db.collection1.replaceOne(Filters.eq("name", newDocObject.getName()), doc);
-               System.out.println("The Profile has been updated.");
-    }
+
     
      @Override
     public void update(String message)

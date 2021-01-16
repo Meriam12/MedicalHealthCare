@@ -5,12 +5,9 @@
  */
 package RMI;
 
-import RMIServer.Doctor;
-import com.mongodb.client.model.Filters;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
-import org.bson.Document;
+
 
 /**
  *
@@ -23,6 +20,6 @@ public interface DoctorInterface extends Remote{
    
     public void viewDoctor(String name) throws RemoteException;
     
-    public void editProfile(String name, String levelOfExpertise,  String phonenumber, String email) throws RemoteException;
+    public void editDRProfile(String name, String levelOfExpertise,  String phonenumber, String email) throws RemoteException;
     
 }

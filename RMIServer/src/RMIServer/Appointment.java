@@ -5,9 +5,11 @@
  */
 package RMIServer;
 
+import RMI.DoctorInterface;
 import com.mongodb.MongoClient;
 import com.mongodb.client.model.Filters;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,14 +20,14 @@ import org.bson.Document;
  * @author meriam
  */
 
-public class Appointment implements DoctorAppointmentFunctionalities{
+public class Appointment extends UnicastRemoteObject implements DoctorAppointmentFunctionalities, DoctorInterface{
     private String timeslot;
     private Payment payment;
     
     DB db;
    
 
-    public Appointment() {
+    public Appointment()  throws RemoteException{
            Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
 mongoLogger.setLevel(Level.SEVERE);
 
@@ -38,12 +40,12 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
 // db.collection9 = db.database.getCollection("Medicine"); // Collection name
     }
 
-    public Appointment(String timeslot, Payment payment) {
+    public Appointment(String timeslot, Payment payment)  throws RemoteException{
         this.timeslot = timeslot;
         this.payment = payment;
     }
 
-    public Appointment(String timeslot) {
+    public Appointment(String timeslot) throws RemoteException {
         this.timeslot = timeslot;
     }
  
@@ -56,7 +58,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
         this.timeslot = timeslot;
     }
     
-    public void bookAnAppointment(String timeslot) throws RemoteException
+    public void bookAnAppointment(String timeslot) throws RemoteException 
     {
         Appointment newAppObject = new Appointment (timeslot);
         db.collection6.insertOne(Document.parse(db.gson.toJson(newAppObject)));
@@ -89,7 +91,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
        // System.out.println(payment.refund());
     }
     
-    public void bookThePatientFollowUpAppointment(Patient p, Doctor d, String timeslot){
+    public void bookThePatientFollowUpAppointment(Patient p, Doctor d, String timeslot)  throws RemoteException{
         //HEREEEE COLLECTION6
         Payment pay = new Payment("Cash", new Cash(), 0);
         ArrayList<Appointment> appoint = new ArrayList<Appointment>();
@@ -125,4 +127,47 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
        this.payment=p ;
     }
 
+     
+         @Override
+    public void makeRating(int rating, String name) throws RemoteException{
+//                Doctor newDocObject = new Doctor(rating, name);
+//                Document doc = Document.parse(db.gson.toJson(newDocObject));
+//                db.collection1.replaceOne(Filters.eq("name", newDocObject.getName()), doc);
+                Document doc = db.collection1.find(Filters.eq("name", name)).first();
+                Doctor DRresult =    db.gson.fromJson(doc.toJson(), Doctor.class);  
+                DRresult.setRating((DRresult.getRating()+rating)/2);
+                Document UpdatedDoc =Document.parse(db.gson.toJson(DRresult));       
+                 db.collection1.replaceOne(Filters.eq("name", name), UpdatedDoc);     
+                System.out.println("The rating has been Saved.");
+    }
+    
+//    public void viewDoctor(String name) throws RemoteException {
+//        
+//       Document Result =(Document)db.collection1.find(Filters.eq("name",name)).;
+//       System.out.println(Result);
+//       
+    @Override
+    public void viewDoctor(String name) throws RemoteException {
+     
+       Document doc = db.collection1.find(Filters.eq("name", name)).first();
+        System.out.println(doc);
+    }       
+//       db.collection1.find({​​​​​​​"name": name}​​​​​​​).forEach(printjson);
+        
+//     ArrayList<Doctor> result = new ArrayList();
+//     ArrayList<Document> docs = db.collection1.find(Filters.all("name",name)).into(new ArrayList<Document>());
+//     for (int i =0; i<docs.size(); i++)
+//     {
+//         result.add(db.gson.fromJson(docs.get(i).toJson(), Doctor.class));
+//     }
+//         return result;
+//    }
+    
+    @Override
+    public void editDRProfile(String name, String levelOfExpertise,  String phonenumber, String email) throws RemoteException{
+                Doctor newDocObject = new Doctor(name, levelOfExpertise, phonenumber, email);
+                Document doc = Document.parse(db.gson.toJson(newDocObject));
+               db.collection1.replaceOne(Filters.eq("name", newDocObject.getName()), doc);
+               System.out.println("The Profile has been updated.");
+    }
 }
