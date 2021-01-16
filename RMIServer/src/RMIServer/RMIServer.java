@@ -203,8 +203,13 @@ public class RMIServer {
             doc2.adddTimeslots("Saturday from 10 AM to 12 PM");
             doc2.adddTimeslots("Monday from 8 AM to 10 AM");
             
+<<<<<<< HEAD
+            or1 = new OperationRoom(1,'A',doc1);
+            or2= new OperationRoom(1,'C',doc2);
+=======
               or1 = new OperationRoom(1,'A',doc1);
             or2= new OperationRoom(2,'C',doc2);
+>>>>>>> 13a2b7a8b6d26eae6e34db6a0a7a1a0f5020b8af
             
             db.insertOperationRoom(or1);
             db.insertOperationRoom(or2);
@@ -212,7 +217,7 @@ public class RMIServer {
             db.insertDoctor(doc1);
             db.insertDoctor(doc2);
             db.insertDoctor(doc3);
-             db.insertDoctor(doc4);
+            db.insertDoctor(doc4);
             db.insertDoctor(doc5);
             db.insertDoctor(doc6);
             
@@ -300,6 +305,18 @@ public class RMIServer {
             db.insertPharmacist(pharma2);
 
             
+//           Patient sub_1 = new Patient("Hossam Amr", "Hossam23@yahoo.com");
+//           Doctor sub_2 = new Doctor("Dr.Farida Magdy", "Dr.Farida12@yahoo.com");
+//           Nurse sub_3 = new Nurse("Marina Hany","MarinaH12@gmail.com");
+//           Pharmacist sub_4 = new Pharmacist("Mina Fady","Dalia109@outlook.com");
+//           
+//           ad.addObserver(sub_1);
+//           ad.addObserver(sub_2);
+//           ad.addObserver(sub_3);
+//           ad.addObserver(sub_4);
+//           
+//           ad.SendNotification("Happy feast wish you all best feast.");
+
 
    //         Doctor d = new Doctor();
    //         d.viewDoctor("Dr.Michael Samy");
