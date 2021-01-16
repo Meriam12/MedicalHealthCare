@@ -119,7 +119,6 @@ public class CreateAccount extends javax.swing.JFrame {
         getContentPane().add(PasswordField);
         PasswordField.setBounds(230, 170, 209, 34);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\backgr.jpg")); // NOI18N
         jLabel4.setText("jLabel4");
         jLabel4.setAlignmentX(0.5F);
         jLabel4.setDoubleBuffered(true);

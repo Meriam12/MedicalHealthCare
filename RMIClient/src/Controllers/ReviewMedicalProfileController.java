@@ -12,24 +12,37 @@ import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import RMI.AdminInterface;
+import RMI.ReviewMedicalProInterface;
 import RMIClient.ReviewMedicalProfile;
+
 /**
  *
  * @author noura
  */
 public class ReviewMedicalProfileController {
+
     ReviewMedicalProfile gui;
     Registry r;
-    
-    public ReviewMedicalProfileController(ReviewMedicalProfile gui, Registry r){
+
+    public ReviewMedicalProfileController(ReviewMedicalProfile gui, Registry r) {
         this.gui = gui;
         this.r = r;
-        gui.getjButton2().addActionListener(new reviewMedicalClass() );
+        gui.getjButton2().addActionListener(new reviewMedicalClass());
     }
-    class reviewMedicalClass implements ActionListener{
-        public void actionPerformed(ActionEvent ae){
-            
+
+    class reviewMedicalClass implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            try {
+                ReviewMedicalProInterface re = (ReviewMedicalProInterface) r.lookup("ReviewMedicalProInterface");
+                re.ReviewMedicalProfile();
+
+            } catch (RemoteException ex) {
+
+            } catch (NotBoundException ex) {
+                Logger.getLogger(CreateAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }
