@@ -7,6 +7,7 @@ package RMIClient;
 
 import Controllers.CreateAccountController;
 import Controllers.DeleteAccountController;
+import Controllers.DeleteMedicineController;
 import Controllers.EditMedicineController;
 import RMI.MedicineDTO;
 import java.rmi.registry.LocateRegistry;
@@ -72,6 +73,14 @@ public class RMIClient {
             EditMedgui.setLocationRelativeTo(null); // This makes the window appears centered
             EditMedgui.setVisible(false); // This shows the gui
             EditMedicineController EditMedgui_controller = new EditMedicineController(EditMedgui, registry);
+          
+            
+                        
+
+            DeleteMedicineGUI DeleteMedgui = new DeleteMedicineGUI();
+            DeleteMedgui.setLocationRelativeTo(null); // This makes the window appears centered
+            DeleteMedgui.setVisible(false); // This shows the gui
+            DeleteMedicineController DeleteMedgui_controller = new DeleteMedicineController(DeleteMedgui, registry);
           
 
 //  MedicineFacadeInterface f = (MedicineFacadeInterface) registry.lookup("fac");
