@@ -78,7 +78,7 @@ public class PayForAppointController {
                 
 
 
-               gui.getjLabel7().setText("Medicine deleted");
+               //gui.getjLabel7().setText("Medicine deleted");
 
                
             } catch (RemoteException ex) {
