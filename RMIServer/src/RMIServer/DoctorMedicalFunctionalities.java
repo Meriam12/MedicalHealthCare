@@ -5,13 +5,15 @@
  */
 package RMIServer;
 
+import java.rmi.RemoteException;
+
 /**
  *
  * @author Mariam
  */
 public interface DoctorMedicalFunctionalities {
     
-    public void reviewMedicalProfile();
+    public void reviewMedicalProfile(String pName)  throws RemoteException;
 
 }
 

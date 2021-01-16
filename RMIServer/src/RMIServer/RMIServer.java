@@ -275,13 +275,13 @@ public class RMIServer {
             prof2 = new MedicalProfile("AB+");
             
             prof1.addChronicDiseases("Diabetes");
-            prof1.addMedicines(med3);
+            prof1.addMedicines("fucidine");
             prof1.addPastAppointments(a1);
             prof1.addPrescription(pres1);
             prof1.adddFollowup("Dr.Farida Magdy");
             
             prof2.addChronicDiseases("");
-            prof2.addMedicines(med2);
+            prof2.addMedicines("fusicosrt");
             prof2.addPastAppointments(a4);
             prof2.addPrescription(pres2);
             prof2.adddFollowup("Dr.Michael Samy");
@@ -336,13 +336,31 @@ public class RMIServer {
    //         d.viewDoctor("Dr.Michael Samy");
             
    
+//   
+//            Account a= new Account();
+//            a.login("Hossam", "1234");
+//            System.out.println("ana henanaanan");
+//   MedicalProfile medp = new MedicalProfile();
+//   medp.reviewMedicalProfile(p1.getName());
+
+
+
+
+
+
    
-            Account a= new Account();
-            a.login("Hossam", "1234");
+      //       MedicalProfile MedicalProfile = new MedicalProfile();
+     //         MedicalProfile.uploadMedicalHistory("hi", "no", "Amira Mostafa");
+     
+     
+     
+     
+     
 
-
-
-
+//     Medicine meddd =  new Medicine();
+//     meddd.editMedicine("fucicort", "c", "1/1/2031", 50, 20);
+//    System.out.println("fucicort changed");
+    
 //            Doctor d = new Doctor();
 //            d.viewDoctor("Dr.Michael Samy");
 //            

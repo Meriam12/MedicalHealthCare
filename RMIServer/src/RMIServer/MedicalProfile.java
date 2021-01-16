@@ -29,12 +29,12 @@ import org.bson.Document;
 public class MedicalProfile extends UnicastRemoteObject implements MedicalProInterface, DoctorMedicalFunctionalities {
     private ArrayList<String> drFollowup = new ArrayList();
     private ArrayList<String> chronicDisease = new ArrayList();
-    private ArrayList<Medicine> medicines = new ArrayList();
+    private ArrayList<String> medicines = new ArrayList();
     private String bloodType;
     private ArrayList<Appointment> pastAppointments = new ArrayList();
     private Prescription prescriptions;
     DB db;
-    public MedicalProfile(){
+    public MedicalProfile() throws RemoteException{
 Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
 mongoLogger.setLevel(Level.SEVERE);
 
@@ -47,8 +47,8 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
 // db.collection9 = db.database.getCollection("Medicine"); // Collection name
     }
     
-    public MedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
-            String bloodType, ArrayList<Appointment> pastAppointments, Prescription prescriptions) {
+    public MedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<String> medicines , 
+            String bloodType, ArrayList<Appointment> pastAppointments, Prescription prescriptions) throws RemoteException {
         this.drFollowup = drFollowup;
         this.chronicDisease = chronicDisease;
         this.medicines = medicines;
@@ -57,7 +57,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
         this.prescriptions = prescriptions;
     }
 
-    public MedicalProfile(String bloodType) {
+    public MedicalProfile(String bloodType) throws RemoteException{
         this.bloodType = bloodType;
     }
     
@@ -79,11 +79,11 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
         this.chronicDisease = chronicDisease;
     }
 
-    public ArrayList<Medicine> getMedicines() {
+    public ArrayList<String> getMedicines() {
         return medicines;
     }
 
-    public void setMedicines(ArrayList<Medicine> medicines) {
+    public void setMedicines(ArrayList<String> medicines) {
         this.medicines = medicines;
     }
 
@@ -110,19 +110,44 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     public void setPrescriptions(Prescription prescriptions) {
         this.prescriptions = prescriptions;
     }
+    
+//           Document ORdoc = db.collection10.find(Filters.eq("ID", id)).first();
+//        OperationRoom result =    db.gson.fromJson(ORdoc.toJson(), OperationRoom.class);            
+//         Document doc = db.collection1.find(Filters.eq("email", DRmail)).first();
+//        Doctor DRresult =    db.gson.fromJson(doc.toJson(), Doctor.class);           
+//         result.ReservedDoctor =  DRresult;       
+//         Document UpdatedRoom =Document.parse(db.gson.toJson(result));       
+//          db.collection10.replaceOne(Filters.eq("ID", id), UpdatedRoom);        
+//          return "Room is requested successfully";
 
-    public void uploadMedicalHistory(String chronicDisease,String medicine){
-        
+    @Override
+    public void uploadMedicalHistory(String chronicDisease,String medicine, String patientName) throws RemoteException{
+              Document PatientDoc = db.collection2.find(Filters.eq("name", patientName)).first();
+              System.out.println(PatientDoc);
+           //   Patient result =    db.gson.fromJson(PatientDoc.toJson(), Patient.class);    
+           //   System.out.println(result);
+              
     }
 
     @Override
-    public void reviewMedicalProfile(){
-        
-    }
-  
+    public void reviewMedicalProfile(String pName) throws RemoteException {
+ 
+        Document D1 = (Document)db.collection2.find(Filters.eq("name", pName));
+          db.gson.fromJson(D1.toJson(), Patient.class);
 
+            System.out.println(D1);
+
+        
+
+        //System.out.println(D1.getn);
+        //Document doc = (Document)db.collection2.find(Filters.eq("name",pName));
+
+    }
+
+
+    @Override
     public void editMedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
-            String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions){
+            String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions) throws RemoteException{
         
     }
     
@@ -136,7 +161,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
        pastAppointments.add(app);
     }  
      
-     public void addMedicines(Medicine med)
+     public void addMedicines(String med)
     {
        medicines.add(med);
     } 

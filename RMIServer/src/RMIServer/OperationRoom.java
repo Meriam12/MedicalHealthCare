@@ -88,41 +88,14 @@ public class OperationRoom  extends UnicastRemoteObject implements OperationRoom
     public String RequestOperationRoom(int id, char type,String DRmail)throws RemoteException{
                
         Document ORdoc = db.collection10.find(Filters.eq("ID", id)).first();
-                //System.out.println(ORdoc);
-        OperationRoom result =    db.gson.fromJson(ORdoc.toJson(), OperationRoom.class);
-               // System.out.println(result);
-               
+        OperationRoom result =    db.gson.fromJson(ORdoc.toJson(), OperationRoom.class);            
          Document doc = db.collection1.find(Filters.eq("email", DRmail)).first();
-               // System.out.println(doc);
-        Doctor DRresult =    db.gson.fromJson(doc.toJson(), Doctor.class);
-               // System.out.println(DRresult);
-               
-               
-               
-         result.ReservedDoctor =  DRresult;
-         
-         Document UpdatedRoom =Document.parse(db.gson.toJson(result));
-         
-          db.collection10.replaceOne(Filters.eq("ID", id), UpdatedRoom);
-          
-          //return "Room with id " + id + " and type " +  type + " is requested by doctor whose email is " + DRmail;
+        Doctor DRresult =    db.gson.fromJson(doc.toJson(), Doctor.class);           
+         result.ReservedDoctor =  DRresult;       
+         Document UpdatedRoom =Document.parse(db.gson.toJson(result));       
+          db.collection10.replaceOne(Filters.eq("ID", id), UpdatedRoom);        
           return "Room is requested successfully";
-                
-             //       Document doc = db.collection1.find(Filters.eq("name", DrName)).first();
-           //                                           System.out.println(doc);
-
-                //    Doctor theDoctor = db.gson.fromJson(doc.toJson(), Doctor.class);
-                   //                                   System.out.println(theDoctor);
-  
-                            
-//                  Document UpdatedDoc =Document.parse(db.gson.toJson(theDoctor));
-//                  System.out.println("debug5");
-//
-//                 db.collection1.replaceOne(Filters.eq("name", DrName), UpdatedDoc);
-//                                   System.out.println("debug6");
-
-                       
-
+          
     }
     
        public void addDoctor(Doctor d)throws RemoteException

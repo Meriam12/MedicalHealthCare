@@ -13,30 +13,30 @@ import java.rmi.registry.Registry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.MedicineInterface;
-import RMIClient.PostMedicineGUI;
+import RMIClient.DeleteMedicineGUI;
 
 /**
  *
  * @author Mariam
  */
-public class PostMedicineController {
+public class DeleteMedicineController {
         // We have reference to both the GUI and the rmi registry
-    PostMedicineGUI gui;
+    DeleteMedicineGUI gui;
     Registry r;
     
     // The constructor takes the gui and the rmi registry as paramaters
-    public PostMedicineController(PostMedicineGUI gui, Registry r)
+    public DeleteMedicineController(DeleteMedicineGUI gui, Registry r)
     {
         this.gui = gui;
         this.r = r;
         // This registers the button with our action listener below (the inner class)
        
 
- gui.getjButton1().addActionListener(new postMedicineClass() );
+ gui.getjButton1().addActionListener(new deleteMedicineClass() );
     }
         
             // This class is responsible for handling the button click
-       class postMedicineClass implements ActionListener {
+       class deleteMedicineClass implements ActionListener {
 
         // Whatever written inside this function will execute when the button is clicked
         @Override
@@ -60,13 +60,7 @@ public class PostMedicineController {
                 
                 String name = gui.getjTextField1().getText();
 
-                String type = gui.getjTextField4().getText();
 
-                 String expiredDate = gui.getjTextField2().getText();
-
-                int amount = Integer.parseInt(gui.getjTextField5().getText());
-
-                int price = Integer.parseInt(gui.getjTextField3().getText());
 
 
                 
@@ -75,7 +69,7 @@ public class PostMedicineController {
                
                 
 
-              p.postMedicine(name,type,expiredDate,amount,price);
+              p.deleteMedicine(name);
 
                 
                 // Once we got the result from our remote object, we can set it to
@@ -83,7 +77,7 @@ public class PostMedicineController {
                 
 
 
-               gui.getjLabel7().setText("Medicine posted");
+               gui.getjLabel7().setText("Medicine deleted");
 
                
             } catch (RemoteException ex) {

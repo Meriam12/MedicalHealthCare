@@ -54,7 +54,7 @@ mongoLogger.setLevel(Level.SEVERE);
     }
     // FUNCTIONS
     
-    public void uploadPrescription(ArrayList<String> x, String pName){
+    public void uploadPrescription(ArrayList<String> x, String pName) throws RemoteException{
         System.out.println("fits");
         Document coll = db.collection2.find(Filters.eq("name", pName)).first();
         System.out.println("wsalttt");
