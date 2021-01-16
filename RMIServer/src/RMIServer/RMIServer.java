@@ -312,6 +312,7 @@ public class RMIServer {
 //           
 //           ad.SendNotification("Happy feast wish you all best feast.");
 
+
    //         Doctor d = new Doctor();
    //         d.viewDoctor("Dr.Michael Samy");
             
