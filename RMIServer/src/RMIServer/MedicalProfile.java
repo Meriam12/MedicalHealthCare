@@ -112,7 +112,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     }
 
     @Override
-    public void uploadMedicalHistory(String chronicDisease,String medicine) throws RemoteException{
+    public void uploadMedicalHistory(String chronicDisease,String medicine, String patientName) throws RemoteException{
         
     }
 
