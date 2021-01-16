@@ -34,7 +34,7 @@ public class MedicalProfile extends UnicastRemoteObject implements MedicalProInt
     private ArrayList<Appointment> pastAppointments = new ArrayList();
     private Prescription prescriptions;
     DB db;
-    public MedicalProfile(){
+    public MedicalProfile() throws RemoteException{
 Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
 mongoLogger.setLevel(Level.SEVERE);
 
@@ -48,7 +48,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     }
     
     public MedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
-            String bloodType, ArrayList<Appointment> pastAppointments, Prescription prescriptions) {
+            String bloodType, ArrayList<Appointment> pastAppointments, Prescription prescriptions) throws RemoteException {
         this.drFollowup = drFollowup;
         this.chronicDisease = chronicDisease;
         this.medicines = medicines;
@@ -57,7 +57,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
         this.prescriptions = prescriptions;
     }
 
-    public MedicalProfile(String bloodType) {
+    public MedicalProfile(String bloodType) throws RemoteException{
         this.bloodType = bloodType;
     }
     
@@ -116,13 +116,13 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     }
 
     @Override
-    public void reviewMedicalProfile(){
+    public void reviewMedicalProfile()  throws RemoteException{
         
     }
   
 
     public void editMedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
-            String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions){
+            String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions) throws RemoteException{
         
     }
     
