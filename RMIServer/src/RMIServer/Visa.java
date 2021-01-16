@@ -31,7 +31,7 @@ DB db ;
     
     @Override
     public String makeAppointmentPayment(String pName, int price, String cardno) throws RemoteException{
-        Document patdoc = (Document)db.collection2.find(Filters.eq("name", pName));
+        //Document patdoc = (Document)db.collection2.find(Filters.eq("name", pName));
         //Patient patient = db.gson.fromJson(patdoc.toJson(), Patient.class);
         //OrderMedicine order = patient.getOrder();
         //PaymentMethod p = new Visa();
