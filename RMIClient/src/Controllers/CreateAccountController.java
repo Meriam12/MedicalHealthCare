@@ -19,15 +19,15 @@ import RMIClient.CreateAccount;
  * @author Toumie
  */
 public class CreateAccountController {
-    CreateAccount gui;
+    CreateAccount gui =new CreateAccount();
     Registry r;
     
    public CreateAccountController()
    {
-        CreateAccount guia = new CreateAccount();
-            guia.setLocationRelativeTo(null); // This makes the window appears centered
-            guia.setVisible(true); // This shows the gui
-            CreateAccountController gui_controller1 = new CreateAccountController(guia, r);
+       
+            gui.setLocationRelativeTo(null); // This makes the window appears centered
+            gui.setVisible(true); // This shows the gui
+            CreateAccountController gui_controller1 = new CreateAccountController(gui, r);
    }
      public CreateAccountController(CreateAccount gui, Registry r)
     {
