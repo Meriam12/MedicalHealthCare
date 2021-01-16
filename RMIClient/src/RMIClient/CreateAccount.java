@@ -7,6 +7,7 @@ package RMIClient;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 /**
  *
@@ -33,15 +34,17 @@ public class CreateAccount extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         CreateButton = new javax.swing.JButton();
         Username = new javax.swing.JTextField();
-        PasswordField = new javax.swing.JTextField();
+        AccountTypeField = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         AccountAddedMessage = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        PasswordField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(570, 370));
+        setPreferredSize(new java.awt.Dimension(570, 400));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 48)); // NOI18N
@@ -57,7 +60,7 @@ public class CreateAccount extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CreateButton);
-        CreateButton.setBounds(210, 240, 150, 40);
+        CreateButton.setBounds(210, 280, 150, 40);
 
         Username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,13 +70,13 @@ public class CreateAccount extends javax.swing.JFrame {
         getContentPane().add(Username);
         Username.setBounds(230, 108, 209, 34);
 
-        PasswordField.addActionListener(new java.awt.event.ActionListener() {
+        AccountTypeField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordFieldActionPerformed(evt);
+                AccountTypeFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(PasswordField);
-        PasswordField.setBounds(230, 163, 209, 34);
+        getContentPane().add(AccountTypeField);
+        AccountTypeField.setBounds(230, 230, 209, 34);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,16 +95,29 @@ public class CreateAccount extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Username:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(96, 105, 116, 29);
+        jLabel2.setBounds(100, 110, 116, 29);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel3.setText("Password:");
+        jLabel3.setText("Account Type:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(103, 160, 109, 29);
+        jLabel3.setBounds(60, 220, 200, 40);
 
         AccountAddedMessage.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(AccountAddedMessage);
-        AccountAddedMessage.setBounds(190, 290, 250, 20);
+        AccountAddedMessage.setBounds(190, 320, 250, 20);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setText("Password:");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(100, 170, 109, 29);
+
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(PasswordField);
+        PasswordField.setBounds(230, 170, 209, 34);
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\backgr.jpg")); // NOI18N
         jLabel4.setText("jLabel4");
@@ -110,7 +126,7 @@ public class CreateAccount extends javax.swing.JFrame {
         jLabel4.setMaximumSize(new java.awt.Dimension(32767, 32767));
         jLabel4.setMinimumSize(new java.awt.Dimension(32767, 32767));
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(-50, 0, 620, 360);
+        jLabel4.setBounds(-50, 0, 620, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -128,6 +144,10 @@ public class CreateAccount extends javax.swing.JFrame {
         return PasswordField;
     }
     
+     public JTextField getAccountType() {
+        return AccountTypeField;
+    }
+    
      public JLabel getAccountAddedMessage() {
         return AccountAddedMessage;
     }
@@ -139,6 +159,10 @@ public class CreateAccount extends javax.swing.JFrame {
     private void CreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CreateButtonActionPerformed
+
+    private void AccountTypeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccountTypeFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AccountTypeFieldActionPerformed
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
         // TODO add your handling code here:
@@ -181,6 +205,7 @@ public class CreateAccount extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AccountAddedMessage;
+    private javax.swing.JTextField AccountTypeField;
     private javax.swing.JButton CreateButton;
     private javax.swing.JTextField PasswordField;
     private javax.swing.JTextField Username;
@@ -188,6 +213,7 @@ public class CreateAccount extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -32,5 +32,7 @@ public class Inventory {
    public void addMedicine(Medicine m) {
         medicines.add(m);
     }
+   
+   
     
 }
