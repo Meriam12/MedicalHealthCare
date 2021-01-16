@@ -12,6 +12,6 @@ import java.rmi.RemoteException;
  *
  * @author noura
  */
-public interface ReviewMedicalProInterface extends Remote{
+public interface MedicalProInterface extends Remote{
     public void reviewMedicalProfile() throws RemoteException;
 }

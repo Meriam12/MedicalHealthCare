@@ -26,7 +26,7 @@ import org.bson.Document;
  *
  * @author meriam
  */
-public class MedicalProfile extends UnicastRemoteObject implements ReviewMedicalProInterface, DoctorMedicalFunctionalities {
+public class MedicalProfile extends UnicastRemoteObject implements MedicalProInterface, DoctorMedicalFunctionalities {
     private ArrayList<String> drFollowup = new ArrayList();
     private ArrayList<String> chronicDisease = new ArrayList();
     private ArrayList<Medicine> medicines = new ArrayList();
