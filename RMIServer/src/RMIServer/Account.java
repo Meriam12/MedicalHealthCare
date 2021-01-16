@@ -70,23 +70,25 @@ public class Account extends UnicastRemoteObject implements AdminInterface{
     
     
     
-   public void login (String username, String Password) throws RemoteException
+   public boolean  login (String username, String Password) throws RemoteException
     {
 
-        
+            boolean result1=false;
            Document userDoc = db.collection5.find(Filters.eq("username", username)).first();
            Account result = db.gson.fromJson(userDoc.toJson(), Account.class);
               
            if(result.username.equals(username) && result.password.equals(Password) )
            {
               System.out.println("You have login successfully.");
+              result1=true;
            }
            else 
            {
               System.out.println("No you haven't.");
-           
+           result1=false;
            }
-
+         
+              return result1;  
     }
      
      @Override

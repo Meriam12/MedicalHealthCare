@@ -5,9 +5,13 @@
  */
 package Testing;
 
+import RMIServer.Account;
 import RMIServer.Medicine;
 import RMIServer.OperationRoom;
+import com.mongodb.client.model.Filters;
 import java.rmi.RemoteException;
+import org.bson.Document;
+import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import org.junit.Before;
@@ -18,6 +22,9 @@ import org.junit.Test;
  *
  */
 public class JUnitTesting  {
+    
+
+
 
     @Test
     public void testRequestOperationRoom() throws RemoteException{
@@ -41,5 +48,13 @@ public class JUnitTesting  {
          String p2 = m.postMedicine("pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp", "Cream", "900-", 90, 35);
         assertEquals( "Medicine is posted successfully!", p2);
     }
-
+    
+    @Test
+    public void testLogin() throws RemoteException
+    {
+           
+          Account acc= new Account();
+                 
+         assertEquals(true,(acc.login("Marina", "3456")));
+    }
 }
