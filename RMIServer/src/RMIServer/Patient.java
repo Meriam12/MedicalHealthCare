@@ -45,6 +45,10 @@ public class Patient extends User implements UserObserver {
         this.order = order;
     }
 
+    public Patient(String name, String email) {
+        super(name, email);
+    }
+
     public Patient(String medicalInsurance, String creditCardNumber, String address, String name, String phonenumber, String birthdate, String email) {
         super(name, phonenumber, birthdate, email);
         this.medicalInsurance = medicalInsurance;

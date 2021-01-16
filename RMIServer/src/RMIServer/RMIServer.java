@@ -203,7 +203,7 @@ public class RMIServer {
             doc2.adddTimeslots("Saturday from 10 AM to 12 PM");
             doc2.adddTimeslots("Monday from 8 AM to 10 AM");
             
-              or1 = new OperationRoom(1,'A',doc1);
+            or1 = new OperationRoom(1,'A',doc1);
             or2= new OperationRoom(1,'C',doc2);
             
             db.insertOperationRoom(or1);
@@ -212,7 +212,7 @@ public class RMIServer {
             db.insertDoctor(doc1);
             db.insertDoctor(doc2);
             db.insertDoctor(doc3);
-             db.insertDoctor(doc4);
+            db.insertDoctor(doc4);
             db.insertDoctor(doc5);
             db.insertDoctor(doc6);
             
@@ -300,6 +300,17 @@ public class RMIServer {
             db.insertPharmacist(pharma2);
 
             
+//           Patient sub_1 = new Patient("Mark", "mark@google.com");
+//           Doctor sub_2 = new Doctor("Dr.Mina", "Dr.Mina@yahoo.com");
+//           Nurse sub_3 = new Nurse("Medhat","Me@yahoo.com");
+//           Pharmacist sub_4 = new Pharmacist("Meriam","Meriam12@gmail.com");
+//           
+//           ad.addObserver(sub_1);
+//           ad.addObserver(sub_2);
+//           ad.addObserver(sub_3);
+//           ad.addObserver(sub_4);
+//           
+//           ad.SendNotification("Happy feast wish you all best feast.");
 
    //         Doctor d = new Doctor();
    //         d.viewDoctor("Dr.Michael Samy");

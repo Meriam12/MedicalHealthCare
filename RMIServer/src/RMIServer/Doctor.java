@@ -43,6 +43,10 @@ public class Doctor extends User implements UserObserver{
         this.doctorMedicalFunctionalities = doctorMedicalFunctionalities;
     }
 
+    public Doctor(String name, String email) {
+        super(name, email);
+    }
+
   
 
     public Doctor(int rating, String levelOfExpertise, String name, String phonenumber, String birthdate, String email) {

@@ -18,6 +18,11 @@ public class Pharmacist extends User implements UserObserver{
     public Pharmacist(String name, String phonenumber, String birthdate, String email) {
         super(name, phonenumber, birthdate, email);
     }
+
+    public Pharmacist(String name, String email) {
+        super(name, email);
+    }
+    
     
      @Override
     public void update(String message)
