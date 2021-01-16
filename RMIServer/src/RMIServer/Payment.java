@@ -5,6 +5,8 @@
  */
 package RMIServer;
 
+import RMI.PaymentMethod;
+
 /**
  *
  * @author meriam
