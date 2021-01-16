@@ -38,7 +38,7 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
 //   private MongoDatabase database = DB.database;
 //   private Gson gson = DB.gson;
 //    private MongoCollection<Document> collection;
-      DB db = new DB();
+      DB db ;
       Inventory inv = new Inventory();
 
       
@@ -48,6 +48,7 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
         mongoLogger.setLevel(Level.SEVERE);
 
         // Initialize
+        db = new DB();
         db.mongoClient = new MongoClient();
         db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
 //        db.collection9 = db.database.getCollection("Medicine"); // Collection name
