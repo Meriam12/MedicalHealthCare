@@ -24,6 +24,7 @@ public class Doctor extends User implements UserObserver{
     private ArrayList<OperationRoom> operationRooms = new ArrayList();
     private DoctorAppointmentFunctionalities doctorAppointmentFunctionalities;
     private DoctorMedicalFunctionalities doctorMedicalFunctionalities;
+    private int price;
     
     DB db = new DB();
     
@@ -49,6 +50,7 @@ public class Doctor extends User implements UserObserver{
         this.rating = rating;
         this.levelOfExpertise = levelOfExpertise;
     }
+<<<<<<< HEAD
 
     public Doctor(String name, String levelOfExpertise,  String phonenumber, String email) {
         super(name, phonenumber, email);
@@ -59,6 +61,23 @@ public class Doctor extends User implements UserObserver{
     public Doctor(int rating, String name) {
         super(name);
         this.rating = rating;
+=======
+    
+    
+    public Doctor(int rating, String levelOfExpertise, String name, String phonenumber, String birthdate, String email,int price) {
+        super(name, phonenumber, birthdate, email);
+        this.rating = rating;
+        this.levelOfExpertise = levelOfExpertise;
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+>>>>>>> b0080abc24512fce658b2f00084407c5d470a327
     }
 
     public int getRating() {
