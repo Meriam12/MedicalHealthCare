@@ -14,7 +14,7 @@ import java.rmi.RemoteException;
  */
 public interface AdminInterface extends Remote{
     
-   public void createAccount(String username, String pass) throws RemoteException;
+   public void createAccount(String username, String pass, String accountType) throws RemoteException;
    public void deleteAccount(String username) throws RemoteException;
    public void updateAccount(String username, String pass) throws RemoteException;
     
