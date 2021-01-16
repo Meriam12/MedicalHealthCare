@@ -201,7 +201,6 @@ public class RMIServer {
             db.insertPrescription(pres1);
             db.insertPrescription(pres2);
             
-<<<<<<< Updated upstream
             doc1= new Doctor(5,"Profssor","Sunday from 9 AM",0,"Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
             doc2= new Doctor(5,"Doctor","Sunday from 9 AM",0,"Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
             doc3= new Doctor(5,"Doctor","Sunday from 9 AM",0,"Dr.Samir Ahmed","01236463738","22/4/1980","Dr.samir@yahoo.com");
@@ -209,7 +208,6 @@ public class RMIServer {
             doc5= new Doctor(5,"Doctor","Sunday from 9 AM",0,"Dr. Ahmed Mostafa","01236463738","22/4/1980","Dr.AHMED@yahoo.com");
             doc6= new Doctor(5,"Doctor","Sunday from 9 AM",0,"Dr.Mina Tamer","01236463738","22/4/1980","Dr.Mina@yahoo.com");
             
-=======
             doc1= new Doctor(5,"Profssor","Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
             doc2= new Doctor(5,"Doctor","Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
             doc3= new Doctor(5,"Doctor","Dr.Samir Ahmed","01236463738","22/4/1980","Dr.samir@yahoo.com");
@@ -223,7 +221,6 @@ public class RMIServer {
 //            doc4= new Doctor(5,"Doctor","Dr. Ahmed Osama","01236463738","22/4/1980","Dr.AhOsama@yahoo.com",100);
 //            doc5= new Doctor(5,"Doctor","Dr. Ahmed Mostafa","01236463738","22/4/1980","Dr.AHMED@yahoo.com",200);
 //            doc6= new Doctor(5,"Doctor","Dr.Mina Tamer","01236463738","22/4/1980","Dr.Mina@yahoo.com",300);
->>>>>>> Stashed changes
 
 
             doc1.addNurses(n1);
@@ -372,19 +369,16 @@ public class RMIServer {
 
 
 
-<<<<<<< Updated upstream
 //   
 //             MedicalProfile MedicalProfile = new MedicalProfile();
 //              MedicalProfile.uploadMedicalHistory("hi", "no", "Amira Mostafa");
 //     
 //     
-=======
    
 //             MedicalProfile MedicalProfile = new MedicalProfile();
 //              MedicalProfile.uploadMedicalHistory("hi", "no", "Amira Mostafa");
 //     
      
->>>>>>> Stashed changes
      
      
      
