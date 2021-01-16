@@ -10,6 +10,7 @@ package RMIServer;
  * @author meriam
  */
 import RMI.MedicineInterface;
+import RMI.OperationRoomInterface;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import com.google.gson.Gson;
@@ -22,7 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bson.Document;
 
-public class OperationRoom  extends UnicastRemoteObject {
+public class OperationRoom  extends UnicastRemoteObject implements OperationRoomInterface{
     private int ID;
     private char Type;
     private Doctor ReservedDoctor; 
@@ -83,6 +84,7 @@ public class OperationRoom  extends UnicastRemoteObject {
 
 
     
+    @Override
     public String RequestOperationRoom(int id, char type,String DRmail)throws RemoteException{
                
         Document ORdoc = db.collection10.find(Filters.eq("ID", id)).first();
