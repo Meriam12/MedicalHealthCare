@@ -95,7 +95,7 @@ public class OperationRoom  extends UnicastRemoteObject {
                                                       System.out.println("debug3");
 
                                     
-                theDoctor.addOPR(r);
+              //  theDoctor.addOPR(r);
                                   System.out.println("debug4");
 
                             

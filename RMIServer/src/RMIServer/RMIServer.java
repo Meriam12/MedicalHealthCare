@@ -194,13 +194,11 @@ public class RMIServer {
 
 
             doc1.addNurses(n1);
-            doc1.addOPR(or1);
             doc1.adddTimeslots("Sunday from 9 AM to 11 AM");
             doc1.adddTimeslots("Tusday from 1 PM to 3 PM");
             doc1.addAccount(acc5);
             
             doc2.addNurses(n2);
-            doc2.addOPR(or2);
             doc2.addAccount(acc6);
             doc2.adddTimeslots("Saturday from 10 AM to 12 PM");
             doc2.adddTimeslots("Monday from 8 AM to 10 AM");
@@ -302,11 +300,14 @@ public class RMIServer {
             db.insertPharmacist(pharma2);
 
             
-            Doctor d = new Doctor();
-            d.viewDoctor("Dr.Michael Samy");
+   //         Doctor d = new Doctor();
+   //         d.viewDoctor("Dr.Michael Samy");
             
-            Account a= new Account();
-            a.login("Hossam", "1234");
+//            Account a= new Account();
+//            a.login("Hossam", "1234");
+
+
+
 //             
 //            
 //            Appointment a = new Appointment();
