@@ -58,7 +58,7 @@ public class Appointment implements DoctorAppointmentFunctionalities{
     {
         db.collection6.deleteOne(Filters.eq("timeslot", timeslot));
         System.out.println("Your appointment has been canceled.");
-        payment.refund();
+        System.out.println(payment.refund());
     }
     
     public void bookThePatientFollowUpAppointment(Patient p, Doctor d, String timeslot){
