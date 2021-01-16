@@ -5,6 +5,11 @@
  */
 package RMIServer;
 
+import com.mongodb.MongoClient;
+import com.mongodb.client.model.Filters;
+import java.rmi.RemoteException;
+import org.bson.Document;
+
 /**
  *
  * @author meriam
@@ -14,9 +19,20 @@ public class Account {
     private String password;
     private String accountType;
 
-    public Account() {
+     DB db = new DB();
+     
+    public Account() throws RemoteException {
+          db.mongoClient = new MongoClient();
+     db.database = db.mongoClient.getDatabase("MedicalHealthCare"); 
     }
 
+    public Account(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+   
+    
     public Account(String username, String password, String accountType) {
         this.username = username;
         this.password = password;
@@ -51,34 +67,34 @@ public class Account {
     
     
     
-    void login (String username, String Password)
+    void login (String username, String Password) throws RemoteException
     {
     
     
     }
+     
     
-//    boolean verifyLogin()
-//    {
-//        
-//
-//    }
-//    
-    
-    void createAccount(String username, String pass)
+    void createAccount(String username, String pass) throws RemoteException
     {
-    
+     Account newAccountObject = new Account(username, pass);
+        db.collection5.insertOne(Document.parse(db.gson.toJson(newAccountObject)));
+        System.out.println("The Account has been created.");
+      
     }
     
-    void deleteAccount(String username)
+    void deleteAccount(String username) throws RemoteException
     {
-    
-       
+        db.collection5.deleteOne(Filters.eq("username", username));
+        System.out.println("The Account has been deleted.");
     }
     
     
-    void updateAccount(String username, String pass)
+    void updateAccount(String username, String pass) throws RemoteException
     {
-    
+                Account newAccObject = new Account(username, pass);
+                Document doc = Document.parse(db.gson.toJson(newAccObject));
+               db.collection5.replaceOne(Filters.eq("username", newAccObject.getUsername()), doc);
+               System.out.println("The Account has been updated.");
     }
     
 }
