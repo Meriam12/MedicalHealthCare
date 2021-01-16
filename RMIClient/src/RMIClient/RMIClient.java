@@ -71,12 +71,12 @@ public class RMIClient {
 //         
 //         
 //
-////            CreateAccount guia = new CreateAccount();
-////            guia.setLocationRelativeTo(null); // This makes the window appears centered
-////            guia.setVisible(false); // This shows the gui
-////            CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
-//
-////                        System.out.println("here");
+            CreateAccount guia = new CreateAccount();
+            guia.setLocationRelativeTo(null); // This makes the window appears centered
+            guia.setVisible(false); // This shows the gui
+            CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
+
+                        System.out.println("here");
 //
 //
 //            
@@ -125,7 +125,7 @@ public class RMIClient {
           
             PayForAppoint PayForAppointGUI = new PayForAppoint();
             PayForAppointGUI.setLocationRelativeTo(null); // This makes the window appears centered
-            PayForAppointGUI.setVisible(true); // This shows the gui
+            PayForAppointGUI.setVisible(false); // This shows the gui
             PayForAppointController PayForAppoint_controller = new PayForAppointController(PayForAppointGUI, registry);
             
 //
@@ -153,11 +153,11 @@ public class RMIClient {
 
 
 
-//          
-//            Login login2 = new Login();
-//            login2.setLocationRelativeTo(null); 
-//            login2.setVisible(true); // This shows the gui
-//            LoginController Accountinf = new LoginController(login2, registry);
+          
+            Login login2 = new Login();
+            login2.setLocationRelativeTo(null); 
+            login2.setVisible(true); // This shows the gui
+            LoginController Accountinf = new LoginController(login2, registry);
 
             
             
