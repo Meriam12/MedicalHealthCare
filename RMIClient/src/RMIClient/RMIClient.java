@@ -30,16 +30,17 @@ public class RMIClient {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RemoteException {
         // TODO code application logic here
         try {
             
-
+            System.out.println("here");
         
 
         
             // Connecting to the RMI Registry created on the server
             Registry registry = LocateRegistry.getRegistry(1099);
+            System.out.println("here");
 
                         
                     // We create an object from the GUI window
@@ -47,6 +48,8 @@ public class RMIClient {
             gui.setLocationRelativeTo(null); // This makes the window appears centered
             gui.setVisible(false); // This shows the gui
             PostMedicineController gui_controller = new PostMedicineController(gui, registry);
+                        System.out.println("here");
+
 //
 //            UpdateAccount guix = new UpdateAccount();
 //            guix.setLocationRelativeTo(null); // This makes the window appears centered
@@ -58,23 +61,36 @@ public class RMIClient {
 //            DeleteAccountController gui_controller1 = new DeleteAccountController(guib, registry);
 
          // We create an object from the GUI window
+<<<<<<< HEAD
+=======
+         
+         
+         
+>>>>>>> d2c8728b5be8f8c56b45eefedf06046e6ac22a1a
 //            CreateAccount guia = new CreateAccount();
 //            guia.setLocationRelativeTo(null); // This makes the window appears centered
 //            guia.setVisible(false); // This shows the gui
 //            CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
+<<<<<<< HEAD
             
+=======
+//                        System.out.println("here");
+
+>>>>>>> d2c8728b5be8f8c56b45eefedf06046e6ac22a1a
             
             RequestOperationRoomGUI gui_op = new RequestOperationRoomGUI();
             gui_op.setLocationRelativeTo(null); // This makes the window appears centered
             gui_op.setVisible(false); // This shows the gui
             RequestOperationRoomController gui_controller_op = new RequestOperationRoomController(gui_op, registry);
-            
+                        System.out.println("here");
+
 
             EditMedicineGUI EditMedgui = new EditMedicineGUI();
             EditMedgui.setLocationRelativeTo(null); // This makes the window appears centered
             EditMedgui.setVisible(false); // This shows the gui
             EditMedicineController EditMedgui_controller = new EditMedicineController(EditMedgui, registry);
-          
+                      System.out.println("here");
+
             
                         
 
@@ -82,14 +98,17 @@ public class RMIClient {
             DeleteMedgui.setLocationRelativeTo(null); // This makes the window appears centered
             DeleteMedgui.setVisible(false); // This shows the gui
             DeleteMedicineController DeleteMedgui_controller = new DeleteMedicineController(DeleteMedgui, registry);
-            
+                        System.out.println("here");
+
             
             makeDRRatingGUI makeRatingGUI = new makeDRRatingGUI();
             makeRatingGUI.setLocationRelativeTo(null); // This makes the window appears centered
             makeRatingGUI.setVisible(true); // This shows the gui
             makeDRRatingController makeDRRating_Controller = new makeDRRatingController(makeRatingGUI, registry);
           
-
+            
+            
+            
 //  MedicineFacadeInterface f = (MedicineFacadeInterface) registry.lookup("fac");
 
 
