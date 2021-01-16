@@ -12,13 +12,17 @@ package RMIServer;
 public class Cash implements PaymentMethod{
     
     @Override
-    public void makeAppointmentPayment(){
-        
+    public String makeAppointmentPayment(){
+        int amount;
+        amount = 12;
+        return  "When you arrive to our hospital, you have to pay " + amount;
     }
     
     @Override
-    public void payMedicine(){
-        
+    public String payMedicine(){
+        int amount;
+        amount = 12;
+        return  "We will come to your address after 2 days, you have to pay " + amount;
     }
     
 }

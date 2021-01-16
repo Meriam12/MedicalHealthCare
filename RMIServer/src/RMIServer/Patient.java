@@ -21,6 +21,7 @@ public class Patient extends User implements UserObserver {
   private String address;
   private OrderMedicine order;
   private Account a;
+  private int amountOfMoney;
 
     public Patient() {
     }
@@ -52,7 +53,21 @@ public class Patient extends User implements UserObserver {
     }
 
    
+    public Patient(String medicalInsurance, String creditCardNumber, String address, int amount, String name, String phonenumber, String birthdate, String email) {
+        super(name, phonenumber, birthdate, email);
+        this.medicalInsurance = medicalInsurance;
+        this.creditCardNumber = creditCardNumber;
+        this.address = address;
+        this.amountOfMoney = amount;
+    }
 
+    public int getAmountOfMoney() {
+        return amountOfMoney;
+    }
+
+    public void setAmountOfMoney(int amountOfMoney) {
+        this.amountOfMoney = amountOfMoney;
+    }
     
     
     public ArrayList<Appointment> getComingAppointments() {

@@ -42,14 +42,12 @@ public class PostMedicineController {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-                        System.out.println("debug1");
 
                 // We try to obtain a remote reference to the grade remote object
                 // that lives on the client. (using the registry object obtained from
                 // the constructor above)
                 
                 MedicineInterface p = (MedicineInterface) r.lookup("MedicineInterface");
-                                        System.out.println("debug2");
 
                 
                 // Get the grade (in numbers) as it is written inside the text field
@@ -61,11 +59,15 @@ public class PostMedicineController {
                 
                 
                 String name = gui.getjTextField1().getText();
-                String type = gui.getjTextField2().getText();
-                 String expiredDate = gui.getjTextField3().getText();
-                int amount = Integer.parseInt(gui.getjTextField4().getText());
-                int price = Integer.parseInt(gui.getjTextField5().getText());
-                                        System.out.println("debug3");
+
+                String type = gui.getjTextField4().getText();
+
+                 String expiredDate = gui.getjTextField2().getText();
+
+                int amount = Integer.parseInt(gui.getjTextField5().getText());
+
+                int price = Integer.parseInt(gui.getjTextField3().getText());
+
 
                 
                 // Once we have the grade as numbers, we can pass it to the remote
@@ -74,7 +76,6 @@ public class PostMedicineController {
                 
 
               p.postMedicine(name,type,expiredDate,amount,price);
-                                      System.out.println("debug4");
 
                 
                 // Once we got the result from our remote object, we can set it to
@@ -82,8 +83,7 @@ public class PostMedicineController {
                 
 
 
-               gui.getjLabel1().setText("Medicine posted");
-                                       System.out.println("debug5");
+               gui.getjLabel7().setText("Medicine posted");
 
                
             } catch (RemoteException ex) {
