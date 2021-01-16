@@ -5,7 +5,9 @@
  */
 package RMIServer;
 
+import static RMIServer.DB.gson;
 import java.util.ArrayList;
+import org.bson.Document;
 
 /**
  *
@@ -17,9 +19,13 @@ public class Admin extends User implements AdminSubject{
     private Account account;
     private ArrayList<UserObserver> observers = new ArrayList();
  
+    DB db;
     private Admin() 
     {
+
+    
         admin= new Admin(1,"Morad Ossman","0123434343","19/2/1992","MoradF2@yahoo.com");
+       
     }
 
     private Admin(int id, String name, String phonenumber, String birthdate, String email) {
@@ -28,7 +34,13 @@ public class Admin extends User implements AdminSubject{
     }
 
   
-
+         public void insertAdmin(Admin a) 
+    {
+        db= new DB();
+        db.collection4.insertOne(Document.parse(gson.toJson(a)));
+        System.out.println("Admin is inserted.");
+    }  
+         
    public static Admin getInstance()
     {
         if ( admin == null )
