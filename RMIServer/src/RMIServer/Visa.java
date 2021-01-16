@@ -11,20 +11,35 @@ package RMIServer;
  *
  * @author noura
  */
+import com.google.gson.Gson;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.bson.Document;
 public class Visa implements PaymentMethod {
     
-    
+    DB db = new DB();
     @Override
-    public String makeAppointmentPayment(){
-        int amount;
-        amount = 100;
-        return  "We will take from your credit card " + amount + " Pounds";
+    public String makeAppointmentPayment(String pName, int price, String cardno){
+        Document patdoc = (Document)db.collection2.find(Filters.eq("name", pName));
+        //Patient patient = db.gson.fromJson(patdoc.toJson(), Patient.class);
+        //OrderMedicine order = patient.getOrder();
+        //PaymentMethod p = new Visa();
+        Document dd = new Document("paymentType", "Visa").append("cost", price);
+        db.collection12.insertOne(dd);
+        
+        return "Payment Successful.";
     }
     
     @Override
-    public String  payMedicine(){
-        int amount;
-        amount = 100;
-        return  "We will take from your credit card " + amount + " Pounds";
+    public String  payMedicine(String pName, int price, String cardno){
+        Document dd = new Document("paymentType", "Visa").append("cost", price);
+        db.collection12.insertOne(dd);
+        
+        return "Payment Successful.";
     }
 }

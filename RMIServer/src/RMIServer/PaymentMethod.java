@@ -11,7 +11,7 @@ package RMIServer;
  */
 public interface PaymentMethod {
     
-    public String makeAppointmentPayment();
-    public String  payMedicine();
+    public String makeAppointmentPayment(String pName, int price, String cardno);
+    public String  payMedicine(String pName, int price, String cardno);
     
 }

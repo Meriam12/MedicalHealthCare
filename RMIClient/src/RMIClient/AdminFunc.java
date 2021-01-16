@@ -74,6 +74,7 @@ public class AdminFunc extends javax.swing.JFrame {
             }
         });
 
+        UpdateAccountButton.setBackground(new java.awt.Color(153, 255, 153));
         UpdateAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         UpdateAccountButton.setText("Update Account");
         UpdateAccountButton.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +83,7 @@ public class AdminFunc extends javax.swing.JFrame {
             }
         });
 
+        DeleteAccountButton.setBackground(new java.awt.Color(255, 102, 255));
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         DeleteAccountButton.setText("Delete Account");
         DeleteAccountButton.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +92,7 @@ public class AdminFunc extends javax.swing.JFrame {
             }
         });
 
+        NotifyAllButton.setBackground(new java.awt.Color(153, 153, 255));
         NotifyAllButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         NotifyAllButton.setText("Notify All");
         NotifyAllButton.addActionListener(new java.awt.event.ActionListener() {
@@ -135,27 +138,33 @@ public class AdminFunc extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    
 
 
     private void NotifyAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotifyAllButtonActionPerformed
         // TODO add your handling code here:
+//        CreateAccount s = new CreateAccount();
+//        s.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_NotifyAllButtonActionPerformed
 
     private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountButtonActionPerformed
         // TODO add your handling code here:
+        DeleteAccount s = new DeleteAccount();
+        s.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_DeleteAccountButtonActionPerformed
 
     private void UpdateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateAccountButtonActionPerformed
         // TODO add your handling code here:
+        UpdateAccount m = new UpdateAccount();
+        m.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_UpdateAccountButtonActionPerformed
 
     private void CreateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountButtonActionPerformed
         // TODO add your handling code here:
-        CreateAccount s = new CreateAccount();
-        s.setVisible(true);
+        CreateAccount f = new CreateAccount();
+        f.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CreateAccountButtonActionPerformed
 
