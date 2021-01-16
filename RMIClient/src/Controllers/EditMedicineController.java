@@ -8,7 +8,7 @@ import java.rmi.registry.Registry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.MedicineInterface;
-import RMIClient.PostMedicineGUI;
+import RMIClient.EditMedicineGUI;
 
 /**
  *
@@ -16,11 +16,11 @@ import RMIClient.PostMedicineGUI;
  */
 public class EditMedicineController {
         // We have reference to both the GUI and the rmi registry
-    PostMedicineGUI gui;
+    EditMedicineGUI gui;
     Registry r;
     
     // The constructor takes the gui and the rmi registry as paramaters
-    public EditMedicineController(PostMedicineGUI gui, Registry r)
+    public EditMedicineController(EditMedicineGUI gui, Registry r)
     {
         this.gui = gui;
         this.r = r;
