@@ -5,16 +5,18 @@
  */
 package RMIServer;
 
+import RMI.AdminInterface;
 import com.mongodb.MongoClient;
 import com.mongodb.client.model.Filters;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import org.bson.Document;
 
 /**
  *
  * @author meriam
  */
-public class Account {
+public class Account extends UnicastRemoteObject implements AdminInterface{
     private String username;
     private String password;
     private String accountType;
@@ -27,14 +29,14 @@ public class Account {
      db.database = db.mongoClient.getDatabase("MedicalHealthCare"); 
     }
 
-    public Account(String username, String password) {
+    public Account(String username, String password) throws RemoteException{
         this.username = username;
         this.password = password;
     }
 
    
     
-    public Account(String username, String password, String accountType) {
+    public Account(String username, String password, String accountType) throws RemoteException {
         this.username = username;
         this.password = password;
         this.accountType = accountType;
@@ -86,8 +88,8 @@ public class Account {
            
     }
      
-    
-    void createAccount(String username, String pass) throws RemoteException
+     @Override
+    public void createAccount(String username, String pass) throws RemoteException
     {
      Account newAccountObject = new Account(username, pass);
         db.collection5.insertOne(Document.parse(db.gson.toJson(newAccountObject)));
@@ -95,14 +97,15 @@ public class Account {
       
     }
     
-    void deleteAccount(String username) throws RemoteException
+     @Override
+    public void deleteAccount(String username) throws RemoteException
     {
         db.collection5.deleteOne(Filters.eq("username", username));
         System.out.println("The Account has been deleted.");
     }
     
-    
-    void updateAccount(String username, String pass) throws RemoteException
+     @Override
+    public void updateAccount(String username, String pass) throws RemoteException
     {
                 Account newAccObject = new Account(username, pass);
                 Document doc = Document.parse(db.gson.toJson(newAccObject));

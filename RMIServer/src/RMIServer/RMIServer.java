@@ -5,6 +5,7 @@
  */
 package RMIServer;
 
+import RMI.AdminInterface;
 import RMI.MedicineInterface;
 import RMI.MedicineFacadeInterface;
 import com.mongodb.MongoClient;
@@ -80,7 +81,9 @@ public class RMIServer {
            //Calling the class for the database 
            DB db = new DB();
            
-                       
+            AdminInterface adminInterface = new Account();     
+            Registry registry = LocateRegistry.createRegistry(1099);
+            registry.bind("AdminInterface", adminInterface);          
             
 
 //            MedicineInterface medicineinterface = new Medicine();     
@@ -109,7 +112,7 @@ public class RMIServer {
 
             MedicineInterface medicineinterface = new Medicine();     
             // My RMI Registry
-            Registry registry = LocateRegistry.createRegistry(1099);
+            //Registry registry = LocateRegistry.createRegistry(1099);
             registry.bind("MedicineInterface", medicineinterface);
             medicineinterface.postMedicine("pp", "Cream", "900-", 90, 35);
             System.out.println("medicine posted");

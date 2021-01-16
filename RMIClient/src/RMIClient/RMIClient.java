@@ -5,6 +5,8 @@
  */
 package RMIClient;
 
+import Controllers.CreateAccountController;
+import Controllers.DeleteAccountController;
 import RMI.MedicineDTO;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -31,7 +33,7 @@ public class RMIClient {
                     // We create an object from the GUI window
             PostMedicine gui = new PostMedicine();
             gui.setLocationRelativeTo(null); // This makes the window appears centered
-            gui.setVisible(true); // This shows the gui
+            gui.setVisible(false); // This shows the gui
         
 
         
@@ -41,8 +43,22 @@ public class RMIClient {
             
             PostMedicineController gui_controller = new PostMedicineController(gui, registry);
 
-          
+          DeleteAccount guib = new DeleteAccount();
+            guib.setLocationRelativeTo(null); // This makes the window appears centered
+            guib.setVisible(true); // This shows the gui
+            DeleteAccountController gui_controller1 = new DeleteAccountController(guib, registry);
 
+//         // We create an object from the GUI window
+//            CreateAccount guia = new CreateAccount();
+//            guia.setLocationRelativeTo(null); // This makes the window appears centered
+//            guia.setVisible(true); // This shows the gui
+//        
+//
+//        
+//            
+//            CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
+
+          
 
 //  MedicineFacadeInterface f = (MedicineFacadeInterface) registry.lookup("fac");
 
