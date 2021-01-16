@@ -23,8 +23,8 @@ public class Account {
      
     public Account() throws RemoteException {
         db= new DB();
-          db.mongoClient = new MongoClient();
-     db.database = db.mongoClient.getDatabase("MedicalHealthCare"); 
+        db.mongoClient = new MongoClient();
+        db.database = db.mongoClient.getDatabase("MedicalHealthCare"); 
     }
 
     public Account(String username, String password) {
@@ -68,12 +68,12 @@ public class Account {
     
     
     
-    void login (String username, String Password) throws RemoteException
+   public void login (String username, String Password) throws RemoteException
     {
 
         
-             Document userDoc = db.collection5.find(Filters.eq("username", username)).first();
-             Account result =    db.gson.fromJson(userDoc.toJson(), Account.class);
+           Document userDoc = db.collection5.find(Filters.eq("username", username)).first();
+           Account result = db.gson.fromJson(userDoc.toJson(), Account.class);
               
            if(result.password.equals(Password) )
            {
