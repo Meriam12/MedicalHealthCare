@@ -5,6 +5,7 @@
  */
 package RMIServer;
 
+import RMI.AccountInterface;
 import RMI.AdminInterface;
 import RMI.DoctorInterface;
 import RMI.DoctorMedicalFunctionalities;
@@ -93,6 +94,9 @@ public class RMIServer {
             registry.bind("AdminInterface", adminInterface);          
             
 
+            AccountInterface accountInter = new Account();     
+            registry.bind("AccountInterface", accountInter);  
+            
 //            MedicineInterface medicineinterface = new Medicine();     
 //            // My RMI Registry
 //            Registry registry = LocateRegistry.createRegistry(1099);

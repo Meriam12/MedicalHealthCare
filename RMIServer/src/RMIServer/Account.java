@@ -5,6 +5,7 @@
  */
 package RMIServer;
 
+import RMI.AccountInterface;
 import RMI.AdminInterface;
 import com.mongodb.MongoClient;
 import com.mongodb.client.model.Filters;
@@ -16,7 +17,7 @@ import org.bson.Document;
  *
  * @author meriam
  */
-public class Account extends UnicastRemoteObject implements AdminInterface{
+public class Account extends UnicastRemoteObject implements AdminInterface,AccountInterface{
     private String username;
     private String password;
     private String accountType;
@@ -68,9 +69,8 @@ public class Account extends UnicastRemoteObject implements AdminInterface{
         this.accountType = accountType;
     }
     
-    
-    
-   public boolean  login (String username, String Password) throws RemoteException
+     @Override
+   public boolean login (String username, String Password) throws RemoteException
     {
 
             boolean result1=false;
