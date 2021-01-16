@@ -20,7 +20,7 @@ public class MedicalProfile implements DoctorMedicalFunctionalities{
     private ArrayList<Medicine> medicines = new ArrayList();
     private String bloodType;
     private ArrayList<Appointment> pastAppointments = new ArrayList();
-    private ArrayList<Prescription> prescriptions = new ArrayList();
+    private Prescription prescriptions;
     DB db;
     public MedicalProfile(){
 Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
@@ -36,7 +36,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     }
     
     public MedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
-            String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions) {
+            String bloodType, ArrayList<Appointment> pastAppointments, Prescription prescriptions) {
         this.drFollowup = drFollowup;
         this.chronicDisease = chronicDisease;
         this.medicines = medicines;
@@ -91,11 +91,11 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
         this.pastAppointments = pastAppointments;
     }
 
-    public ArrayList<Prescription> getPrescriptions() {
+    public Prescription getPrescriptions() {
         return prescriptions;
     }
 
-    public void setPrescriptions(ArrayList<Prescription> prescriptions) {
+    public void setPrescriptions(Prescription prescriptions) {
         this.prescriptions = prescriptions;
     }
 
@@ -116,7 +116,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     
       public void addPrescription(Prescription pres)
     {
-       prescriptions.add(pres);
+       prescriptions = pres;
     }
     
      public void addPastAppointments(Appointment app)
