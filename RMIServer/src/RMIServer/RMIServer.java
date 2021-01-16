@@ -16,6 +16,7 @@ import org.bson.Document;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -364,7 +365,25 @@ public class RMIServer {
             
             
             
+//            
+//System.out.println("im here");
+//ArrayList<String> pres = new ArrayList<String>();
+//            System.out.println("222");
+//            Prescription p = new Prescription();
+//            pres.add("EAt brufen twice a day for 16 days");
+//            System.out.println("33");
+//            p.uploadPrescription(pres, p1.getName());
+//            System.out.println("end");
+//            
+//            ArrayList<String> pres2 = new ArrayList<String>();
+//            Prescription p2 = new Prescription();
+//            pres2.add("sleep");
+//            p2.uploadPrescription(pres2, p1.getName());
+//            System.out.println("end");
             
+            
+
+
     //        MedicineInterface medicineinterface = new Medicine();
             //Doctor d = new Doctor();
 //            d.editProfile("Dr.Michael Samy","Gamed", "07775000", "gamed@bue.com");

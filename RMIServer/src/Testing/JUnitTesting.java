@@ -22,19 +22,24 @@ public class JUnitTesting  {
     @Test
     public void testRequestOperationRoom() throws RemoteException{
         OperationRoom o = new OperationRoom();
-        String result = o.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
-        assertEquals("Room is requested successfully", result);
-//        String result2 = o.RequestOperationRoom(1, 'A', "Dr.M@yahoo.com");
-//        assertEquals("Room is requested successfully", result2);
+//        String result = o.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
+//        assertEquals("Room is requested successfully", result);
+        
+        String result2 = o.RequestOperationRoom(1, 'A', "Dr.M@yahoo.com");
+        assertEquals("Room is requested successfully", result2);
     }
 
 
     @Test
     public void testpostMedicine() throws RemoteException{
         Medicine m = new Medicine();
-        String p = m.postMedicine("pp", "Cream", "900-", 90, 35);
-        assertEquals( "Medicine is posted successfully!", p);
+//        String p = m.postMedicine("pp", "Cream", "900-", 90, 35);
+//        assertEquals( "Medicine is posted successfully!", p);
+        
         //fail(m.postMedicine("pp", "Cream", "900-", 90, 35));
+        
+         String p2 = m.postMedicine("pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp", "Cream", "900-", 90, 35);
+        assertEquals( "Medicine is posted successfully!", p2);
     }
 
 }

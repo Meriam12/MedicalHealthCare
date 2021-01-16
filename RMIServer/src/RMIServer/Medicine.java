@@ -105,11 +105,16 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface{
     
     @Override
     public String postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException{
+        if(name.length() > 50){
+             return "too long name";
+        }
+        else{
         Medicine newMedicineObject = new Medicine(name,type,expiredDate,amountInStock,price);
         db.collection9.insertOne(Document.parse(db.gson.toJson(newMedicineObject)));
         //System.out.println("Medicine Posted!.");
         inv.addMedicine(newMedicineObject);
         return "Medicine is posted successfully!";
+        }
     }
     
     @Override
