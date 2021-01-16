@@ -111,6 +111,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
         this.prescriptions = prescriptions;
     }
 
+    @Override
     public void uploadMedicalHistory(String chronicDisease,String medicine) throws RemoteException{
         
     }
@@ -121,6 +122,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     }
   
 
+    @Override
     public void editMedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
             String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions) throws RemoteException{
         
