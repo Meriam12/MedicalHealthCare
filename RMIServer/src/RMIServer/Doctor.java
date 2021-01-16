@@ -26,9 +26,10 @@ public class Doctor extends User implements UserObserver{
     private DoctorMedicalFunctionalities doctorMedicalFunctionalities;
     private int price;
     
-    DB db = new DB();
+    DB db ; 
     
     public Doctor() throws RemoteException {
+        db=new DB();
         db.mongoClient = new MongoClient();
         db.database = db.mongoClient.getDatabase("MedicalHealthCare");
 
@@ -139,8 +140,8 @@ public class Doctor extends User implements UserObserver{
 //       
     public void viewDoctor(String name) throws RemoteException {
      
-       Document Result =(Document)db.collection1.find(Filters.eq("name",name));
-       System.out.println(Result);
+       Document doc = db.collection1.find(Filters.eq("name", name)).first();
+        System.out.println(doc);
     }       
 //       db.collection1.find({​​​​​​​"name": name}​​​​​​​).forEach(printjson);
         

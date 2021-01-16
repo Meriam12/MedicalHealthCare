@@ -27,13 +27,14 @@ public class OperationRoom  extends UnicastRemoteObject {
     private char Type;
     private Doctor ReservedDoctor; 
 
-    DB db = new DB();
+    DB db;
     public OperationRoom()throws RemoteException{
                 // Disables Mongo Logs
         Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
         mongoLogger.setLevel(Level.SEVERE);
 
         // Initialize
+       db = new DB();
        db.mongoClient = new MongoClient();
         db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     }
