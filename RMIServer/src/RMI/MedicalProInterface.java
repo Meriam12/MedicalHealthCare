@@ -5,8 +5,12 @@
  */
 package RMI;
 
+import RMIServer.Appointment;
+import RMIServer.Medicine;
+import RMIServer.Prescription;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,4 +18,7 @@ import java.rmi.RemoteException;
  */
 public interface MedicalProInterface extends Remote{
     public void reviewMedicalProfile() throws RemoteException;
+    public void uploadMedicalHistory(String chronicDisease,String medicine) throws RemoteException;
+     public void editMedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
+            String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions) throws RemoteException;
 }

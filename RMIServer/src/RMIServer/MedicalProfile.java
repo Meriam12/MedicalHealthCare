@@ -111,7 +111,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
         this.prescriptions = prescriptions;
     }
 
-    public void uploadMedicalHistory(String chronicDisease,String medicine){
+    public void uploadMedicalHistory(String chronicDisease,String medicine) throws RemoteException{
         
     }
 
