@@ -5,24 +5,28 @@
  */
 package RMIServer;
 
+import org.bson.Document;
+
 /**
  *
  * @author noura
  */
 public class Cash implements PaymentMethod{
-    
+    DB db = new DB();
     @Override
-    public String makeAppointmentPayment(){
-        int amount;
-        amount = 100;
-        return  "When you arrive to our hospital, you have to pay " + amount;
+    public String makeAppointmentPayment(String pName, int price, String cardno){
+        Document dd = new Document("paymentType", "Cash").append("cost", price);
+        db.collection12.insertOne(dd);
+        
+        return "Payment Successful.";
     }
     
     @Override
-    public String payMedicine(){
-        int amount;
-        amount = 100;
-        return  "We will come to your address after 2 days, you have to pay " + amount;
+    public String payMedicine(String pName, int price, String cardno){
+        Document dd = new Document("paymentType", "Cash").append("cost", price);
+        db.collection12.insertOne(dd);
+        
+        return "Payment Successful.";
     }
     
 }

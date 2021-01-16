@@ -170,7 +170,8 @@ public class DB {
       
       public void insertPrescription(Prescription p) 
     {
-        collection14.insertOne(Document.parse(gson.toJson(p)));
+        Document d1 = new Document("prescription", p.getPrescriptions());
+        collection14.insertOne(Document.parse(gson.toJson(d1)));
         System.out.println("Prescription is inserted.");
     }
       public void insertSpecialization(Specialization s) 

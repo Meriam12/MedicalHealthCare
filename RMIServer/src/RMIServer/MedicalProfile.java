@@ -5,6 +5,7 @@
  */
 package RMIServer;
 
+import RMI.DoctorMedicalFunctionalities;
 import com.mongodb.*;
 import java.util.ArrayList;
 import java.util.logging.Level;

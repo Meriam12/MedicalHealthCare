@@ -5,6 +5,7 @@
  */
 package RMIServer;
 
+import static RMIServer.DB.database;
 import com.mongodb.MongoClient;
 import com.mongodb.client.model.Filters;
 import java.rmi.RemoteException;
@@ -21,7 +22,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bson.Document;
 
-
 /**
  *
  * @author meriam
@@ -29,20 +29,22 @@ import org.bson.Document;
 public class Prescription {
 
     private String prescriptions;
-DB db;
+
+    DB db;
 
     public Prescription() {
         // Disables Mongo Logs
-Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
-mongoLogger.setLevel(Level.SEVERE);
+        Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+        mongoLogger.setLevel(Level.SEVERE);
 // Initialize
-  db = new DB();
+        db = new DB();
+        db.mongoClient = new MongoClient();
+        db.database = db.mongoClient.getDatabase("MedicalHealthCare");
+        db.collection2 = database.getCollection("Patient"); 
     }
 
-    
-    
     public Prescription(String prescription) {
-       prescriptions = prescription;
+        prescriptions = prescription;
     }
 
     public String getPrescriptions() {
@@ -53,10 +55,11 @@ mongoLogger.setLevel(Level.SEVERE);
         this.prescriptions = prescriptions;
     }
     // FUNCTIONS
-    
-    public void uploadPrescription(ArrayList<String> x, String pName) throws RemoteException{
+
+    public void uploadPrescription(String x, String pName) throws RemoteException {
         System.out.println("fits");
-        Document coll = db.collection2.find(Filters.eq("name", pName)).first();
+
+        Document coll = (Document) db.collection2.find(Filters.eq("name", pName)).first();
         System.out.println("wsalttt");
         System.out.println(coll);
         Patient pat = db.gson.fromJson(coll.toJson(), Patient.class);
@@ -66,28 +69,24 @@ mongoLogger.setLevel(Level.SEVERE);
         System.out.println("44");
         medpro = pat.getMedicalProfile();
         System.out.println("55");
-        
+
         String pres = "new pres";
         System.out.println("66");
-       prescriptions = pres;
+        prescriptions = pres;
         System.out.println("77");
         medpro.setPrescriptions(this);
         System.out.println("88");
-       pat.setMedicalProfile(medpro);
+        pat.setMedicalProfile(medpro);
         System.out.println("99");
-       Document result = Document.parse(db.gson.toJson(pat));
+        Document result = Document.parse(db.gson.toJson(pat));
         System.out.println("processed");
-       db.collection2.replaceOne(Filters.eq("email", pName), result);
+        db.collection2.replaceOne(Filters.eq("email", pName), result);
         System.out.println("done");
-    
-               
-               
-               
-        
+
     }
-    
-     public void addPresciption(String prescription)
-    {
-       prescriptions = prescription;
-    } 
+
+//     public void addPresciption(String prescription)
+//    {
+//       prescriptions = prescription;
+//    } 
 }

@@ -7,6 +7,7 @@ package RMIServer;
 
 import RMI.AdminInterface;
 import RMI.DoctorInterface;
+import RMI.DoctorMedicalFunctionalities;
 import RMI.MedicineInterface;
 import RMI.MedicineFacadeInterface;
 import RMI.OperationRoomInterface;
@@ -119,7 +120,7 @@ public class RMIServer {
             MedicineInterface medicineinterface = new Medicine();     
             OperationRoomInterface operationRoomInterface= new OperationRoom();
             DoctorInterface DoctorInterface = new Appointment() ;
-            
+            DoctorMedicalFunctionalities DoctorMedicalFunctionalities = new MedicalProfile();
             // My RMI Registry
             //Registry registry = LocateRegistry.createRegistry(1099);
             
@@ -131,7 +132,7 @@ public class RMIServer {
             registry.bind("operationRoomInterface", operationRoomInterface);
              registry.bind("DoctorInterface", DoctorInterface);
             
-            
+               registry.bind("DoctorMedicalFunctionalities", DoctorMedicalFunctionalities);
             
           //  OperationRoom room = new OperationRoom();
            // room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
@@ -201,12 +202,25 @@ public class RMIServer {
             db.insertPrescription(pres2);
             
             doc1= new Doctor(5,"Profssor","Sunday from 9 AM",0,"Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
+            doc2= new Doctor(5,"Doctor","Sunday from 9 AM",0,"Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
+            doc3= new Doctor(5,"Doctor","Sunday from 9 AM",0,"Dr.Samir Ahmed","01236463738","22/4/1980","Dr.samir@yahoo.com");
+            doc4= new Doctor(5,"Doctor","Sunday from 9 AM",0,"Dr. Ahmed Osama","01236463738","22/4/1980","Dr.AhOsama@yahoo.com");
+            doc5= new Doctor(5,"Doctor","Sunday from 9 AM",0,"Dr. Ahmed Mostafa","01236463738","22/4/1980","Dr.AHMED@yahoo.com");
+            doc6= new Doctor(5,"Doctor","Sunday from 9 AM",0,"Dr.Mina Tamer","01236463738","22/4/1980","Dr.Mina@yahoo.com");
+            
+            doc1= new Doctor(5,"Profssor","Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
             doc2= new Doctor(5,"Doctor","Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
             doc3= new Doctor(5,"Doctor","Dr.Samir Ahmed","01236463738","22/4/1980","Dr.samir@yahoo.com");
             doc4= new Doctor(5,"Doctor","Dr. Ahmed Osama","01236463738","22/4/1980","Dr.AhOsama@yahoo.com",100);
             doc5= new Doctor(5,"Doctor","Dr. Ahmed Mostafa","01236463738","22/4/1980","Dr.AHMED@yahoo.com",200);
             doc6= new Doctor(5,"Doctor","Dr.Mina Tamer","01236463738","22/4/1980","Dr.Mina@yahoo.com",300);
-            
+                        
+            //doc1= new Doctor(5,"Profssor","Sunday from 9 AM to 11 AM",0,"12/9/1980","Dr.Farida12@yahoo.com");
+//            doc2= new Doctor(5,"Doctor","Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
+//            doc3= new Doctor(5,"Doctor","Dr.Samir Ahmed","01236463738","22/4/1980","Dr.samir@yahoo.com");
+//            doc4= new Doctor(5,"Doctor","Dr. Ahmed Osama","01236463738","22/4/1980","Dr.AhOsama@yahoo.com",100);
+//            doc5= new Doctor(5,"Doctor","Dr. Ahmed Mostafa","01236463738","22/4/1980","Dr.AHMED@yahoo.com",200);
+//            doc6= new Doctor(5,"Doctor","Dr.Mina Tamer","01236463738","22/4/1980","Dr.Mina@yahoo.com",300);
 
 
             doc1.addNurses(n1);
@@ -355,10 +369,15 @@ public class RMIServer {
 
 
 
+//   
+//             MedicalProfile MedicalProfile = new MedicalProfile();
+//              MedicalProfile.uploadMedicalHistory("hi", "no", "Amira Mostafa");
+//     
+//     
    
-      //       MedicalProfile MedicalProfile = new MedicalProfile();
-     //         MedicalProfile.uploadMedicalHistory("hi", "no", "Amira Mostafa");
-     
+//             MedicalProfile MedicalProfile = new MedicalProfile();
+//              MedicalProfile.uploadMedicalHistory("hi", "no", "Amira Mostafa");
+//     
      
      
      
