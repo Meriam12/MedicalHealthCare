@@ -54,6 +54,9 @@ public class RMIServer {
        static  Doctor doc1;
        static  Doctor doc2;     
        static Doctor doc3;
+       static  Doctor doc4;
+       static  Doctor doc5;     
+       static Doctor doc6;
        static  MedicalProfile prof1;
        static  MedicalProfile prof2;
        static  Payment pay1;
@@ -184,6 +187,11 @@ public class RMIServer {
             doc1= new Doctor(5,"Profssor","Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
             doc2= new Doctor(5,"Doctor","Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
             doc3= new Doctor(5,"Doctor","Dr.Samir Ahmed","01236463738","22/4/1980","Dr.samir@yahoo.com");
+            doc4= new Doctor(5,"Doctor","Dr. Ahmed Osama","01236463738","22/4/1980","Dr.AhOsama@yahoo.com",100);
+            doc5= new Doctor(5,"Doctor","Dr. Ahmed Mostafa","01236463738","22/4/1980","Dr.AHMED@yahoo.com",200);
+            doc6= new Doctor(5,"Doctor","Dr.Mina Tamer","01236463738","22/4/1980","Dr.Mina@yahoo.com",300);
+            
+
 
             doc1.addNurses(n1);
             doc1.addOPR(or1);
@@ -197,16 +205,24 @@ public class RMIServer {
             doc2.adddTimeslots("Saturday from 10 AM to 12 PM");
             doc2.adddTimeslots("Monday from 8 AM to 10 AM");
             
-            db.insertDoctor(doc1);
-            db.insertDoctor(doc2);
-            db.insertDoctor(doc3);
-            
-            or1 = new OperationRoom(1,'A',doc1);
+              or1 = new OperationRoom(1,'A',doc1);
             or2= new OperationRoom(1,'C',doc2);
             
             db.insertOperationRoom(or1);
             db.insertOperationRoom(or2);
-          
+            
+            db.insertDoctor(doc1);
+            db.insertDoctor(doc2);
+            db.insertDoctor(doc3);
+             db.insertDoctor(doc4);
+            db.insertDoctor(doc5);
+            db.insertDoctor(doc6);
+            
+
+        
+            OperationRoom rooom = new OperationRoom();
+            rooom.RequestOperationRoom(1, 'C', "Dr.Mina Tamer");
+            System.out.println("room reuqsted");
             
             spe1 = new Specialization("Dermatologists");
             spe2 = new Specialization("Ophthalmologists");
