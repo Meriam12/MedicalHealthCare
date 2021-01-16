@@ -116,8 +116,10 @@ public class RMIServer {
             MedicineInterface medicineinterface = new Medicine();     
             // My RMI Registry
             //Registry registry = LocateRegistry.createRegistry(1099);
+            
+            
             registry.bind("MedicineInterface", medicineinterface);
-            medicineinterface.postMedicine("pp", "Cream", "900-", 90, 35);
+            medicineinterface.postMedicine("cc", "Cream", "900-", 90, 35);
             System.out.println("medicine posted");
             
           //  OperationRoom room = new OperationRoom();
@@ -226,9 +228,9 @@ public class RMIServer {
             
 
         
-            OperationRoom rooom = new OperationRoom();
-            rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
-            System.out.println("room reuqsted");
+   //         OperationRoom rooom = new OperationRoom();
+    //        rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
+   //         System.out.println("room reuqsted");
             
             spe1 = new Specialization("Dermatologists");
             spe2 = new Specialization("Ophthalmologists");

@@ -83,7 +83,7 @@ public class OperationRoom  extends UnicastRemoteObject {
 
 
     
-    public void RequestOperationRoom(int id, char type,String DRmail)throws RemoteException{
+    public String RequestOperationRoom(int id, char type,String DRmail)throws RemoteException{
                
         Document ORdoc = db.collection10.find(Filters.eq("ID", id)).first();
                 //System.out.println(ORdoc);
@@ -102,6 +102,9 @@ public class OperationRoom  extends UnicastRemoteObject {
          Document UpdatedRoom =Document.parse(db.gson.toJson(result));
          
           db.collection10.replaceOne(Filters.eq("ID", id), UpdatedRoom);
+          
+          //return "Room with id " + id + " and type " +  type + " is requested by doctor whose email is " + DRmail;
+          return "Room is requested successfully";
                 
              //       Document doc = db.collection1.find(Filters.eq("name", DrName)).first();
            //                                           System.out.println(doc);

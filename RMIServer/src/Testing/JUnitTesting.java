@@ -5,30 +5,36 @@
  */
 package Testing;
 
+import RMIServer.Medicine;
 import RMIServer.OperationRoom;
+import java.rmi.RemoteException;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
  *
- * 
+ *
  */
-public class JUnitTesting {
+public class JUnitTesting  {
 
-//    @Test
-//    public void testAdd() {
-//        Calculator c = new Calculator();
-//        int result = c.add(5, 6);
-//        assertEquals(11, result);
-//    }
-//
-//
-//    @Test
-//    public void testSub() {
-//        Calculator c = new Calculator();
-//        int result = c.sub(6, 1);
-//        assertEquals(4, result);
-//    }
+    @Test
+    public void testRequestOperationRoom() throws RemoteException{
+        OperationRoom o = new OperationRoom();
+        String result = o.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
+        assertEquals("Room is requested successfully", result);
+//        String result2 = o.RequestOperationRoom(1, 'A', "Dr.M@yahoo.com");
+//        assertEquals("Room is requested successfully", result2);
+    }
+
+
+    @Test
+    public void testpostMedicine() throws RemoteException{
+        Medicine m = new Medicine();
+        String p = m.postMedicine("pp", "Cream", "900-", 90, 35);
+        assertEquals( "Medicine is posted successfully!", p);
+        //fail(m.postMedicine("pp", "Cream", "900-", 90, 35));
+    }
 
 }

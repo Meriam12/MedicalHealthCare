@@ -14,7 +14,7 @@ import java.rmi.RemoteException;
  */
 public interface MedicineInterface extends Remote {
     
-        public void postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException;
+        public String postMedicine(String name, String type, String expiredDate, int amountInStock, int price) throws RemoteException;
     
         public void deleteMedicine(String name) throws RemoteException;
 

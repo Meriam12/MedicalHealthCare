@@ -27,39 +27,37 @@ import org.bson.Document;
  * @author meriam
  */
 public class Prescription {
-    
-    private ArrayList<String> prescriptions= new ArrayList();
-    DB db;
+
+    private String prescriptions;
+DB db;
+
     public Prescription() {
         // Disables Mongo Logs
 Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
 mongoLogger.setLevel(Level.SEVERE);
 // Initialize
-db = new DB();
-db.mongoClient = new MongoClient();
-db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
-// db.collection9 = db.database.getCollection("Medicine"); // Collection name
-        
+  db = new DB();
     }
 
     
     
-    public Prescription(ArrayList<String> prescription) {
+    public Prescription(String prescription) {
        prescriptions = prescription;
     }
 
-    public ArrayList<String> getPrescription() {
+    public String getPrescriptions() {
         return prescriptions;
     }
 
-    public void setPrescription(ArrayList<String> prescription) {
-        prescriptions = prescription;
+    public void setPrescriptions(String prescriptions) {
+        this.prescriptions = prescriptions;
     }
     // FUNCTIONS
     
-    public void uploadPrescription(ArrayList<String> x, String email){
+    public void uploadPrescription(ArrayList<String> x, String pName){
         System.out.println("fits");
-        Document coll = db.collection2.find(Filters.eq("email", email)).first();
+        Document coll = db.collection2.find(Filters.eq("name", pName)).first();
+        System.out.println("wsalttt");
         System.out.println(coll);
         Patient pat = db.gson.fromJson(coll.toJson(), Patient.class);
         //db.gson.fromJson(ORdoc.toJson(), OperationRoom.class)
@@ -69,17 +67,17 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
         medpro = pat.getMedicalProfile();
         System.out.println("55");
         
-        ArrayList<Prescription> pres = new ArrayList<Prescription>();
+        String pres = "new pres";
         System.out.println("66");
-        pres.add(new Prescription(x));
+       prescriptions = pres;
         System.out.println("77");
-        medpro.setPrescriptions(pres);
+        medpro.setPrescriptions(this);
         System.out.println("88");
        pat.setMedicalProfile(medpro);
         System.out.println("99");
        Document result = Document.parse(db.gson.toJson(pat));
         System.out.println("processed");
-       db.collection2.replaceOne(Filters.eq("email", email), result);
+       db.collection2.replaceOne(Filters.eq("email", pName), result);
         System.out.println("done");
     
                
@@ -90,6 +88,6 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     
      public void addPresciption(String prescription)
     {
-       prescriptions.add(prescription);
+       prescriptions = prescription;
     } 
 }
