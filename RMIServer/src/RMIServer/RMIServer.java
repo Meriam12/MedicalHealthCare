@@ -116,8 +116,10 @@ public class RMIServer {
             MedicineInterface medicineinterface = new Medicine();     
             // My RMI Registry
             //Registry registry = LocateRegistry.createRegistry(1099);
+            
+            
             registry.bind("MedicineInterface", medicineinterface);
-            medicineinterface.postMedicine("pp", "Cream", "900-", 90, 35);
+            medicineinterface.postMedicine("cc", "Cream", "900-", 90, 35);
             System.out.println("medicine posted");
             
           //  OperationRoom room = new OperationRoom();

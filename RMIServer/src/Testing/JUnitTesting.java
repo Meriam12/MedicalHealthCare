@@ -5,9 +5,11 @@
  */
 package Testing;
 
+import RMIServer.Medicine;
 import RMIServer.OperationRoom;
 import java.rmi.RemoteException;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,12 +26,13 @@ public class JUnitTesting  {
         assertEquals("Room is requested successfully", result);
     }
 
-//
-//    @Test
-//    public void testSub() {
-//        Calculator c = new Calculator();
-//        int result = c.sub(6, 1);
-//        assertEquals(4, result);
-//    }
+
+    @Test
+    public void testpostMedicine() throws RemoteException{
+        Medicine m = new Medicine();
+        String p = m.postMedicine("pp", "Cream", "900-", 90, 35);
+        assertEquals( "Medicine is posted successfully!", p);
+        //fail(m.postMedicine("pp", "Cream", "900-", 90, 35));
+    }
 
 }
