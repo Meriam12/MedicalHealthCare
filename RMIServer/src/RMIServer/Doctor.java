@@ -5,17 +5,29 @@
  */
 package RMIServer;
 
+import RMI.DoctorInterface;
 import com.mongodb.MongoClient;
 import com.mongodb.client.model.Filters;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import org.bson.Document;
-
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import com.google.gson.Gson;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.bson.Document;
 /**
  *
  * @author meriam
  */
-public class Doctor extends User implements UserObserver{
+public class Doctor extends User implements UserObserver, DoctorInterface{
     private int rating;
     private String levelOfExpertise;
     private ArrayList<Nurse> nurse = new ArrayList();
@@ -123,6 +135,7 @@ public class Doctor extends User implements UserObserver{
 
 
     
+    @Override
     public void makeRating(int rating, String name){
                 Doctor newDocObject = new Doctor(rating, name);
                 Document doc = Document.parse(db.gson.toJson(newDocObject));
@@ -135,6 +148,7 @@ public class Doctor extends User implements UserObserver{
 //       Document Result =(Document)db.collection1.find(Filters.eq("name",name)).;
 //       System.out.println(Result);
 //       
+    @Override
     public void viewDoctor(String name) throws RemoteException {
      
        Document doc = db.collection1.find(Filters.eq("name", name)).first();
@@ -151,6 +165,7 @@ public class Doctor extends User implements UserObserver{
 //         return result;
 //    }
     
+    @Override
     public void editProfile(String name, String levelOfExpertise,  String phonenumber, String email){
                 Doctor newDocObject = new Doctor(name, levelOfExpertise, phonenumber, email);
                 Document doc = Document.parse(db.gson.toJson(newDocObject));

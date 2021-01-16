@@ -8,6 +8,7 @@ package RMIServer;
 import RMI.AdminInterface;
 import RMI.MedicineInterface;
 import RMI.MedicineFacadeInterface;
+import RMI.OperationRoomInterface;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -115,6 +116,7 @@ public class RMIServer {
 //            
 
             MedicineInterface medicineinterface = new Medicine();     
+            OperationRoomInterface operationRoomInterface= new OperationRoom();
             // My RMI Registry
             //Registry registry = LocateRegistry.createRegistry(1099);
             
@@ -123,6 +125,7 @@ public class RMIServer {
             medicineinterface.postMedicine("cc", "Cream", "900-", 90, 35);
             System.out.println("medicine posted");
             
+            registry.bind("operationRoomInterface", operationRoomInterface);
           //  OperationRoom room = new OperationRoom();
            // room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
            // System.out.println("room requested");
@@ -211,7 +214,7 @@ public class RMIServer {
             
 
             or1 = new OperationRoom(1,'A',doc1);
-            or2= new OperationRoom(1,'C',doc2);
+            or2= new OperationRoom(2,'C',doc2);
 
          
             
@@ -347,9 +350,18 @@ public class RMIServer {
 //            a.login("Hossam", "1234");
 
 //             
-//            
-            Appointment app = new Appointment();
-            app.CancelAppointment("20/1/2021 Saturday at 11 am","Hossam Amr");
+//        
+
+
+
+
+ //           Appointment app = new Appointment();
+    //        app.CancelAppointment("20/1/2021 Saturday at 11 am","Hossam Amr");
+      
+    
+    
+    
+            
 //            
 //            Account ac = new Account();
 //            ac.updateAccount("Marina", "12345marina" );
