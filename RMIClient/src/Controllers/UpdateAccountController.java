@@ -21,6 +21,14 @@ public class UpdateAccountController {
      UpdateAccount gui;
      Registry r;
      
+       public UpdateAccountController()
+    {
+            UpdateAccount guia = new UpdateAccount();
+            guia.setLocationRelativeTo(null); // This makes the window appears centered
+            guia.setVisible(true); // This shows the gui
+            UpdateAccountController gui_controller1 = new UpdateAccountController(guia, r);
+    }
+     
      public UpdateAccountController(UpdateAccount gui, Registry r)
     {
         this.gui = gui;

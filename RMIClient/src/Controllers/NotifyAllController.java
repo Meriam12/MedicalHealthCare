@@ -30,7 +30,13 @@ public class NotifyAllController {
         gui.getSendButton().addActionListener(new AccountClass() );
     }
         
-    
+      public NotifyAllController()
+    {
+            NotifyAll guia = new NotifyAll();
+            guia.setLocationRelativeTo(null); // This makes the window appears centered
+            guia.setVisible(true); // This shows the gui
+            NotifyAllController gui_controller1 = new NotifyAllController(guia, r);
+    }
       class AccountClass implements ActionListener {
 
         // Whatever written inside this function will execute when the button is clicked

@@ -18,11 +18,22 @@ import RMIClient.DeleteAccount;
  *
  * @author Toumie
  */
+
 public class DeleteAccountController {
+    
+    
+    
     DeleteAccount gui;
     Registry r;
     
-   
+     public DeleteAccountController()
+    {
+             DeleteAccount guia = new DeleteAccount();
+            guia.setLocationRelativeTo(null); // This makes the window appears centered
+            guia.setVisible(true); // This shows the gui
+            DeleteAccountController gui_controller1 = new DeleteAccountController(guia, r);
+    }
+    
      public DeleteAccountController(DeleteAccount gui, Registry r)
     {
         this.gui = gui;
