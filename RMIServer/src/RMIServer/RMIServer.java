@@ -288,6 +288,9 @@ public class RMIServer {
             
             Doctor d = new Doctor();
             d.viewDoctor("Dr.Michael Samy");
+            
+            Account a= new Account();
+            a.login("Hossam", "1234");
 //             
 //            
 //            Appointment a = new Appointment();

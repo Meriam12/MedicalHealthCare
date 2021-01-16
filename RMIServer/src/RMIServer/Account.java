@@ -70,8 +70,20 @@ public class Account {
     
     void login (String username, String Password) throws RemoteException
     {
-    
-    
+//        DB query = new BasicDBObject("_id", "jo");
+//        DBCursor cursor = collection.find(query);
+           Document doc = (Document)db.collection5.find(Filters.exists(username, true));
+           String s= doc.get(doc, password);
+           if(s== password)
+           {
+              System.out.println("You have entered.");
+           }
+           else 
+           {
+              System.out.println("No you havn't.");
+           
+           }
+           
     }
      
     
