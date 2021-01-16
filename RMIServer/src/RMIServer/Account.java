@@ -84,7 +84,7 @@ public class Account extends UnicastRemoteObject implements AdminInterface{
            }
            else 
            {
-              System.out.println("No you haven't.");
+              System.out.println("Your username or password is incorrect.");
            result1=false;
            }
          
