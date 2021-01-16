@@ -29,7 +29,7 @@ import org.bson.Document;
 public class MedicalProfile extends UnicastRemoteObject implements MedicalProInterface, DoctorMedicalFunctionalities {
     private ArrayList<String> drFollowup = new ArrayList();
     private ArrayList<String> chronicDisease = new ArrayList();
-    private ArrayList<Medicine> medicines = new ArrayList();
+    private ArrayList<String> medicines = new ArrayList();
     private String bloodType;
     private ArrayList<Appointment> pastAppointments = new ArrayList();
     private Prescription prescriptions;
@@ -47,7 +47,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
 // db.collection9 = db.database.getCollection("Medicine"); // Collection name
     }
     
-    public MedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
+    public MedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<String> medicines , 
             String bloodType, ArrayList<Appointment> pastAppointments, Prescription prescriptions) throws RemoteException {
         this.drFollowup = drFollowup;
         this.chronicDisease = chronicDisease;
@@ -79,11 +79,11 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
         this.chronicDisease = chronicDisease;
     }
 
-    public ArrayList<Medicine> getMedicines() {
+    public ArrayList<String> getMedicines() {
         return medicines;
     }
 
-    public void setMedicines(ArrayList<Medicine> medicines) {
+    public void setMedicines(ArrayList<String> medicines) {
         this.medicines = medicines;
     }
 
@@ -138,7 +138,7 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
        pastAppointments.add(app);
     }  
      
-     public void addMedicines(Medicine med)
+     public void addMedicines(String med)
     {
        medicines.add(med);
     } 

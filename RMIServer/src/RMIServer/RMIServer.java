@@ -275,13 +275,13 @@ public class RMIServer {
             prof2 = new MedicalProfile("AB+");
             
             prof1.addChronicDiseases("Diabetes");
-            prof1.addMedicines(med3);
+            prof1.addMedicines("fucidine");
             prof1.addPastAppointments(a1);
             prof1.addPrescription(pres1);
             prof1.adddFollowup("Dr.Farida Magdy");
             
             prof2.addChronicDiseases("");
-            prof2.addMedicines(med2);
+            prof2.addMedicines("fusicosrt");
             prof2.addPastAppointments(a4);
             prof2.addPrescription(pres2);
             prof2.adddFollowup("Dr.Michael Samy");
