@@ -12,6 +12,7 @@ import RMI.DoctorMedicalFunctionalities;
 import RMI.MedicineInterface;
 import RMI.MedicineFacadeInterface;
 import RMI.OperationRoomInterface;
+import RMI.PaymentMethod;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -88,6 +89,8 @@ public class RMIServer {
            
            //Calling the class for the database 
            DB db = new DB();
+           PaymentMethod PaymentMethod1 = new Visa();
+           PaymentMethod PaymentMethod2 = new Cash();
            
             AdminInterface adminInterface = new Account();     
             Registry registry = LocateRegistry.createRegistry(1099);
@@ -96,6 +99,9 @@ public class RMIServer {
 
             AccountInterface accountInter = new Account();     
             registry.bind("AccountInterface", accountInter);  
+            
+             registry.bind("visa", PaymentMethod1);  
+              registry.bind("cash", PaymentMethod2);  
             
 //            MedicineInterface medicineinterface = new Medicine();     
 //            // My RMI Registry

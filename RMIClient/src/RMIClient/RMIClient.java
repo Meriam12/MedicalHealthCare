@@ -86,6 +86,7 @@ public class RMIClient {
 //                        System.out.println("here");
 
 
+
             
             RequestOperationRoomGUI gui_op = new RequestOperationRoomGUI();
             gui_op.setLocationRelativeTo(null); // This makes the window appears centered
@@ -150,6 +151,7 @@ public class RMIClient {
             login2.setVisible(true); // This shows the gui
             LoginController Accountinf = new LoginController(login2, registry);
 
+            
             
 //  MedicineFacadeInterface f = (MedicineFacadeInterface) registry.lookup("fac");
 
