@@ -13,7 +13,7 @@ import java.rmi.RemoteException;
  */
 public interface DoctorMedicalFunctionalities {
     
-    public void reviewMedicalProfile()  throws RemoteException;
+    public void reviewMedicalProfile(String pName)  throws RemoteException;
 
 }
 

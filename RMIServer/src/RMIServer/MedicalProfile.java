@@ -129,8 +129,14 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
               
     }
 
-    @Override
-    public void reviewMedicalProfile()  throws RemoteException{
+@Override
+    public void reviewMedicalProfile(String pName)  throws RemoteException{
+        
+        ArrayList <Document> D1 = new ArrayList<Document>();
+         db.collection2.find(Filters.all("name", pName)).into(D1);
+         System.out.println(D1);
+        //Document doc = (Document)db.collection2.find(Filters.eq("name",pName));
+        
         
     }
   
