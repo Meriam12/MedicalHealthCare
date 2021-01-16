@@ -71,33 +71,20 @@ public class Account {
     void login (String username, String Password) throws RemoteException
     {
 
-//           Document doc = (Document)db.collection5.find(Filters.exists(username, true));
-//           String s= doc.get(doc, password);
-//           if(s== password)
-//           {
-//              System.out.println("You have entered.");
-//           }
-//           else 
-//           {
-//              System.out.println("No you havn't.");
-//           
-//           }
         
-                    Document userDoc = db.collection5.find(Filters.eq("username", username)).first();
-                               Account result =    db.gson.fromJson(userDoc.toJson(), Account.class);
+             Document userDoc = db.collection5.find(Filters.eq("username", username)).first();
+             Account result =    db.gson.fromJson(userDoc.toJson(), Account.class);
+              
            if(result.password.equals(Password) )
            {
               System.out.println("You have entered.");
            }
            else 
            {
-              System.out.println("No you havn't.");
+              System.out.println("No you haven't.");
            
            }
-                    
-                         
 
-           
     }
      
     
