@@ -116,11 +116,18 @@ public class Doctor extends User implements UserObserver{
                 System.out.println("The rating has been Saved.");
     }
     
+<<<<<<< HEAD
 //    public void viewDoctor(String name) throws RemoteException {
 //        
 //       Document Result =(Document)db.collection1.find(Filters.eq("name",name)).;
 //       System.out.println(Result);
 //       
+=======
+    public void viewDoctor(String name) throws RemoteException {
+     
+       Document Result =(Document)db.collection1.find(Filters.eq("name",name));
+       System.out.println(Result);
+>>>>>>> f38e1718591ebc9fb036ab53640520ac1c7198fb
        
 //       db.collection1.find({​​​​​​​"name": name}​​​​​​​).forEach(printjson);
         
@@ -166,5 +173,25 @@ public class Doctor extends User implements UserObserver{
        this.account=a ;
     }
      
+<<<<<<< HEAD
 
+=======
+    public  Doctor getDrByName(String name){
+//                Document doc = collection.find(Filters.eq("email", email)).first();
+//        Student result = gson.fromJson(doc.toJson(), Student.class);
+//        return result;
+                    Document doc = db.collection1.find(Filters.eq("name", name)).first();
+                    Doctor result = db.gson.fromJson(doc.toJson(), Doctor.class);
+                    return result;
+    }
+
+     
+//     public Doctor findDrByName(String name){
+//         for (){
+//             
+//         }
+//         return null;
+//     }
+ 
+>>>>>>> f38e1718591ebc9fb036ab53640520ac1c7198fb
 }

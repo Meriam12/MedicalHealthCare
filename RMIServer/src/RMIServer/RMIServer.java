@@ -94,6 +94,7 @@ public class RMIServer {
 //            System.out.println("room requested");
 //            
 
+<<<<<<< HEAD
 //            MedicineInterface medicineinterface = new Medicine();     
 //            // My RMI Registry
 //            Registry registry = LocateRegistry.createRegistry(1099);
@@ -106,6 +107,21 @@ public class RMIServer {
 //            System.out.println("room requested");
 //            
 
+=======
+            MedicineInterface medicineinterface = new Medicine();     
+            // My RMI Registry
+            Registry registry = LocateRegistry.createRegistry(1099);
+            registry.bind("MedicineInterface", medicineinterface);
+            medicineinterface.postMedicine("pp", "Cream", "900-", 90, 35);
+            System.out.println("medicine posted");
+            
+          //  OperationRoom room = new OperationRoom();
+           // room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
+           // System.out.println("room requested");
+            
+           Cash cashh = new Cash();
+           System.out.println(cashh.payMedicine());
+>>>>>>> f38e1718591ebc9fb036ab53640520ac1c7198fb
             
             Inv = new Inventory();
            
@@ -198,8 +214,8 @@ public class RMIServer {
             db.insertSpecialization(spe1);
             db.insertSpecialization(spe2);
             
-            pay1= new Payment("Visa");
-            pay2= new Payment("Cash");
+            pay1= new Payment("Visa",2300);
+            pay2= new Payment("Cash",12);
             
             db.insertPayment(pay1);
             db.insertPayment(pay2);
@@ -266,6 +282,7 @@ public class RMIServer {
             db.insertPharmacist(pharma1);
             db.insertPharmacist(pharma2);
 
+<<<<<<< HEAD
 //            Doctor d = new Doctor();
 //            d.viewDoctor("Dr.Michael Samy");
 //             
@@ -277,6 +294,18 @@ public class RMIServer {
 //            ac.updateAccount("Marina", "12345marina" );
 //            ac.createAccount("Samia", "samia17");
 //            ac.deleteAccount("Hossam");
+=======
+            //Doctor d = new Doctor();
+            //d.viewDoctor("Dr.Michael Samy");
+             
+            
+            //Appointment a = new Appointment();
+            //a.CancelAppointment("1/2/2019 Monday at 9 am");
+            
+            
+            
+            
+>>>>>>> f38e1718591ebc9fb036ab53640520ac1c7198fb
     //        MedicineInterface medicineinterface = new Medicine();
             Doctor d = new Doctor();
 //            d.editProfile("Dr.Michael Samy","Gamed", "07775000", "gamed@bue.com");
