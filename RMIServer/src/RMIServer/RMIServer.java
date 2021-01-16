@@ -223,9 +223,9 @@ public class RMIServer {
             
 
         
-            OperationRoom rooom = new OperationRoom();
-            rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
-            System.out.println("room reuqsted");
+   //         OperationRoom rooom = new OperationRoom();
+    //        rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
+   //         System.out.println("room reuqsted");
             
             spe1 = new Specialization("Dermatologists");
             spe2 = new Specialization("Ophthalmologists");

@@ -6,23 +6,24 @@
 package Testing;
 
 import RMIServer.OperationRoom;
+import java.rmi.RemoteException;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
  *
- * 
+ *
  */
-public class JUnitTesting {
+public class JUnitTesting  {
 
-//    @Test
-//    public void testAdd() {
-//        Calculator c = new Calculator();
-//        int result = c.add(5, 6);
-//        assertEquals(11, result);
-//    }
-//
+    @Test
+    public void testRequestOperationRoom() throws RemoteException{
+        OperationRoom o = new OperationRoom();
+        String result = o.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
+        assertEquals("Room is requested successfully", result);
+    }
+
 //
 //    @Test
 //    public void testSub() {
