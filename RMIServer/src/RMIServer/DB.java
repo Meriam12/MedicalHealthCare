@@ -9,6 +9,8 @@ import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bson.Document;
@@ -175,6 +177,36 @@ public class DB {
     {
         collection15.insertOne(Document.parse(gson.toJson(s)));
         System.out.println("Specialization is inserted.");
+    }
+      
+      //        public Student getStudentByMail(String email) {
+//        Document doc = collection.find(Filters.eq("email", email)).first();
+//        Student result = gson.fromJson(doc.toJson(), Student.class);
+//        return result;
+//    }
+        public void RequestOperationRoom(int id, char type,String DrName)throws RemoteException{
+                OperationRoom r = new OperationRoom(id,type);
+                                  System.out.println("debug1");
+
+                 // Doctor theDoctor = Doctor.getDrByName(DrName);
+                    Document doc = collection1.find(Filters.eq("name", DrName)).first();
+                                                      System.out.println(doc);
+
+                    Doctor theDoctor = gson.fromJson(doc.toJson(), Doctor.class);
+                                                      System.out.println("debug3");
+
+                                    
+                theDoctor.addOPR(r);
+                                  System.out.println("debug4");
+
+                            
+                  Document UpdatedDoc =Document.parse(gson.toJson(theDoctor));
+                  System.out.println("debug5");
+
+                collection1.replaceOne(Filters.eq("name", DrName), UpdatedDoc);
+                                   System.out.println("debug6");
+             
+
     }
        public void close() 
     {
