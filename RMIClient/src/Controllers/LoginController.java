@@ -26,6 +26,16 @@ public class LoginController {
     Login login;
     Registry r;
     
+    public LoginController ()
+    {
+        
+            Login guia = new Login();
+            guia.setLocationRelativeTo(null); // This makes the window appears centered
+            guia.setVisible(true); // This shows the gui
+            LoginController gui_controller1 = new LoginController(guia, r);
+    
+    }
+    
     public LoginController(Login login, Registry r)
     {
         this.login = login;
