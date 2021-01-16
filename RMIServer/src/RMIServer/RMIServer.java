@@ -300,10 +300,10 @@ public class RMIServer {
             db.insertPharmacist(pharma2);
 
             
-//           Patient sub_1 = new Patient("Mark", "mark@google.com");
-//           Doctor sub_2 = new Doctor("Dr.Mina", "Dr.Mina@yahoo.com");
-//           Nurse sub_3 = new Nurse("Medhat","Me@yahoo.com");
-//           Pharmacist sub_4 = new Pharmacist("Meriam","Meriam12@gmail.com");
+//           Patient sub_1 = new Patient("Hossam Amr", "Hossam23@yahoo.com");
+//           Doctor sub_2 = new Doctor("Dr.Farida Magdy", "Dr.Farida12@yahoo.com");
+//           Nurse sub_3 = new Nurse("Marina Hany","MarinaH12@gmail.com");
+//           Pharmacist sub_4 = new Pharmacist("Mina Fady","Dalia109@outlook.com");
 //           
 //           ad.addObserver(sub_1);
 //           ad.addObserver(sub_2);
