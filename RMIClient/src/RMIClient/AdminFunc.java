@@ -6,6 +6,10 @@
 package RMIClient;
 
 import Controllers.CreateAccountController;
+import Controllers.DeleteAccountController;
+import Controllers.NotifyAllController;
+import Controllers.UpdateAccountController;
+import java.rmi.registry.Registry;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -19,6 +23,8 @@ public class AdminFunc extends javax.swing.JFrame {
     /**
      * Creates new form AdminFunc
      */
+    Registry r;
+    CreateAccount ac;
     public AdminFunc() {
         initComponents();
     }
@@ -142,30 +148,32 @@ public class AdminFunc extends javax.swing.JFrame {
 
     private void NotifyAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotifyAllButtonActionPerformed
         // TODO add your handling code here:
-//        CreateAccount s = new CreateAccount();
-//        s.setVisible(true);
-//        this.dispose();
+         NotifyAllController mm = new NotifyAllController();
+            this.dispose();
     }//GEN-LAST:event_NotifyAllButtonActionPerformed
 
     private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountButtonActionPerformed
         // TODO add your handling code here:
-        DeleteAccount s = new DeleteAccount();
-        s.setVisible(true);
-        this.dispose();
+        DeleteAccountController cc = new DeleteAccountController();
+            this.dispose();
     }//GEN-LAST:event_DeleteAccountButtonActionPerformed
 
     private void UpdateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateAccountButtonActionPerformed
         // TODO add your handling code here:
-        UpdateAccount m = new UpdateAccount();
-        m.setVisible(true);
-        this.dispose();
+//        UpdateAccount m = new UpdateAccount();
+//        m.setVisible(true);
+//        this.dispose();
+         UpdateAccountController bb = new UpdateAccountController();
+            this.dispose();
     }//GEN-LAST:event_UpdateAccountButtonActionPerformed
 
     private void CreateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountButtonActionPerformed
         // TODO add your handling code here:
-        CreateAccount f = new CreateAccount();
-        f.setVisible(true);
-        this.dispose();
+//        CreateAccount f = new CreateAccount();
+//        f.setVisible(true);
+//        this.dispose();
+            CreateAccountController a = new CreateAccountController();
+            this.dispose();
     }//GEN-LAST:event_CreateAccountButtonActionPerformed
 
     /**

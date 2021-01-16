@@ -22,13 +22,13 @@ public class CreateAccountController {
     CreateAccount gui;
     Registry r;
     
-//   public CreateAccountController()
-//   {
-//        CreateAccount guia = new CreateAccount();
-//            guia.setLocationRelativeTo(null); // This makes the window appears centered
-//            guia.setVisible(false); // This shows the gui
-//            CreateAccountController gui_controller1 = new CreateAccountController(guia, r);
-//   }
+   public CreateAccountController()
+   {
+        CreateAccount guia = new CreateAccount();
+            guia.setLocationRelativeTo(null); // This makes the window appears centered
+            guia.setVisible(true); // This shows the gui
+            CreateAccountController gui_controller1 = new CreateAccountController(guia, r);
+   }
      public CreateAccountController(CreateAccount gui, Registry r)
     {
         this.gui = gui;
