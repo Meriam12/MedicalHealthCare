@@ -336,17 +336,31 @@ public class RMIServer {
    //         d.viewDoctor("Dr.Michael Samy");
             
    
-   
-            Account a= new Account();
-            a.login("Hossam", "1234");
-            System.out.println("ana henanaanan");
-   MedicalProfile medp = new MedicalProfile();
-   medp.reviewMedicalProfile(p1.getName());
-   
-             MedicalProfile MedicalProfile = new MedicalProfile();
-              MedicalProfile.uploadMedicalHistory("hi", "no", "Amira Mostafa");
+//   
+//            Account a= new Account();
+//            a.login("Hossam", "1234");
+//            System.out.println("ana henanaanan");
+//   MedicalProfile medp = new MedicalProfile();
+//   medp.reviewMedicalProfile(p1.getName());
 
 
+
+
+
+
+   
+      //       MedicalProfile MedicalProfile = new MedicalProfile();
+     //         MedicalProfile.uploadMedicalHistory("hi", "no", "Amira Mostafa");
+     
+     
+     
+     
+     
+
+//     Medicine meddd =  new Medicine();
+//     meddd.editMedicine("fucicort", "c", "1/1/2031", 50, 20);
+//    System.out.println("fucicort changed");
+    
 //            Doctor d = new Doctor();
 //            d.viewDoctor("Dr.Michael Samy");
 //            

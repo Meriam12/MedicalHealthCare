@@ -40,7 +40,7 @@ public class RMIClient {
 
                         
                     // We create an object from the GUI window
-            PostMedicine gui = new PostMedicine();
+            PostMedicineGUI gui = new PostMedicineGUI();
             gui.setLocationRelativeTo(null); // This makes the window appears centered
             gui.setVisible(false); // This shows the gui
             PostMedicineController gui_controller = new PostMedicineController(gui, registry);

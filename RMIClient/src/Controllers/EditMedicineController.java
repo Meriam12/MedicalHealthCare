@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controllers;
 
 import java.awt.event.ActionEvent;
@@ -19,13 +14,13 @@ import RMIClient.PostMedicineGUI;
  *
  * @author Mariam
  */
-public class PostMedicineController {
+public class EditMedicineController {
         // We have reference to both the GUI and the rmi registry
     PostMedicineGUI gui;
     Registry r;
     
     // The constructor takes the gui and the rmi registry as paramaters
-    public PostMedicineController(PostMedicineGUI gui, Registry r)
+    public EditMedicineController(PostMedicineGUI gui, Registry r)
     {
         this.gui = gui;
         this.r = r;
@@ -75,7 +70,7 @@ public class PostMedicineController {
                
                 
 
-              p.postMedicine(name,type,expiredDate,amount,price);
+              p.editMedicine(name,type,expiredDate,amount,price);
 
                 
                 // Once we got the result from our remote object, we can set it to
@@ -83,7 +78,7 @@ public class PostMedicineController {
                 
 
 
-               gui.getjLabel7().setText("Medicine posted");
+               gui.getjLabel7().setText("Medicine edited");
 
                
             } catch (RemoteException ex) {
