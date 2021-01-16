@@ -160,10 +160,10 @@ public class RMIServer {
             db.insertAccount(acc7);
             db.insertAccount(acc8);
             db.insertAccount(acc9);
-            
-            ad = Admin.getInstance();
+           
+           ad = Admin.getInstance();
             ad.addAccount(acc9);
-            db.insertAdmin(ad);
+            ad.insertAdmin(ad);
 
             n1 = new Nurse("Dr.Farida Magdy","Marina Hany","0158908089","23/12/1990","MarinaH12@gmail.com");
             n2= new Nurse("Dr.Michael Samy","Farid Essam","0121909889","1/12/1993","FaridEss@gmail.com");
@@ -300,6 +300,7 @@ public class RMIServer {
             db.insertPharmacist(pharma2);
 
             
+
    //         Doctor d = new Doctor();
    //         d.viewDoctor("Dr.Michael Samy");
             
@@ -307,6 +308,13 @@ public class RMIServer {
 //            a.login("Hossam", "1234");
 
 
+
+
+//            Doctor d = new Doctor();
+//            d.viewDoctor("Dr.Michael Samy");
+//            
+//            Account a= new Account();
+//            a.login("Hossam", "1234");
 
 //             
 //            

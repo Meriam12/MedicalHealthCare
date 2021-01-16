@@ -107,11 +107,11 @@ public class DB {
         System.out.println("Nurse is inserted.");
     } 
     
-    public void insertAdmin(Admin a) 
-    {
-        collection4.insertOne(Document.parse(gson.toJson(a)));
-        System.out.println("Admin is inserted.");
-    } 
+//    public void insertAdmin(Admin a) 
+//    {
+//        collection4.insertOne(Document.parse(gson.toJson(a)));
+//        System.out.println("Admin is inserted.");
+//    } 
     
     
     public void insertAccount(Account a) 
