@@ -84,10 +84,7 @@ public class RMIClient {
 //            gui_op.setVisible(false); // This shows the gui
 //            RequestOperationRoomController gui_controller_op = new RequestOperationRoomController(gui_op, registry);
 //                        System.out.println("here");
-<<<<<<< HEAD
 
-=======
->>>>>>> 7ceca6aa1de7d4b3a16a8887931ae5f8e6978127
 
 
             
@@ -125,10 +122,7 @@ public class RMIClient {
             ReviewMedicalProfile.setVisible(true); // This shows the gui
             ReviewMedicalProfileController ReviewMedicalProfile_cont = new ReviewMedicalProfileController(ReviewMedicalProfile, registry);
           
-<<<<<<< HEAD
 
-=======
->>>>>>> 7ceca6aa1de7d4b3a16a8887931ae5f8e6978127
 //
 //
 //            EditMedicineGUI EditMedgui = new EditMedicineGUI();
@@ -156,10 +150,7 @@ public class RMIClient {
             login2.setLocationRelativeTo(null); 
             login2.setVisible(true); // This shows the gui
             LoginController Accountinf = new LoginController(login2, registry);
-<<<<<<< HEAD
 
-=======
->>>>>>> 7ceca6aa1de7d4b3a16a8887931ae5f8e6978127
             
             
 //  MedicineFacadeInterface f = (MedicineFacadeInterface) registry.lookup("fac");
