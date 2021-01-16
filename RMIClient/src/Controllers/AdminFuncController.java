@@ -7,6 +7,8 @@ package Controllers;
 
 import RMIClient.AdminFunc;
 import RMIClient.CreateAccount;
+import RMIClient.UpdateAccount;
+import RMIClient.DeleteAccount;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.registry.Registry;
