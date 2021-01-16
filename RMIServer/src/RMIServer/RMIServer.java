@@ -210,9 +210,7 @@ public class RMIServer {
             or1 = new OperationRoom(1,'A',doc1);
             or2= new OperationRoom(1,'C',doc2);
 
-              or1 = new OperationRoom(1,'A',doc1);
-            or2= new OperationRoom(2,'C',doc2);
-
+         
             
             db.insertOperationRoom(or1);
             db.insertOperationRoom(or2);
@@ -225,10 +223,10 @@ public class RMIServer {
             db.insertDoctor(doc6);
             
 
-        
-            OperationRoom rooom = new OperationRoom();
-            rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
-            System.out.println("room reuqsted");
+//        
+//            OperationRoom rooom = new OperationRoom();
+//            rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
+//            System.out.println("room reuqsted");
             
             spe1 = new Specialization("Dermatologists");
             spe2 = new Specialization("Ophthalmologists");
@@ -340,8 +338,8 @@ public class RMIServer {
 
 //             
 //            
-//            Appointment a = new Appointment();
-//            a.CancelAppointment("1/2/2019 Monday at 9 am");
+            Appointment app = new Appointment();
+            app.CancelAppointment("20/1/2021 Saturday at 11 am");
 //            
 //            Account ac = new Account();
 //            ac.updateAccount("Marina", "12345marina" );
