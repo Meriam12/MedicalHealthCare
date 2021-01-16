@@ -12,23 +12,21 @@ import java.rmi.registry.Registry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.AdminInterface;
-import RMIClient.CreateAccount;
-
+import RMIClient.UpdateAccount;
 /**
  *
- * @author Toumie
+ * @author DELL
  */
-public class CreateAccountController {
-    CreateAccount gui;
-    Registry r;
-    
-   
-     public CreateAccountController(CreateAccount gui, Registry r)
+public class UpdateAccountController {
+     UpdateAccount gui;
+     Registry r;
+     
+     public UpdateAccountController(UpdateAccount gui, Registry r)
     {
         this.gui = gui;
         this.r = r;
         // This registers the button with our action listener below (the inner class)
-        gui.getCreateButton().addActionListener(new AccountClass() );
+        gui.getUpdateButton().addActionListener(new AccountClass() );
     }
         
       class AccountClass implements ActionListener {
@@ -48,10 +46,10 @@ public class CreateAccountController {
 
                 String password = gui.getPasswordField().getText();
 
-                String accountType = gui.getAccountType().getText();
+             
 
 
-              a.createAccount(username,password,accountType);
+              a.updateAccount(username,password);
 
                 
                 // Once we got the result from our remote object, we can set it to
@@ -59,7 +57,7 @@ public class CreateAccountController {
                 
 
 
-               gui.getAccountAddedMessage().setText("Account added successfully.");
+               gui.getUpdateMessage().setText("Password updated successfully.");
 
                
             } catch (RemoteException ex) {
@@ -70,5 +68,7 @@ public class CreateAccountController {
         }
         
       }
-    
+     
+     
+     
 }

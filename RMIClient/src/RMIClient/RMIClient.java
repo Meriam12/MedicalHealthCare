@@ -12,6 +12,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import RMI.MedicineFacadeInterface;
 import Controllers.PostMedicineController;
+import Controllers.UpdateAccountController;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -42,21 +43,21 @@ public class RMIClient {
 
             
             PostMedicineController gui_controller = new PostMedicineController(gui, registry);
-
-          DeleteAccount guib = new DeleteAccount();
-            guib.setLocationRelativeTo(null); // This makes the window appears centered
-            guib.setVisible(true); // This shows the gui
-            DeleteAccountController gui_controller1 = new DeleteAccountController(guib, registry);
-
-//         // We create an object from the GUI window
-//            CreateAccount guia = new CreateAccount();
-//            guia.setLocationRelativeTo(null); // This makes the window appears centered
-//            guia.setVisible(true); // This shows the gui
-//        
 //
-//        
-//            
-//            CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
+//            UpdateAccount guix = new UpdateAccount();
+//            guix.setLocationRelativeTo(null); // This makes the window appears centered
+//            guix.setVisible(true); // This shows the gui
+//            UpdateAccountController gui_controller1 = new UpdateAccountController(guix, registry);
+//          DeleteAccount guib = new DeleteAccount();
+//            guib.setLocationRelativeTo(null); // This makes the window appears centered
+//            guib.setVisible(true); // This shows the gui
+//            DeleteAccountController gui_controller1 = new DeleteAccountController(guib, registry);
+
+         // We create an object from the GUI window
+            CreateAccount guia = new CreateAccount();
+            guia.setLocationRelativeTo(null); // This makes the window appears centered
+            guia.setVisible(true); // This shows the gui
+            CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
 
           
 

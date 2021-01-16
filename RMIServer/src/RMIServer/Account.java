@@ -90,9 +90,9 @@ public class Account extends UnicastRemoteObject implements AdminInterface{
     }
      
      @Override
-    public void createAccount(String username, String pass) throws RemoteException
+    public void createAccount(String username, String pass, String accountType) throws RemoteException
     {
-     Account newAccountObject = new Account(username, pass);
+     Account newAccountObject = new Account(username, pass, accountType);
         db.collection5.insertOne(Document.parse(db.gson.toJson(newAccountObject)));
         System.out.println("The Account has been created.");
       
