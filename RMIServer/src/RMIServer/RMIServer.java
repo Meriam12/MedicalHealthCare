@@ -55,6 +55,9 @@ public class RMIServer {
        static  Doctor doc1;
        static  Doctor doc2;     
        static Doctor doc3;
+       static  Doctor doc4;
+       static  Doctor doc5;     
+       static Doctor doc6;
        static  MedicalProfile prof1;
        static  MedicalProfile prof2;
        static  Payment pay1;
@@ -160,10 +163,10 @@ public class RMIServer {
             db.insertAccount(acc7);
             db.insertAccount(acc8);
             db.insertAccount(acc9);
-            
-            ad = Admin.getInstance();
+           
+           ad = Admin.getInstance();
             ad.addAccount(acc9);
-            db.insertAdmin(ad);
+            ad.insertAdmin(ad);
 
             n1 = new Nurse("Dr.Farida Magdy","Marina Hany","0158908089","23/12/1990","MarinaH12@gmail.com");
             n2= new Nurse("Dr.Michael Samy","Farid Essam","0121909889","1/12/1993","FaridEss@gmail.com");
@@ -187,29 +190,45 @@ public class RMIServer {
             doc1= new Doctor(5,"Profssor","Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
             doc2= new Doctor(5,"Doctor","Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
             doc3= new Doctor(5,"Doctor","Dr.Samir Ahmed","01236463738","22/4/1980","Dr.samir@yahoo.com");
+            doc4= new Doctor(5,"Doctor","Dr. Ahmed Osama","01236463738","22/4/1980","Dr.AhOsama@yahoo.com",100);
+            doc5= new Doctor(5,"Doctor","Dr. Ahmed Mostafa","01236463738","22/4/1980","Dr.AHMED@yahoo.com",200);
+            doc6= new Doctor(5,"Doctor","Dr.Mina Tamer","01236463738","22/4/1980","Dr.Mina@yahoo.com",300);
+            
+
 
             doc1.addNurses(n1);
-            doc1.addOPR(or1);
             doc1.adddTimeslots("Sunday from 9 AM to 11 AM");
             doc1.adddTimeslots("Tusday from 1 PM to 3 PM");
             doc1.addAccount(acc5);
             
             doc2.addNurses(n2);
-            doc2.addOPR(or2);
             doc2.addAccount(acc6);
             doc2.adddTimeslots("Saturday from 10 AM to 12 PM");
             doc2.adddTimeslots("Monday from 8 AM to 10 AM");
             
-            db.insertDoctor(doc1);
-            db.insertDoctor(doc2);
-            db.insertDoctor(doc3);
-            
+
             or1 = new OperationRoom(1,'A',doc1);
             or2= new OperationRoom(1,'C',doc2);
+
+              or1 = new OperationRoom(1,'A',doc1);
+            or2= new OperationRoom(2,'C',doc2);
+
             
             db.insertOperationRoom(or1);
             db.insertOperationRoom(or2);
-          
+            
+            db.insertDoctor(doc1);
+            db.insertDoctor(doc2);
+            db.insertDoctor(doc3);
+            db.insertDoctor(doc4);
+            db.insertDoctor(doc5);
+            db.insertDoctor(doc6);
+            
+
+        
+            OperationRoom rooom = new OperationRoom();
+            rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
+            System.out.println("room reuqsted");
             
             spe1 = new Specialization("Dermatologists");
             spe2 = new Specialization("Ophthalmologists");
@@ -289,11 +308,36 @@ public class RMIServer {
             db.insertPharmacist(pharma2);
 
             
-            Doctor d = new Doctor();
-            d.viewDoctor("Dr.Michael Samy");
+//           Patient sub_1 = new Patient("Hossam Amr", "Hossam23@yahoo.com");
+//           Doctor sub_2 = new Doctor("Dr.Farida Magdy", "Dr.Farida12@yahoo.com");
+//           Nurse sub_3 = new Nurse("Marina Hany","MarinaH12@gmail.com");
+//           Pharmacist sub_4 = new Pharmacist("Mina Fady","Dalia109@outlook.com");
+//           
+//           ad.addObserver(sub_1);
+//           ad.addObserver(sub_2);
+//           ad.addObserver(sub_3);
+//           ad.addObserver(sub_4);
+//           
+//           ad.SendNotification("Happy feast wish you all best feast.");
+
+
+   //         Doctor d = new Doctor();
+   //         d.viewDoctor("Dr.Michael Samy");
             
+   
+   
             Account a= new Account();
             a.login("Hossam", "1234");
+
+
+
+
+//            Doctor d = new Doctor();
+//            d.viewDoctor("Dr.Michael Samy");
+//            
+//            Account a= new Account();
+//            a.login("Hossam", "1234");
+
 //             
 //            
 //            Appointment a = new Appointment();

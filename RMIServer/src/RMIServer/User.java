@@ -23,6 +23,11 @@ public class User {
         this.name = name;
     }
 
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+  
     public User(String name, String phonenumber, String email) {
         this.name = name;
         this.phonenumber = phonenumber;

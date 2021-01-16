@@ -21,7 +21,6 @@ public class Doctor extends User implements UserObserver{
     private ArrayList<Nurse> nurse = new ArrayList();
     private ArrayList<String> timeSlots = new ArrayList();
     private Account account;
-    private ArrayList<OperationRoom> operationRooms = new ArrayList();
     private DoctorAppointmentFunctionalities doctorAppointmentFunctionalities;
     private DoctorMedicalFunctionalities doctorMedicalFunctionalities;
     private int price;
@@ -42,6 +41,10 @@ public class Doctor extends User implements UserObserver{
         this.account = account;
         this.doctorAppointmentFunctionalities = doctorAppointmentFunctionalities;
         this.doctorMedicalFunctionalities = doctorMedicalFunctionalities;
+    }
+
+    public Doctor(String name, String email) {
+        super(name, email);
     }
 
   
@@ -118,13 +121,7 @@ public class Doctor extends User implements UserObserver{
         this.account = account;
     }
 
-    public ArrayList<OperationRoom> getOperationRooms() {
-        return operationRooms;
-    }
 
-    public void setOperationRooms(ArrayList<OperationRoom> operationRooms) {
-        this.operationRooms = operationRooms;
-    }
     
     public void makeRating(int rating, String name){
                 Doctor newDocObject = new Doctor(rating, name);
@@ -172,10 +169,7 @@ public class Doctor extends User implements UserObserver{
         nurse.add(n);
     }
         
-     public void addOPR(OperationRoom o) 
-    {
-        operationRooms.add(o);
-    }
+
        
       public void adddTimeslots(String timeslots)
     {

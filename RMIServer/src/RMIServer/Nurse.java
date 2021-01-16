@@ -23,6 +23,10 @@ public class Nurse extends User implements UserObserver{
         this.AssignedDoctor = AssignedDoctor;
     }
 
+    public Nurse(String name, String email) {
+        super(name, email);
+    }
+
    
 
     

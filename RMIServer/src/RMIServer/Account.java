@@ -25,8 +25,8 @@ public class Account extends UnicastRemoteObject implements AdminInterface{
      
     public Account() throws RemoteException {
         db= new DB();
-          db.mongoClient = new MongoClient();
-     db.database = db.mongoClient.getDatabase("MedicalHealthCare"); 
+        db.mongoClient = new MongoClient();
+        db.database = db.mongoClient.getDatabase("MedicalHealthCare"); 
     }
 
     public Account(String username, String password) throws RemoteException{
@@ -70,22 +70,23 @@ public class Account extends UnicastRemoteObject implements AdminInterface{
     
     
     
-    void login (String username, String Password) throws RemoteException
+   public void login (String username, String Password) throws RemoteException
     {
-//        DB query = new BasicDBObject("_id", "jo");
-//        DBCursor cursor = collection.find(query);
-           Document doc = (Document)db.collection5.find(Filters.exists(username, true));
-           String s= doc.get(doc, password);
-           if(s== password)
+
+        
+           Document userDoc = db.collection5.find(Filters.eq("username", username)).first();
+           Account result = db.gson.fromJson(userDoc.toJson(), Account.class);
+              
+           if(result.username.equals(username) && result.password.equals(Password) )
            {
-              System.out.println("You have entered.");
+              System.out.println("You have login successfully.");
            }
            else 
            {
-              System.out.println("No you havn't.");
+              System.out.println("No you haven't.");
            
            }
-           
+
     }
      
      @Override

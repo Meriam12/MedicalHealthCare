@@ -83,27 +83,38 @@ public class OperationRoom  extends UnicastRemoteObject {
 
 
     
-    public void RequestOperationRoom(int id, char type,String DrName)throws RemoteException{
-                OperationRoom r = new OperationRoom(id,type);
-                                  System.out.println("debug1");
+    public void RequestOperationRoom(int id, char type,String DRmail)throws RemoteException{
+               
+        Document ORdoc = db.collection10.find(Filters.eq("ID", id)).first();
+                //System.out.println(ORdoc);
+        OperationRoom result =    db.gson.fromJson(ORdoc.toJson(), OperationRoom.class);
+               // System.out.println(result);
+               
+         Document doc = db.collection1.find(Filters.eq("email", DRmail)).first();
+               // System.out.println(doc);
+        Doctor DRresult =    db.gson.fromJson(doc.toJson(), Doctor.class);
+               // System.out.println(DRresult);
+               
+               
+               
+         result.ReservedDoctor =  DRresult;
+         
+         Document UpdatedRoom =Document.parse(db.gson.toJson(result));
+         
+          db.collection10.replaceOne(Filters.eq("ID", id), UpdatedRoom);
+                
+             //       Document doc = db.collection1.find(Filters.eq("name", DrName)).first();
+           //                                           System.out.println(doc);
 
-                 // Doctor theDoctor = Doctor.getDrByName(DrName);
-                    Document doc = db.collection1.find(Filters.eq("name", DrName)).first();
-                                                      System.out.println(doc);
-
-                    Doctor theDoctor = db.gson.fromJson(doc.toJson(), Doctor.class);
-                                                      System.out.println("debug3");
-
-                                    
-                theDoctor.addOPR(r);
-                                  System.out.println("debug4");
-
+                //    Doctor theDoctor = db.gson.fromJson(doc.toJson(), Doctor.class);
+                   //                                   System.out.println(theDoctor);
+  
                             
-                  Document UpdatedDoc =Document.parse(db.gson.toJson(theDoctor));
-                  System.out.println("debug5");
-
-                 db.collection1.replaceOne(Filters.eq("name", DrName), UpdatedDoc);
-                                   System.out.println("debug6");
+//                  Document UpdatedDoc =Document.parse(db.gson.toJson(theDoctor));
+//                  System.out.println("debug5");
+//
+//                 db.collection1.replaceOne(Filters.eq("name", DrName), UpdatedDoc);
+//                                   System.out.println("debug6");
 
                        
 

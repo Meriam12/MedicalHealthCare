@@ -9,6 +9,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.model.Filters;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.bson.Document;
 
 /**
@@ -20,12 +22,20 @@ public class Appointment implements DoctorAppointmentFunctionalities{
     private String timeslot;
     private Payment payment;
     
-    DB db = new DB();
+    DB db;
    
 
     public Appointment() {
-           db.mongoClient = new MongoClient();
-        db.database = db.mongoClient.getDatabase("MedicalHealthCare");
+           Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+mongoLogger.setLevel(Level.SEVERE);
+
+
+
+// Initialize
+db = new DB();
+db.mongoClient = new MongoClient();
+db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
+// db.collection9 = db.database.getCollection("Medicine"); // Collection name
     }
 
     public Appointment(String timeslot, Payment payment) {
