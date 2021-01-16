@@ -12,6 +12,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import RMI.MedicineFacadeInterface;
 import Controllers.PostMedicineController;
+import Controllers.RequestOperationRoomController;
 import Controllers.UpdateAccountController;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -30,18 +31,18 @@ public class RMIClient {
         // TODO code application logic here
         try {
             
-            
-                    // We create an object from the GUI window
-            PostMedicine gui = new PostMedicine();
-            gui.setLocationRelativeTo(null); // This makes the window appears centered
-            gui.setVisible(false); // This shows the gui
+
         
 
         
             // Connecting to the RMI Registry created on the server
             Registry registry = LocateRegistry.getRegistry(1099);
 
-            
+                        
+                    // We create an object from the GUI window
+            PostMedicine gui = new PostMedicine();
+            gui.setLocationRelativeTo(null); // This makes the window appears centered
+            gui.setVisible(false); // This shows the gui
             PostMedicineController gui_controller = new PostMedicineController(gui, registry);
 //
 //            UpdateAccount guix = new UpdateAccount();
@@ -56,8 +57,15 @@ public class RMIClient {
          // We create an object from the GUI window
             CreateAccount guia = new CreateAccount();
             guia.setLocationRelativeTo(null); // This makes the window appears centered
-            guia.setVisible(true); // This shows the gui
+            guia.setVisible(false); // This shows the gui
             CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
+            
+            
+            RequestOperationRoomGUI gui_op = new RequestOperationRoomGUI();
+            gui_op.setLocationRelativeTo(null); // This makes the window appears centered
+            gui_op.setVisible(true); // This shows the gui
+            RequestOperationRoomController gui_controller_op = new RequestOperationRoomController(gui_op, registry);
+            
 
           
 
