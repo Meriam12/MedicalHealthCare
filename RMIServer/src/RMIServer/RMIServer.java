@@ -226,17 +226,16 @@ public class RMIServer {
             db.insertDoctor(doc6);
             
 
-<<<<<<< HEAD
+
 //        
 //            OperationRoom rooom = new OperationRoom();
 //            rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
 //            System.out.println("room reuqsted");
-=======
         
    //         OperationRoom rooom = new OperationRoom();
     //        rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
    //         System.out.println("room reuqsted");
->>>>>>> 760f80f1f77a75672ab17e442fb4a1947b6cdf6c
+
             
             spe1 = new Specialization("Dermatologists");
             spe2 = new Specialization("Ophthalmologists");
@@ -349,7 +348,7 @@ public class RMIServer {
 //             
 //            
             Appointment app = new Appointment();
-            app.CancelAppointment("20/1/2021 Saturday at 11 am");
+            app.CancelAppointment("20/1/2021 Saturday at 11 am","Hossam Amr");
 //            
 //            Account ac = new Account();
 //            ac.updateAccount("Marina", "12345marina" );

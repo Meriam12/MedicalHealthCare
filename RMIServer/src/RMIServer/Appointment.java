@@ -64,13 +64,28 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
         sendAppointmentConfirmationNotification(message);
     }
     
-    public void CancelAppointment(String timeslot) throws RemoteException
+    public void CancelAppointment(String timeslot,String PatientName) throws RemoteException
     {
-       Document doc = db.collection2.find(Filters.eq("commingAppointment", timeslot)).first();
-       Appointment result = db.gson.fromJson(doc.toJson(), Appointment.class);
-       result.timeslot.replaceAll("timeslot", "12/2/2021 tusday at 1 pm");
-       db.collection6.deleteOne(Filters.eq("timeslot", timeslot));
-       System.out.println("Your appointment has been canceled.");
+          Document doc = db.collection2.find(Filters.eq("name", PatientName)).first();
+         Patient result = db.gson.fromJson(doc.toJson(), Patient.class);
+        for (int i=0; i<result.getComingAppointments().size();i++)
+        {
+            if (timeslot.equals(result.getComingAppointments().get(i)))
+            {
+                 
+              result.getComingAppointments().remove(i);
+            }
+           
+           db.insertPatient(result);
+        }
+         
+          
+         System.out.println("Deleted");
+//       Document doc = db.collection2.find(Filters.eq("commingAppointment", timeslot)).first();
+//       Patient result = db.gson.fromJson(doc.toJson(), Patient.class);
+//       
+//       db.collection6.deleteOne(Filters.eq("timeslot", timeslot));
+//       System.out.println("Your appointment has been canceled.");
        // System.out.println(payment.refund());
     }
     
