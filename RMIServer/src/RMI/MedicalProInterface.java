@@ -17,8 +17,11 @@ import java.util.ArrayList;
  * @author noura
  */
 public interface MedicalProInterface extends Remote{
+    
     public void reviewMedicalProfile() throws RemoteException;
+    
     public void uploadMedicalHistory(String chronicDisease,String medicine) throws RemoteException;
+    
      public void editMedicalProfile( ArrayList<String> drFollowup, ArrayList<String> chronicDisease, ArrayList<Medicine> medicines , 
             String bloodType, ArrayList<Appointment> pastAppointments, ArrayList<Prescription> prescriptions) throws RemoteException;
 }
