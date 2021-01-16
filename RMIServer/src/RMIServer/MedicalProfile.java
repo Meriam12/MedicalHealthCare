@@ -110,10 +110,23 @@ db.database = db.mongoClient.getDatabase("MedicalHealthCare"); // Database name
     public void setPrescriptions(Prescription prescriptions) {
         this.prescriptions = prescriptions;
     }
+    
+//           Document ORdoc = db.collection10.find(Filters.eq("ID", id)).first();
+//        OperationRoom result =    db.gson.fromJson(ORdoc.toJson(), OperationRoom.class);            
+//         Document doc = db.collection1.find(Filters.eq("email", DRmail)).first();
+//        Doctor DRresult =    db.gson.fromJson(doc.toJson(), Doctor.class);           
+//         result.ReservedDoctor =  DRresult;       
+//         Document UpdatedRoom =Document.parse(db.gson.toJson(result));       
+//          db.collection10.replaceOne(Filters.eq("ID", id), UpdatedRoom);        
+//          return "Room is requested successfully";
 
     @Override
     public void uploadMedicalHistory(String chronicDisease,String medicine, String patientName) throws RemoteException{
-        
+              Document PatientDoc = db.collection2.find(Filters.eq("name", patientName)).first();
+              System.out.println(PatientDoc);
+           //   Patient result =    db.gson.fromJson(PatientDoc.toJson(), Patient.class);    
+           //   System.out.println(result);
+              
     }
 
     @Override
