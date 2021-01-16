@@ -87,7 +87,7 @@ public class MedicalProfile implements DoctorMedicalFunctionalities{
         this.prescriptions = prescriptions;
     }
 
-    public void uploadMedicalHistory(ArrayList<String> chronicDisease,ArrayList<Medicine> medicines){
+    public void uploadMedicalHistory(String chronicDisease,String medicine){
         
     }
 
