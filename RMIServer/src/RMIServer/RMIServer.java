@@ -200,7 +200,7 @@ public class RMIServer {
             db.insertPrescription(pres1);
             db.insertPrescription(pres2);
             
-            doc1= new Doctor(5,"Profssor","Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
+            doc1= new Doctor(5,"Profssor","Sunday from 9 AM",0,"Dr.Farida Magdy","01228473738","12/9/1980","Dr.Farida12@yahoo.com");
             doc2= new Doctor(5,"Doctor","Dr.Michael Samy","01236463738","22/4/1980","Dr.Michael_Samy@yahoo.com");
             doc3= new Doctor(5,"Doctor","Dr.Samir Ahmed","01236463738","22/4/1980","Dr.samir@yahoo.com");
             doc4= new Doctor(5,"Doctor","Dr. Ahmed Osama","01236463738","22/4/1980","Dr.AhOsama@yahoo.com",100);
@@ -210,14 +210,14 @@ public class RMIServer {
 
 
             doc1.addNurses(n1);
-            doc1.adddTimeslots("Sunday from 9 AM to 11 AM");
-            doc1.adddTimeslots("Tusday from 1 PM to 3 PM");
+//            doc1.adddTimeslots("Sunday from 9 AM ");
+//            doc1.adddTimeslots("Tusday from 1 PM ");
             doc1.addAccount(acc5);
             
             doc2.addNurses(n2);
             doc2.addAccount(acc6);
-            doc2.adddTimeslots("Saturday from 10 AM to 12 PM");
-            doc2.adddTimeslots("Monday from 8 AM to 10 AM");
+//            doc2.adddTimeslots("Saturday from 10 AM to 12 PM");
+//            doc2.adddTimeslots("Monday from 8 AM to 10 AM");
             
 
             or1 = new OperationRoom(1,'A',doc1);

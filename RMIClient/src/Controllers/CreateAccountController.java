@@ -22,7 +22,13 @@ public class CreateAccountController {
     CreateAccount gui;
     Registry r;
     
-   
+//   public CreateAccountController()
+//   {
+//        CreateAccount guia = new CreateAccount();
+//            guia.setLocationRelativeTo(null); // This makes the window appears centered
+//            guia.setVisible(false); // This shows the gui
+//            CreateAccountController gui_controller1 = new CreateAccountController(guia, r);
+//   }
      public CreateAccountController(CreateAccount gui, Registry r)
     {
         this.gui = gui;
@@ -31,6 +37,7 @@ public class CreateAccountController {
         gui.getCreateButton().addActionListener(new AccountClass() );
     }
         
+    
       class AccountClass implements ActionListener {
 
         // Whatever written inside this function will execute when the button is clicked

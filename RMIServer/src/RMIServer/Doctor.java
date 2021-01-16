@@ -31,7 +31,7 @@ public class Doctor extends User implements UserObserver, DoctorInterface{
     private int rating;
     private String levelOfExpertise;
     private ArrayList<Nurse> nurse = new ArrayList();
-    private ArrayList<String> timeSlots = new ArrayList();
+    private String timeSlots;
     private Account account;
     private DoctorAppointmentFunctionalities doctorAppointmentFunctionalities;
     private DoctorMedicalFunctionalities doctorMedicalFunctionalities;
@@ -59,6 +59,15 @@ public class Doctor extends User implements UserObserver, DoctorInterface{
         super(name, email);
     }
 
+    public Doctor(int rating, String levelOfExpertise, String timeSlots, int price, String name, String phonenumber, String birthdate, String email) {
+        super(name, phonenumber, birthdate, email);
+        this.rating = rating;
+        this.levelOfExpertise = levelOfExpertise;
+        this.timeSlots = timeSlots;
+        this.price = price;
+    }
+
+ 
   
 
     public Doctor(int rating, String levelOfExpertise, String name, String phonenumber, String birthdate, String email) {
@@ -117,14 +126,15 @@ public class Doctor extends User implements UserObserver, DoctorInterface{
         this.nurse = nurse;
     }
 
-    public ArrayList<String> getTimeSlots() {
+    public String getTimeSlots() {
         return timeSlots;
     }
 
-    public void setTimeSlots(ArrayList<String> timeSlots) {
+    public void setTimeSlots(String timeSlots) {
         this.timeSlots = timeSlots;
     }
 
+ 
     public Account getAccount() {
         return account;
     }
@@ -192,10 +202,10 @@ public class Doctor extends User implements UserObserver, DoctorInterface{
         
 
        
-      public void adddTimeslots(String timeslots)
-    {
-       timeSlots.add(timeslots);
-    }  
+//      public void adddTimeslots(String timeslots)
+//    {
+//       timeSlots.add(timeslots);
+//    }  
     
      public void addAccount(Account a)
     {

@@ -5,6 +5,7 @@
  */
 package RMIClient;
 
+import Controllers.CreateAccountController;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -67,12 +68,27 @@ public class AdminFunc extends javax.swing.JFrame {
         CreateAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         CreateAccountButton.setText("Create Account");
         CreateAccountButton.setAutoscrolls(true);
+        CreateAccountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateAccountButtonActionPerformed(evt);
+            }
+        });
 
         UpdateAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         UpdateAccountButton.setText("Update Account");
+        UpdateAccountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateAccountButtonActionPerformed(evt);
+            }
+        });
 
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         DeleteAccountButton.setText("Delete Account");
+        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteAccountButtonActionPerformed(evt);
+            }
+        });
 
         NotifyAllButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         NotifyAllButton.setText("Notify All");
@@ -122,26 +138,26 @@ public class AdminFunc extends javax.swing.JFrame {
     
     
     
-    
-     private void CreateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-//          CreateAccount itemloader =new CreateAccount();
-//          itemloader.setVisible(true);
-//          this.setVisible(false);
-    }                                               
 
-       private void UpdateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
 
-         private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
-
-    
     private void NotifyAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotifyAllButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NotifyAllButtonActionPerformed
+
+    private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteAccountButtonActionPerformed
+
+    private void UpdateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateAccountButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateAccountButtonActionPerformed
+
+    private void CreateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountButtonActionPerformed
+        // TODO add your handling code here:
+        CreateAccount s = new CreateAccount();
+        s.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CreateAccountButtonActionPerformed
 
     /**
      * @param args the command line arguments

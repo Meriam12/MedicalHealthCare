@@ -6,6 +6,9 @@
 package Controllers;
 
 import RMIClient.AdminFunc;
+import RMIClient.CreateAccount;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.rmi.registry.Registry;
 
 /**
@@ -23,12 +26,18 @@ public class AdminFuncController {
         this.gui = gui;
         this.r = r;
         // This registers the button with our action listener below (the inner class)
-        gui.getCreateAccountButton().addActionListener(new AccountClass() );
-        gui.getUpdateAccountButton().addActionListener(new AccountClass() );
-        gui.getDeleteAccountButton().addActionListener(new AccountClass() );
-        gui.getNotifyAllButton().addActionListener(new AccountClass() );
+        gui.getCreateAccountButton().addActionListener(new Account1Class() );
+//        gui.getUpdateAccountButton().addActionListener(new Account2Class() );
+//        gui.getDeleteAccountButton().addActionListener(new Account3Class() );
+//        gui.getNotifyAllButton().addActionListener(new Account4Class() );
     }
-    
-    
-    
+    class Account1Class implements ActionListener {
+      @Override
+        public void actionPerformed(ActionEvent ae) {
+          CreateAccount itemloader =new CreateAccount();
+          itemloader.setVisible(true);
+          gui.setVisible(false);
+        
+        }
+    }
 }

@@ -58,10 +58,10 @@ public class RMIClient {
 //            DeleteAccountController gui_controller1 = new DeleteAccountController(guib, registry);
 
          // We create an object from the GUI window
-            CreateAccount guia = new CreateAccount();
-            guia.setLocationRelativeTo(null); // This makes the window appears centered
-            guia.setVisible(false); // This shows the gui
-            CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
+//            CreateAccount guia = new CreateAccount();
+//            guia.setLocationRelativeTo(null); // This makes the window appears centered
+//            guia.setVisible(false); // This shows the gui
+//            CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
             
             
             RequestOperationRoomGUI gui_op = new RequestOperationRoomGUI();
