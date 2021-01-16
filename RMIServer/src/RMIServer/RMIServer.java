@@ -435,6 +435,10 @@ public class RMIServer {
             
             // medicineinterface.postMedicine("Cream", "mllk", "900-", 90, 35);
             
+            
+            Doctor drr= new Doctor();
+            drr.makeRating(2, "Dr. Ahmed Osama");
+            
        
             System.out.println("My facade is ready..."); 
             db.close();
