@@ -106,7 +106,7 @@ public class RMIClient {
             makeDRRatingController makeDRRating_Controller = new makeDRRatingController(makeRatingGUI, registry);
           
                         
-            ReviewMedicalProfile ReviewMedicalProfile = new ReviewMedicalProfile();
+            ReviewMedicalProfileGUI ReviewMedicalProfile = new ReviewMedicalProfileGUI();
             ReviewMedicalProfile.setLocationRelativeTo(null); // This makes the window appears centered
             ReviewMedicalProfile.setVisible(true); // This shows the gui
             ReviewMedicalProfileController ReviewMedicalProfile_cont = new ReviewMedicalProfileController(ReviewMedicalProfile, registry);
