@@ -7,15 +7,11 @@ package RMI;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import org.bson.Document;
 
 /**
  *
- * @author Mariam
+ * @author meriam
  */
-public interface DoctorMedicalFunctionalities extends Remote {
-    
-    public Document reviewMedicalProfile(String pName)  throws RemoteException;
-
+public interface AccountInterface extends Remote{
+     public boolean login (String username, String Password) throws RemoteException;
 }
-

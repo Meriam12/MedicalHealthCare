@@ -7,6 +7,7 @@ package RMI;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import org.bson.Document;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.rmi.RemoteException;
  */
 public interface DoctorMedicalFunctionalities extends Remote {
     
-    public void reviewMedicalProfile(String pName)  throws RemoteException;
+    public Document reviewMedicalProfile(String pName)  throws RemoteException;
 
 }
 

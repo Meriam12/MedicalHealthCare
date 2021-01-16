@@ -22,10 +22,10 @@ import RMI.MedicalProInterface;
  */
 public class ReviewMedicalProfileController {
 
-    ReviewMedicalProfile gui;
+    ReviewMedicalProfileGUI gui;
     Registry r;
 
-    public ReviewMedicalProfileController(ReviewMedicalProfile gui, Registry r) {
+    public ReviewMedicalProfileController(ReviewMedicalProfileGUI gui, Registry r) {
         this.gui = gui;
         this.r = r;
         gui.getjButton3().addActionListener(new reviewMedicalClass());
@@ -36,13 +36,19 @@ public class ReviewMedicalProfileController {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-                
+                 System.out.println("debug1");
                 
                 DoctorMedicalFunctionalities re = (DoctorMedicalFunctionalities) r.lookup("DoctorMedicalFunctionalities");
-                
+                                 System.out.println("debug1");
+
                  String name = gui.getjTextField1().getText();
+                                 System.out.println("debug1");
+
+                re.reviewMedicalProfile("name").toString();
                 
-                re.reviewMedicalProfile("name");
+                
+                gui.getjLabel3().setText("h");
+                 System.out.println("debug1");
 
             } catch (RemoteException ex) {
 

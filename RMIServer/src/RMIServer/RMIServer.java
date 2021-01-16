@@ -5,6 +5,7 @@
  */
 package RMIServer;
 
+import RMI.AccountInterface;
 import RMI.AdminInterface;
 import RMI.DoctorInterface;
 import RMI.DoctorMedicalFunctionalities;
@@ -93,6 +94,9 @@ public class RMIServer {
             registry.bind("AdminInterface", adminInterface);          
             
 
+            AccountInterface accountInter = new Account();     
+            registry.bind("AccountInterface", accountInter);  
+            
 //            MedicineInterface medicineinterface = new Medicine();     
 //            // My RMI Registry
 //            Registry registry = LocateRegistry.createRegistry(1099);
@@ -139,7 +143,7 @@ public class RMIServer {
            // System.out.println("room requested");
             
            Cash cashh = new Cash();
-           System.out.println(cashh.payMedicine());
+     //     System.out.println(cashh.payMedicine());
             
 
             Inv = new Inventory();
@@ -195,8 +199,8 @@ public class RMIServer {
             pres1= new Prescription();
             pres2= new Prescription();
             
-            pres1.addPresciption("You should take this medicine ");
-            pres2.addPresciption("You should take this medicine ");
+//            pres1.addPresciption("You should take this medicine ");
+//            pres2.addPresciption("You should take this medicine ");
             
             db.insertPrescription(pres1);
             db.insertPrescription(pres2);
@@ -338,6 +342,10 @@ public class RMIServer {
             
             db.insertPharmacist(pharma1);
             db.insertPharmacist(pharma2);
+            
+            
+            
+            
 
             
 //           Patient sub_1 = new Patient("Hossam Amr", "Hossam23@yahoo.com");
@@ -361,8 +369,11 @@ public class RMIServer {
 //            Account a= new Account();
 //            a.login("Hossam", "1234");
 //            System.out.println("ana henanaanan");
+
+
+
 //   MedicalProfile medp = new MedicalProfile();
-//   medp.reviewMedicalProfile(p1.getName());
+//   medp.reviewMedicalProfile("Amira Mostafa");
 
 
 

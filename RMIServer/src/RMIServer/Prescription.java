@@ -59,8 +59,8 @@ public class Prescription {
     public void uploadPrescription(String x, String pName) throws RemoteException {
         System.out.println("fits");
 
-        Document coll = (Document) db.collection2.find(Filters.eq("name", pName)).first();
-        System.out.println("wsalttt");
+        Document coll =  (Document)db.collection2.find(Filters.eq("name", pName)).first();
+            System.out.println("two");
         System.out.println(coll);
         Patient pat = db.gson.fromJson(coll.toJson(), Patient.class);
         //db.gson.fromJson(ORdoc.toJson(), OperationRoom.class)
