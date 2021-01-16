@@ -231,10 +231,7 @@ public class RMIServer {
 //            OperationRoom rooom = new OperationRoom();
 //            rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
 //            System.out.println("room reuqsted");
-<<<<<<< HEAD
-=======
 
->>>>>>> e51b1174a506e28ff4faa3f26d730a1edc990a98
         
    //         OperationRoom rooom = new OperationRoom();
     //        rooom.RequestOperationRoom(1, 'A', "Dr.Mina@yahoo.com");
