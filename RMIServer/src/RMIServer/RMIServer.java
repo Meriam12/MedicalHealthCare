@@ -339,7 +339,10 @@ public class RMIServer {
    
             Account a= new Account();
             a.login("Hossam", "1234");
-
+            System.out.println("ana henanaanan");
+   MedicalProfile medp = new MedicalProfile();
+   medp.reviewMedicalProfile(p1.getName());
+   
              MedicalProfile MedicalProfile = new MedicalProfile();
               MedicalProfile.uploadMedicalHistory("hi", "no", "Amira Mostafa");
 
