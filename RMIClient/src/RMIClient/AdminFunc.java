@@ -5,9 +5,13 @@
  */
 package RMIClient;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
- * @author DELL
+ * @author Toumie
  */
 public class AdminFunc extends javax.swing.JFrame {
 
@@ -18,6 +22,26 @@ public class AdminFunc extends javax.swing.JFrame {
         initComponents();
     }
 
+        public JButton getCreateAccountButton() {
+        return CreateAccountButton;
+    }
+
+    public JButton getUpdateAccountButton() {
+        return UpdateAccountButton;
+    }
+    
+    public JButton getDeleteAccountButton() {
+        return DeleteAccountButton;
+    }
+    
+     public JButton getNotifyAllButton() {
+        return NotifyAllButton;
+    }
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,21 +51,97 @@ public class AdminFunc extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        CreateAccountButton = new javax.swing.JButton();
+        UpdateAccountButton = new javax.swing.JButton();
+        DeleteAccountButton = new javax.swing.JButton();
+        NotifyAllButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 206, 108));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel2.setText("Admin Functionalities");
+
+        CreateAccountButton.setBackground(new java.awt.Color(255, 255, 153));
+        CreateAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        CreateAccountButton.setText("Create Account");
+        CreateAccountButton.setAutoscrolls(true);
+
+        UpdateAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UpdateAccountButton.setText("Update Account");
+
+        DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DeleteAccountButton.setText("Delete Account");
+
+        NotifyAllButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NotifyAllButton.setText("Notify All");
+        NotifyAllButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NotifyAllButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CreateAccountButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UpdateAccountButton, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                            .addComponent(DeleteAccountButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(NotifyAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(62, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(47, 47, 47)
+                .addComponent(CreateAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(UpdateAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(DeleteAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(NotifyAllButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    
+    
+    
+     private void CreateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+//          CreateAccount itemloader =new CreateAccount();
+//          itemloader.setVisible(true);
+//          this.setVisible(false);
+    }                                               
+
+       private void UpdateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+         private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+    
+    private void NotifyAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotifyAllButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NotifyAllButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,6 +178,19 @@ public class AdminFunc extends javax.swing.JFrame {
         });
     }
 
+//     LoginGUI itemloader=new LoginGUI();
+//    itemloader.setVisible(true);
+//    this.setVisible(false);
+//    
+//    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CreateAccountButton;
+    private javax.swing.JButton DeleteAccountButton;
+    private javax.swing.JButton NotifyAllButton;
+    private javax.swing.JButton UpdateAccountButton;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
