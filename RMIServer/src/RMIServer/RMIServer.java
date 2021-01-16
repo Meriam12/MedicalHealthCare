@@ -94,7 +94,6 @@ public class RMIServer {
 //            System.out.println("room requested");
 //            
 
-<<<<<<< HEAD
 //            MedicineInterface medicineinterface = new Medicine();     
 //            // My RMI Registry
 //            Registry registry = LocateRegistry.createRegistry(1099);
@@ -107,7 +106,6 @@ public class RMIServer {
 //            System.out.println("room requested");
 //            
 
-=======
             MedicineInterface medicineinterface = new Medicine();     
             // My RMI Registry
             Registry registry = LocateRegistry.createRegistry(1099);
@@ -121,7 +119,6 @@ public class RMIServer {
             
            Cash cashh = new Cash();
            System.out.println(cashh.payMedicine());
->>>>>>> f38e1718591ebc9fb036ab53640520ac1c7198fb
             
             Inv = new Inventory();
            
@@ -282,7 +279,6 @@ public class RMIServer {
             db.insertPharmacist(pharma1);
             db.insertPharmacist(pharma2);
 
-<<<<<<< HEAD
 //            Doctor d = new Doctor();
 //            d.viewDoctor("Dr.Michael Samy");
 //             
@@ -294,7 +290,7 @@ public class RMIServer {
 //            ac.updateAccount("Marina", "12345marina" );
 //            ac.createAccount("Samia", "samia17");
 //            ac.deleteAccount("Hossam");
-=======
+
             //Doctor d = new Doctor();
             //d.viewDoctor("Dr.Michael Samy");
              
@@ -305,7 +301,6 @@ public class RMIServer {
             
             
             
->>>>>>> f38e1718591ebc9fb036ab53640520ac1c7198fb
     //        MedicineInterface medicineinterface = new Medicine();
             Doctor d = new Doctor();
 //            d.editProfile("Dr.Michael Samy","Gamed", "07775000", "gamed@bue.com");

@@ -50,7 +50,6 @@ public class Doctor extends User implements UserObserver{
         this.rating = rating;
         this.levelOfExpertise = levelOfExpertise;
     }
-<<<<<<< HEAD
 
     public Doctor(String name, String levelOfExpertise,  String phonenumber, String email) {
         super(name, phonenumber, email);
@@ -61,8 +60,7 @@ public class Doctor extends User implements UserObserver{
     public Doctor(int rating, String name) {
         super(name);
         this.rating = rating;
-=======
-    
+    }
     
     public Doctor(int rating, String levelOfExpertise, String name, String phonenumber, String birthdate, String email,int price) {
         super(name, phonenumber, birthdate, email);
@@ -77,7 +75,6 @@ public class Doctor extends User implements UserObserver{
 
     public void setPrice(int price) {
         this.price = price;
->>>>>>> b0080abc24512fce658b2f00084407c5d470a327
     }
 
     public int getRating() {
@@ -135,19 +132,16 @@ public class Doctor extends User implements UserObserver{
                 System.out.println("The rating has been Saved.");
     }
     
-<<<<<<< HEAD
 //    public void viewDoctor(String name) throws RemoteException {
 //        
 //       Document Result =(Document)db.collection1.find(Filters.eq("name",name)).;
 //       System.out.println(Result);
 //       
-=======
     public void viewDoctor(String name) throws RemoteException {
      
        Document Result =(Document)db.collection1.find(Filters.eq("name",name));
        System.out.println(Result);
->>>>>>> f38e1718591ebc9fb036ab53640520ac1c7198fb
-       
+    }       
 //       db.collection1.find({​​​​​​​"name": name}​​​​​​​).forEach(printjson);
         
 //     ArrayList<Doctor> result = new ArrayList();
@@ -192,9 +186,7 @@ public class Doctor extends User implements UserObserver{
        this.account=a ;
     }
      
-<<<<<<< HEAD
 
-=======
     public  Doctor getDrByName(String name){
 //                Document doc = collection.find(Filters.eq("email", email)).first();
 //        Student result = gson.fromJson(doc.toJson(), Student.class);
@@ -211,6 +203,5 @@ public class Doctor extends User implements UserObserver{
 //         }
 //         return null;
 //     }
- 
->>>>>>> f38e1718591ebc9fb036ab53640520ac1c7198fb
+
 }
