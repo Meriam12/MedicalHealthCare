@@ -74,7 +74,7 @@ public class PayForAppointController {
                      gui.getjLabel6().setText(p.makeAppointmentPayment("",100,"12"));
                 }
                 else if(visaorcash.equals("cash")){
-                    p.makeAppointmentPayment("",100,"12");
+                    pp.makeAppointmentPayment("",100,"12");
                      gui.getjLabel6().setText(p.makeAppointmentPayment("",100,"12"));
                 }
 
