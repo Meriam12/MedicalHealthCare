@@ -9,12 +9,24 @@ import com.mongodb.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.*;
+import RMI.*;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import com.google.gson.Gson;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.bson.Document;
 
 /**
  *
  * @author meriam
  */
-public class MedicalProfile implements DoctorMedicalFunctionalities{
+public class MedicalProfile extends UnicastRemoteObject implements MedicineInterface, DoctorMedicalFunctionalities {
     private ArrayList<String> drFollowup = new ArrayList();
     private ArrayList<String> chronicDisease = new ArrayList();
     private ArrayList<Medicine> medicines = new ArrayList();
