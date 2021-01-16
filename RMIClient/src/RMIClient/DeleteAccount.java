@@ -61,8 +61,7 @@ public class DeleteAccount extends javax.swing.JFrame {
             }
         });
 
-        Backgr.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\backgr.jpg")); // NOI18N
-        Backgr.setText("jLabel4");
+        Backgr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RMIClient/backgr.jpg"))); // NOI18N
         Backgr.setAlignmentX(0.5F);
         Backgr.setDoubleBuffered(true);
         Backgr.setMaximumSize(new java.awt.Dimension(32767, 32767));

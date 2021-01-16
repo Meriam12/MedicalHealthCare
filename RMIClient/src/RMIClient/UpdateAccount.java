@@ -71,8 +71,7 @@ public class UpdateAccount extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\backgr.jpg")); // NOI18N
-        jLabel4.setText("ddd");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RMIClient/backgr.jpg"))); // NOI18N
         jLabel4.setAlignmentX(0.5F);
         jLabel4.setDoubleBuffered(true);
         jLabel4.setMaximumSize(new java.awt.Dimension(32767, 32767));
