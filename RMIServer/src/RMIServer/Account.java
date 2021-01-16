@@ -19,9 +19,10 @@ public class Account {
     private String password;
     private String accountType;
 
-     DB db = new DB();
+     DB db ;
      
     public Account() throws RemoteException {
+        db= new DB();
           db.mongoClient = new MongoClient();
      db.database = db.mongoClient.getDatabase("MedicalHealthCare"); 
     }
