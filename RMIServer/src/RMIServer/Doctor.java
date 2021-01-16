@@ -133,13 +133,19 @@ public class Doctor extends User implements UserObserver, DoctorInterface{
         this.account = account;
     }
 
+    
 
     
     @Override
-    public void makeRating(int rating, String name){
-                Doctor newDocObject = new Doctor(rating, name);
-                Document doc = Document.parse(db.gson.toJson(newDocObject));
-                db.collection1.replaceOne(Filters.eq("name", newDocObject.getName()), doc);
+    public void makeRating(int rating, String name) throws RemoteException{
+//                Doctor newDocObject = new Doctor(rating, name);
+//                Document doc = Document.parse(db.gson.toJson(newDocObject));
+//                db.collection1.replaceOne(Filters.eq("name", newDocObject.getName()), doc);
+                Document doc = db.collection1.find(Filters.eq("name", name)).first();
+                Doctor DRresult =    db.gson.fromJson(doc.toJson(), Doctor.class);  
+                DRresult.setRating((DRresult.rating+rating)/2);
+                Document UpdatedDoc =Document.parse(db.gson.toJson(DRresult));       
+                 db.collection1.replaceOne(Filters.eq("name", name), UpdatedDoc);     
                 System.out.println("The rating has been Saved.");
     }
     
@@ -166,7 +172,7 @@ public class Doctor extends User implements UserObserver, DoctorInterface{
 //    }
     
     @Override
-    public void editProfile(String name, String levelOfExpertise,  String phonenumber, String email){
+    public void editProfile(String name, String levelOfExpertise,  String phonenumber, String email) throws RemoteException{
                 Doctor newDocObject = new Doctor(name, levelOfExpertise, phonenumber, email);
                 Document doc = Document.parse(db.gson.toJson(newDocObject));
                db.collection1.replaceOne(Filters.eq("name", newDocObject.getName()), doc);

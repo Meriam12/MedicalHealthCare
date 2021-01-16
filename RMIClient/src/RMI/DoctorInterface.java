@@ -5,7 +5,6 @@
  */
 package RMI;
 
-import RMIServer.Doctor;
 import com.mongodb.client.model.Filters;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
