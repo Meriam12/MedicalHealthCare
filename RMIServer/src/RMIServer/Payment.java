@@ -58,13 +58,22 @@ public class Payment  {
     }
     
     
-    public void makeAppointmentPayment(){
-        
+    public void makeAppointmentPayment(String paymentType){
+        if ( paymentType == "cash"){
+            
+        }
+        else if (paymentType == "visa"){
+            
+        }
     }
     
-   
-    public void payMedicine(){
-
+      public void payMedicine(String paymentType){
+        if ( paymentType == "cash"){
+            
+        }
+        else if (paymentType == "visa"){
+            
+        }
     }
     
     
