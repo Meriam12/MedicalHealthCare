@@ -5,6 +5,7 @@
  */
 package RMIServer;
 
+import RMI.DoctorMedicalFunctionalities;
 import RMI.DoctorInterface;
 import com.mongodb.MongoClient;
 import com.mongodb.client.model.Filters;

@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RMIServer;
+package RMI;
 
+import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
  *
  * @author Mariam
  */
-public interface DoctorMedicalFunctionalities {
+public interface DoctorMedicalFunctionalities extends Remote {
     
     public void reviewMedicalProfile(String pName)  throws RemoteException;
 

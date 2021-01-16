@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import RMI.DoctorMedicalFunctionalities;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.NotBoundException;
@@ -27,7 +28,7 @@ public class ReviewMedicalProfileController {
     public ReviewMedicalProfileController(ReviewMedicalProfile gui, Registry r) {
         this.gui = gui;
         this.r = r;
-        gui.getjButton2().addActionListener(new reviewMedicalClass());
+        gui.getjButton3().addActionListener(new reviewMedicalClass());
     }
 
     class reviewMedicalClass implements ActionListener {
@@ -35,8 +36,13 @@ public class ReviewMedicalProfileController {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-                MedicalProInterface re = (MedicalProInterface) r.lookup("ReviewMedicalProInterface");
-                re.reviewMedicalProfile("");
+                
+                
+                DoctorMedicalFunctionalities re = (DoctorMedicalFunctionalities) r.lookup("DoctorMedicalFunctionalities");
+                
+                 String name = gui.getjTextField1().getText();
+                
+                re.reviewMedicalProfile("name");
 
             } catch (RemoteException ex) {
 
