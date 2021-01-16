@@ -27,15 +27,13 @@ import org.bson.Document;
  * @author meriam
  */
 public class Prescription {
+    
     private ArrayList<String> prescriptions= new ArrayList();
-DB db;
+    DB db;
     public Prescription() {
         // Disables Mongo Logs
 Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
 mongoLogger.setLevel(Level.SEVERE);
-
-
-
 // Initialize
 db = new DB();
 db.mongoClient = new MongoClient();
