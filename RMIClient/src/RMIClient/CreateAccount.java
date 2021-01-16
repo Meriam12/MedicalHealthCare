@@ -128,7 +128,7 @@ public class CreateAccount extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BackButton);
-        BackButton.setBounds(470, 300, 70, 30);
+        BackButton.setBounds(440, 300, 100, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RMIClient/backgr.jpg"))); // NOI18N
         jLabel4.setAlignmentX(0.5F);
@@ -136,7 +136,7 @@ public class CreateAccount extends javax.swing.JFrame {
         jLabel4.setMaximumSize(new java.awt.Dimension(32767, 32767));
         jLabel4.setMinimumSize(new java.awt.Dimension(32767, 32767));
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(-50, 0, 620, 410);
+        jLabel4.setBounds(-20, 0, 620, 90);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
