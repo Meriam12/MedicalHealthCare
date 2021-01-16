@@ -84,7 +84,6 @@ public class RMIClient {
 //            gui_op.setVisible(false); // This shows the gui
 //            RequestOperationRoomController gui_controller_op = new RequestOperationRoomController(gui_op, registry);
 //                        System.out.println("here");
-<<<<<<< Updated upstream
 
 
             
@@ -122,7 +121,6 @@ public class RMIClient {
             ReviewMedicalProfile.setVisible(true); // This shows the gui
             ReviewMedicalProfileController ReviewMedicalProfile_cont = new ReviewMedicalProfileController(ReviewMedicalProfile, registry);
           
-=======
 //
 //
 //            EditMedicineGUI EditMedgui = new EditMedicineGUI();
@@ -150,7 +148,6 @@ public class RMIClient {
             login2.setLocationRelativeTo(null); 
             login2.setVisible(true); // This shows the gui
             LoginController Accountinf = new LoginController(login2, registry);
->>>>>>> Stashed changes
             
             
 //  MedicineFacadeInterface f = (MedicineFacadeInterface) registry.lookup("fac");
