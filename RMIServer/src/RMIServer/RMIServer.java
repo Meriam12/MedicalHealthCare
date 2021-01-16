@@ -6,6 +6,7 @@
 package RMIServer;
 
 import RMI.AdminInterface;
+import RMI.DoctorInterface;
 import RMI.MedicineInterface;
 import RMI.MedicineFacadeInterface;
 import RMI.OperationRoomInterface;
@@ -117,6 +118,8 @@ public class RMIServer {
 
             MedicineInterface medicineinterface = new Medicine();     
             OperationRoomInterface operationRoomInterface= new OperationRoom();
+            DoctorInterface DoctorInterface = new Doctor() ;
+            
             // My RMI Registry
             //Registry registry = LocateRegistry.createRegistry(1099);
             
@@ -126,6 +129,10 @@ public class RMIServer {
             System.out.println("medicine posted");
             
             registry.bind("operationRoomInterface", operationRoomInterface);
+             registry.bind("DoctorInterface", DoctorInterface);
+            
+            
+            
           //  OperationRoom room = new OperationRoom();
            // room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
            // System.out.println("room requested");

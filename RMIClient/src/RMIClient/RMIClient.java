@@ -16,6 +16,7 @@ import RMI.MedicineFacadeInterface;
 import Controllers.PostMedicineController;
 import Controllers.RequestOperationRoomController;
 import Controllers.UpdateAccountController;
+import Controllers.makeDRRatingController;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -81,6 +82,12 @@ public class RMIClient {
             DeleteMedgui.setLocationRelativeTo(null); // This makes the window appears centered
             DeleteMedgui.setVisible(false); // This shows the gui
             DeleteMedicineController DeleteMedgui_controller = new DeleteMedicineController(DeleteMedgui, registry);
+            
+            
+            makeDRRatingGUI makeRatingGUI = new makeDRRatingGUI();
+            makeRatingGUI.setLocationRelativeTo(null); // This makes the window appears centered
+            makeRatingGUI.setVisible(true); // This shows the gui
+            makeDRRatingController makeDRRating_Controller = new makeDRRatingController(makeRatingGUI, registry);
           
 
 //  MedicineFacadeInterface f = (MedicineFacadeInterface) registry.lookup("fac");
