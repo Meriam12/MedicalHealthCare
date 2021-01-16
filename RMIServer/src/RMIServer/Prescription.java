@@ -37,24 +37,25 @@ DB db = new DB();
     }
     // FUNCTIONS
     
-    public void uploadPrescription(ArrayList<String> x, Patient p){
+    public void uploadPrescription(ArrayList<String> x, String pName){
+        Document coll = db.collection2.find(Filters.eq("name", pName)).first();
+        Patient pat = db.gson.fromJson(coll.toJson(), Patient.class);
         MedicalProfile medpro = new MedicalProfile();
-        medpro = p.getMedicalProfile();
-        Prescription pres = new Prescription(x);
-        Document doc = Document.parse(db.gson.toJson(medpro));
+        medpro = pat.getMedicalProfile();
         
-//        ArrayList<String> pres = new ArrayList<String>();
-//            Prescription p = new Prescription();
-//            pres.add("EAt brufen twice a day for 16 days");
-//            p.uploadPrescription(pres, p1);
-//            System.out.println("end");
-//            
-//            ArrayList<String> pres2 = new ArrayList<String>();
-//            Prescription p2 = new Prescription();
-//            pres2.add("sleep");
-//            p2.uploadPrescription(pres2, p1);
-//            System.out.println("end");
-            
+        ArrayList<Prescription> pres = new ArrayList<Prescription>();
+        pres.add(new Prescription(x));
+        medpro.setPrescriptions(pres);
+       pat.setMedicalProfile(medpro);
+       Document result = Document.parse(db.gson.toJson(pat));
+        System.out.println("processed");
+       db.collection2.replaceOne(Filters.eq("name", pName), result);
+        System.out.println("done");
+    
+               
+               
+               
+        
     }
     
      public void addPresciption(String prescription)
