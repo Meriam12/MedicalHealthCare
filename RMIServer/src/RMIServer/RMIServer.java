@@ -11,6 +11,7 @@ import RMI.DoctorInterface;
 import RMI.DoctorMedicalFunctionalities;
 import RMI.MedicineInterface;
 import RMI.MedicineFacadeInterface;
+import RMI.NotifyInterface;
 import RMI.OperationRoomInterface;
 import RMI.PaymentMethod;
 import com.mongodb.MongoClient;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sun.security.jca.GetInstance;
 /**
  *
  * @author meriam
@@ -128,11 +130,12 @@ public class RMIServer {
 //            room.RequestOperationRoom(1, 'C', "Dr.Farida Magdy");
 //            System.out.println("room requested");
 //            
-
+           
             MedicineInterface medicineinterface = new Medicine();     
             OperationRoomInterface operationRoomInterface= new OperationRoom();
             DoctorInterface DoctorInterface = new Appointment() ;
             DoctorMedicalFunctionalities DoctorMedicalFunctionalities = new MedicalProfile();
+         //   NotifyInterface notifyInterface = new Admin GetInstance();
             // My RMI Registry
             //Registry registry = LocateRegistry.createRegistry(1099);
             
@@ -143,7 +146,7 @@ public class RMIServer {
             
             registry.bind("operationRoomInterface", operationRoomInterface);
              registry.bind("DoctorInterface", DoctorInterface);
-            
+             // registry.bind("NotifyInterface", notifyInterface);
                registry.bind("DoctorMedicalFunctionalities", DoctorMedicalFunctionalities);
             
           //  OperationRoom room = new OperationRoom();

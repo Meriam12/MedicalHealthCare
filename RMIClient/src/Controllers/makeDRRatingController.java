@@ -24,7 +24,7 @@ import java.rmi.registry.LocateRegistry;
  */
 public class makeDRRatingController {
         // We have reference to both the GUI and the rmi registry
-    makeDRRatingGUI gui;
+    makeDRRatingGUI gui = new makeDRRatingGUI();
     Registry r;
     
     

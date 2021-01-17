@@ -121,6 +121,7 @@ public class PatientFunc extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             PayForAppointController c = new PayForAppointController();
+             this.dispose();
         } catch (RemoteException ex) {
             Logger.getLogger(PatientFunc.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -136,6 +137,7 @@ public class PatientFunc extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             makeDRRatingController m = new makeDRRatingController();
+             this.dispose();
         } catch (RemoteException ex) {
             Logger.getLogger(PatientFunc.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -145,6 +147,7 @@ public class PatientFunc extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             LoginController cc = new LoginController();
+             this.dispose();
         } catch (RemoteException ex) {
             Logger.getLogger(DoctorFunctionalties.class.getName()).log(Level.SEVERE, null, ex);
         }

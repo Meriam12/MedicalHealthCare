@@ -170,7 +170,7 @@ public class AdminFunc extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             NotifyAllController mm = new NotifyAllController();
-             this.dispose();
+            
         } catch (RemoteException ex) {
             Logger.getLogger(AdminFunc.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -181,7 +181,7 @@ public class AdminFunc extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             DeleteAccountController cc = new DeleteAccountController();
-            this.dispose();
+            
         } catch (RemoteException ex) {
             Logger.getLogger(AdminFunc.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -194,7 +194,7 @@ public class AdminFunc extends javax.swing.JFrame {
 //        m.setVisible(true);
 //        this.dispose();
 UpdateAccountController bb = new UpdateAccountController();
-this.dispose();
+
         } catch (RemoteException ex) {
             Logger.getLogger(AdminFunc.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -208,7 +208,7 @@ this.dispose();
 //        f.setVisible(true);
 //        this.dispose();
 CreateAccountController a = new CreateAccountController();
- this.dispose();
+
         } catch (RemoteException ex) {
             Logger.getLogger(AdminFunc.class.getName()).log(Level.SEVERE, null, ex);
         }

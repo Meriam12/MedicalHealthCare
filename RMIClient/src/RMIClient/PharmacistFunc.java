@@ -5,6 +5,8 @@
  */
 package RMIClient;
 
+import Controllers.DeleteMedicineController;
+import Controllers.EditMedicineController;
 import Controllers.LoginController;
 import Controllers.PostMedicineController;
 import java.rmi.RemoteException;
@@ -122,6 +124,7 @@ public class PharmacistFunc extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             PostMedicineController c = new PostMedicineController();
+            this.dispose();
         } catch (RemoteException ex) {
             Logger.getLogger(PharmacistFunc.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -130,22 +133,31 @@ public class PharmacistFunc extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        DeleteMedicineGUI d= new DeleteMedicineGUI();
-        d.setVisible(true);
-        this.dispose();
+       
+        try {
+             DeleteMedicineController d= new DeleteMedicineController() ;
+              this.dispose();
+        } catch (RemoteException ex) {
+            Logger.getLogger(PharmacistFunc.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        EditMedicineGUI m = new EditMedicineGUI();
-        m.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            EditMedicineController e = new EditMedicineController();
+             this.dispose();
+        } catch (RemoteException ex) {
+            Logger.getLogger(PharmacistFunc.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         try {
             // TODO add your handling code here:
             LoginController cc = new LoginController();
+             this.dispose();
         } catch (RemoteException ex) {
             Logger.getLogger(DoctorFunctionalties.class.getName()).log(Level.SEVERE, null, ex);
         }
