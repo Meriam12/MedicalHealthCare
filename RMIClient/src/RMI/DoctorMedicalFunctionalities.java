@@ -15,7 +15,7 @@ import org.bson.Document;
  */
 public interface DoctorMedicalFunctionalities extends Remote {
     
-    public Document reviewMedicalProfile(String pName)  throws RemoteException;
+    public void reviewMedicalProfile(String pName)  throws RemoteException;
 
 }
 

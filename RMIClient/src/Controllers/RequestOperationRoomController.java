@@ -16,14 +16,24 @@ import java.util.logging.Logger;
 import RMI.MedicineInterface;
 import RMI.OperationRoomInterface;
 import RMIClient.RequestOperationRoomGUI;
+import java.rmi.registry.LocateRegistry;
 /**
  *
  * @author Mariam
  */
-public class RequestOperationRoomController {
-       RequestOperationRoomGUI gui;
-        Registry r;
+public class RequestOperationRoomController extends RemoteException{
+       RequestOperationRoomGUI gui = new RequestOperationRoomGUI();
+       Registry r;
     
+        
+        public RequestOperationRoomController() throws RemoteException
+        {
+           r=LocateRegistry.getRegistry(1099);
+           gui.setLocationRelativeTo(null); // This makes the window appears centered
+           gui.setVisible(true); // This shows the gui
+           RequestOperationRoomController gui_controller1 = new RequestOperationRoomController(gui, r);
+        
+        }
     // The constructor takes the gui and the rmi registry as paramaters
     public RequestOperationRoomController(RequestOperationRoomGUI gui, Registry r)
     {

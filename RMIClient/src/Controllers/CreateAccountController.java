@@ -13,18 +13,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.AdminInterface;
 import RMIClient.CreateAccount;
+import java.rmi.registry.LocateRegistry;
 
 /**
  *
  * @author Toumie
  */
-public class CreateAccountController {
+public class CreateAccountController extends RemoteException{
     CreateAccount gui =new CreateAccount();
     Registry r;
     
-   public CreateAccountController()
+   public CreateAccountController() throws RemoteException
    {
        
+            r=LocateRegistry.getRegistry(1099);
             gui.setLocationRelativeTo(null); // This makes the window appears centered
             gui.setVisible(true); // This shows the gui
             CreateAccountController gui_controller1 = new CreateAccountController(gui, r);

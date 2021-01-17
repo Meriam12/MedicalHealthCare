@@ -13,20 +13,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.AdminInterface;
 import RMIClient.UpdateAccount;
+import java.rmi.registry.LocateRegistry;
 /**
  *
  * @author DELL
  */
-public class UpdateAccountController {
-     UpdateAccount gui;
+public class UpdateAccountController extends RemoteException{
+     UpdateAccount gui = new UpdateAccount();
      Registry r;
      
-       public UpdateAccountController()
+       public UpdateAccountController() throws RemoteException
     {
-            UpdateAccount guia = new UpdateAccount();
-            guia.setLocationRelativeTo(null); // This makes the window appears centered
-            guia.setVisible(true); // This shows the gui
-            UpdateAccountController gui_controller1 = new UpdateAccountController(guia, r);
+        
+            r=LocateRegistry.getRegistry(1099);
+            gui.setLocationRelativeTo(null); // This makes the window appears centered
+            gui.setVisible(true); // This shows the gui
+            UpdateAccountController gui_controller1 = new UpdateAccountController(gui, r);
     }
      
      public UpdateAccountController(UpdateAccount gui, Registry r)

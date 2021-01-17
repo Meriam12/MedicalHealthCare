@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import RMI.MedicineInterface;
 import RMI.PaymentMethod;
 import RMIClient.DeleteMedicineGUI;
+import RMIClient.Login;
 import RMIClient.PayForAppoint;
 import java.rmi.registry.LocateRegistry;
 
@@ -24,11 +25,20 @@ import java.rmi.registry.LocateRegistry;
  *
  * @author Mariam
  */
-public class PayForAppointController {
+public class PayForAppointController extends RemoteException{
         // We have reference to both the GUI and the rmi registry
-    PayForAppoint gui;
+    PayForAppoint gui = new PayForAppoint();
     Registry r;
     
+    public PayForAppointController() throws RemoteException
+    {
+            r=LocateRegistry.getRegistry(1099);
+            gui.setLocationRelativeTo(null); // This makes the window appears centered
+            gui.setVisible(true); // This shows the gui
+            PayForAppointController gui_controller1 = new PayForAppointController(gui, r);
+    
+    
+    }
     // The constructor takes the gui and the rmi registry as paramaters
     public PayForAppointController(PayForAppoint gui, Registry r)
     {

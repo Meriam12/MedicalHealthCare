@@ -14,16 +14,27 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.MedicineInterface;
 import RMIClient.PostMedicineGUI;
+import java.rmi.registry.LocateRegistry;
 
 /**
  *
  * @author Mariam
  */
-public class PostMedicineController {
+public class PostMedicineController extends RemoteException{
         // We have reference to both the GUI and the rmi registry
-    PostMedicineGUI gui;
+    PostMedicineGUI gui = new PostMedicineGUI();
     Registry r;
     
+    
+    public PostMedicineController()throws RemoteException
+    {
+    
+           r=LocateRegistry.getRegistry(1099);
+           gui.setLocationRelativeTo(null); // This makes the window appears centered
+           gui.setVisible(true); // This shows the gui
+           PostMedicineController gui_controller1 = new PostMedicineController(gui, r);
+    
+    }
     // The constructor takes the gui and the rmi registry as paramaters
     public PostMedicineController(PostMedicineGUI gui, Registry r)
     {
@@ -90,6 +101,9 @@ public class PostMedicineController {
                 Logger.getLogger(PostMedicineController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NotBoundException ex) {
                 Logger.getLogger(PostMedicineController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            catch (Exception ex) {
+            System.out.println("Exception occured");
             }
         }
         

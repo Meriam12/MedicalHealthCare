@@ -14,17 +14,28 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.MedicineInterface;
 import RMIClient.DeleteMedicineGUI;
+import java.rmi.registry.LocateRegistry;
 
 /**
  *
  * @author Mariam
  */
-public class DeleteMedicineController {
+public class DeleteMedicineController extends RemoteException{
         // We have reference to both the GUI and the rmi registry
-    DeleteMedicineGUI gui;
+    DeleteMedicineGUI gui = new DeleteMedicineGUI();
     Registry r;
     
     // The constructor takes the gui and the rmi registry as paramaters
+    public DeleteMedicineController() throws RemoteException
+    {
+           r=LocateRegistry.getRegistry(1099);
+           gui.setLocationRelativeTo(null); // This makes the window appears centered
+           gui.setVisible(true); // This shows the gui
+           DeleteMedicineController gui_controller1 = new DeleteMedicineController(gui, r);
+    
+    
+    }
+    
     public DeleteMedicineController(DeleteMedicineGUI gui, Registry r)
     {
         this.gui = gui;
@@ -32,7 +43,7 @@ public class DeleteMedicineController {
         // This registers the button with our action listener below (the inner class)
        
 
- gui.getjButton1().addActionListener(new deleteMedicineClass() );
+       gui.getjButton1().addActionListener(new deleteMedicineClass() );
     }
         
             // This class is responsible for handling the button click

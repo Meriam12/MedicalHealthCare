@@ -13,25 +13,26 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.AdminInterface;
 import RMIClient.DeleteAccount;
+import java.rmi.registry.LocateRegistry;
 
 /**
  *
  * @author Toumie
  */
 
-public class DeleteAccountController {
+public class DeleteAccountController extends RemoteException{
     
     
     
-    DeleteAccount gui;
+    DeleteAccount gui = new DeleteAccount();
     Registry r;
     
-     public DeleteAccountController()
+     public DeleteAccountController() throws RemoteException
     {
-             DeleteAccount guia = new DeleteAccount();
-            guia.setLocationRelativeTo(null); // This makes the window appears centered
-            guia.setVisible(true); // This shows the gui
-            DeleteAccountController gui_controller1 = new DeleteAccountController(guia, r);
+            r=LocateRegistry.getRegistry(1099);
+            gui.setLocationRelativeTo(null); // This makes the window appears centered
+            gui.setVisible(true); // This shows the gui
+            DeleteAccountController gui_controller1 = new DeleteAccountController(gui, r);
     }
     
      public DeleteAccountController(DeleteAccount gui, Registry r)

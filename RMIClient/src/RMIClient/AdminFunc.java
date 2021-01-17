@@ -7,9 +7,13 @@ package RMIClient;
 
 import Controllers.CreateAccountController;
 import Controllers.DeleteAccountController;
+import Controllers.LoginController;
 import Controllers.NotifyAllController;
 import Controllers.UpdateAccountController;
+import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -63,6 +67,7 @@ public class AdminFunc extends javax.swing.JFrame {
         UpdateAccountButton = new javax.swing.JButton();
         DeleteAccountButton = new javax.swing.JButton();
         NotifyAllButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 206, 108));
@@ -107,6 +112,13 @@ public class AdminFunc extends javax.swing.JFrame {
             }
         });
 
+        BackButton.setText("Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,21 +126,27 @@ public class AdminFunc extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CreateAccountButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(UpdateAccountButton, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                            .addComponent(DeleteAccountButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(NotifyAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(111, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(95, 95, 95)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(143, 143, 143)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(CreateAccountButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(UpdateAccountButton, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                                    .addComponent(DeleteAccountButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(NotifyAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 101, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(62, Short.MAX_VALUE)
+                .addContainerGap(43, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(47, 47, 47)
                 .addComponent(CreateAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -138,7 +156,9 @@ public class AdminFunc extends javax.swing.JFrame {
                 .addComponent(DeleteAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(NotifyAllButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addGap(18, 18, 18)
+                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -147,69 +167,68 @@ public class AdminFunc extends javax.swing.JFrame {
 
 
     private void NotifyAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotifyAllButtonActionPerformed
-        // TODO add your handling code here:
-         NotifyAllController mm = new NotifyAllController();
-            this.dispose();
+        try {
+            // TODO add your handling code here:
+            NotifyAllController mm = new NotifyAllController();
+             this.dispose();
+        } catch (RemoteException ex) {
+            Logger.getLogger(AdminFunc.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
     }//GEN-LAST:event_NotifyAllButtonActionPerformed
 
     private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountButtonActionPerformed
-        // TODO add your handling code here:
-        DeleteAccountController cc = new DeleteAccountController();
+        try {
+            // TODO add your handling code here:
+            DeleteAccountController cc = new DeleteAccountController();
             this.dispose();
+        } catch (RemoteException ex) {
+            Logger.getLogger(AdminFunc.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_DeleteAccountButtonActionPerformed
 
     private void UpdateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateAccountButtonActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
 //        UpdateAccount m = new UpdateAccount();
 //        m.setVisible(true);
 //        this.dispose();
-         UpdateAccountController bb = new UpdateAccountController();
-            this.dispose();
+UpdateAccountController bb = new UpdateAccountController();
+this.dispose();
+        } catch (RemoteException ex) {
+            Logger.getLogger(AdminFunc.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
     }//GEN-LAST:event_UpdateAccountButtonActionPerformed
 
     private void CreateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountButtonActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
 //        CreateAccount f = new CreateAccount();
 //        f.setVisible(true);
 //        this.dispose();
-            CreateAccountController a = new CreateAccountController();
-            this.dispose();
+CreateAccountController a = new CreateAccountController();
+ this.dispose();
+        } catch (RemoteException ex) {
+            Logger.getLogger(AdminFunc.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
     }//GEN-LAST:event_CreateAccountButtonActionPerformed
+
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+        try {
+            // TODO add your handling code here:
+            LoginController cc = new LoginController();
+        } catch (RemoteException ex) {
+            Logger.getLogger(DoctorFunctionalties.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.dispose();
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminFunc.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminFunc.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminFunc.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminFunc.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AdminFunc().setVisible(true);
-            }
-        });
-    }
+ 
 
 //     LoginGUI itemloader=new LoginGUI();
 //    itemloader.setVisible(true);
@@ -220,6 +239,7 @@ public class AdminFunc extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton;
     private javax.swing.JButton CreateAccountButton;
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JButton NotifyAllButton;

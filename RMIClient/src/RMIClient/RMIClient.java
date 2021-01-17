@@ -50,7 +50,7 @@ public class RMIClient {
                     // We create an object from the GUI window
 //            PostMedicineGUI gui = new PostMedicineGUI();
 //            gui.setLocationRelativeTo(null); // This makes the window appears centered
-//            gui.setVisible(false); // This shows the gui
+//            gui.setVisible(true); // This shows the gui
 //            PostMedicineController gui_controller = new PostMedicineController(gui, registry);
 //                        System.out.println("here");
 //
@@ -71,12 +71,12 @@ public class RMIClient {
 //         
 //         
 //
-            CreateAccount guia = new CreateAccount();
-            guia.setLocationRelativeTo(null); // This makes the window appears centered
-            guia.setVisible(false); // This shows the gui
-            CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
-
-                        System.out.println("here");
+//            CreateAccount guia = new CreateAccount();
+//            guia.setLocationRelativeTo(null); // This makes the window appears centered
+//            guia.setVisible(false); // This shows the gui
+//            CreateAccountController gui_controller1 = new CreateAccountController(guia, registry);
+//
+//                        System.out.println("here");
 //
 //
 //            
@@ -89,44 +89,44 @@ public class RMIClient {
 
 
             
-            RequestOperationRoomGUI gui_op = new RequestOperationRoomGUI();
-            gui_op.setLocationRelativeTo(null); // This makes the window appears centered
-            gui_op.setVisible(false); // This shows the gui
-            RequestOperationRoomController gui_controller_op = new RequestOperationRoomController(gui_op, registry);
-                        System.out.println("here");
-
-
-            EditMedicineGUI EditMedgui = new EditMedicineGUI();
-            EditMedgui.setLocationRelativeTo(null); // This makes the window appears centered
-            EditMedgui.setVisible(false); // This shows the gui
-            EditMedicineController EditMedgui_controller = new EditMedicineController(EditMedgui, registry);
-                      System.out.println("here");
+//            RequestOperationRoomGUI gui_op = new RequestOperationRoomGUI();
+//            gui_op.setLocationRelativeTo(null); // This makes the window appears centered
+//            gui_op.setVisible(false); // This shows the gui
+//            RequestOperationRoomController gui_controller_op = new RequestOperationRoomController(gui_op, registry);
+//                        System.out.println("here");
+//
+//
+//            EditMedicineGUI EditMedgui = new EditMedicineGUI();
+//            EditMedgui.setLocationRelativeTo(null); // This makes the window appears centered
+//            EditMedgui.setVisible(false); // This shows the gui
+//            EditMedicineController EditMedgui_controller = new EditMedicineController(EditMedgui, registry);
+//                      System.out.println("here");
 
             
                         
+//
+//            DeleteMedicineGUI DeleteMedgui = new DeleteMedicineGUI();
+//            DeleteMedgui.setLocationRelativeTo(null); // This makes the window appears centered
+//            DeleteMedgui.setVisible(false); // This shows the gui
+//            DeleteMedicineController DeleteMedgui_controller = new DeleteMedicineController(DeleteMedgui, registry);
+//                        System.out.println("here");
 
-            DeleteMedicineGUI DeleteMedgui = new DeleteMedicineGUI();
-            DeleteMedgui.setLocationRelativeTo(null); // This makes the window appears centered
-            DeleteMedgui.setVisible(false); // This shows the gui
-            DeleteMedicineController DeleteMedgui_controller = new DeleteMedicineController(DeleteMedgui, registry);
-                        System.out.println("here");
-
-            
-            makeDRRatingGUI makeRatingGUI = new makeDRRatingGUI();
-            makeRatingGUI.setLocationRelativeTo(null); // This makes the window appears centered
-            makeRatingGUI.setVisible(false); // This shows the gui
-            makeDRRatingController makeDRRating_Controller = new makeDRRatingController(makeRatingGUI, registry);
+//            
+//            makeDRRatingGUI makeRatingGUI = new makeDRRatingGUI();
+//            makeRatingGUI.setLocationRelativeTo(null); // This makes the window appears centered
+//            makeRatingGUI.setVisible(false); // This shows the gui
+//            makeDRRatingController makeDRRating_Controller = new makeDRRatingController(makeRatingGUI, registry);
           
                         
-            ReviewMedicalProfileGUI ReviewMedicalProfile = new ReviewMedicalProfileGUI();
-            ReviewMedicalProfile.setLocationRelativeTo(null); // This makes the window appears centered
-            ReviewMedicalProfile.setVisible(false); // This shows the gui
-            ReviewMedicalProfileController ReviewMedicalProfile_cont = new ReviewMedicalProfileController(ReviewMedicalProfile, registry);
-          
-            PayForAppoint PayForAppointGUI = new PayForAppoint();
-            PayForAppointGUI.setLocationRelativeTo(null); // This makes the window appears centered
-            PayForAppointGUI.setVisible(false); // This shows the gui
-            PayForAppointController PayForAppoint_controller = new PayForAppointController(PayForAppointGUI, registry);
+//            ReviewMedicalProfileGUI ReviewMedicalProfile = new ReviewMedicalProfileGUI();
+//            ReviewMedicalProfile.setLocationRelativeTo(null); // This makes the window appears centered
+//            ReviewMedicalProfile.setVisible(false); // This shows the gui
+//            ReviewMedicalProfileController ReviewMedicalProfile_cont = new ReviewMedicalProfileController(ReviewMedicalProfile, registry);
+//          
+//            PayForAppoint PayForAppointGUI = new PayForAppoint();
+//            PayForAppointGUI.setLocationRelativeTo(null); // This makes the window appears centered
+//            PayForAppointGUI.setVisible(false); // This shows the gui
+//            PayForAppointController PayForAppoint_controller = new PayForAppointController(PayForAppointGUI, registry);
             
 //
 //
@@ -153,7 +153,7 @@ public class RMIClient {
 
 
 
-          
+//          
             Login login2 = new Login();
             login2.setLocationRelativeTo(null); 
             login2.setVisible(true); // This shows the gui

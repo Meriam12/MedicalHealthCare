@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,17 +23,16 @@ import java.util.logging.Logger;
  *
  * @author meriam
  */
-public class LoginController {
-    Login login;
+public class LoginController extends RemoteException{
+    Login login = new Login();
     Registry r;
     
-    public LoginController ()
+    public LoginController ()throws RemoteException
     {
-        
-            Login guia = new Login();
-            guia.setLocationRelativeTo(null); // This makes the window appears centered
-            guia.setVisible(true); // This shows the gui
-            LoginController gui_controller1 = new LoginController(guia, r);
+            r=LocateRegistry.getRegistry(1099);
+            login.setLocationRelativeTo(null); // This makes the window appears centered
+            login.setVisible(true); // This shows the gui
+            LoginController gui_controller1 = new LoginController(login, r);
     
     }
     

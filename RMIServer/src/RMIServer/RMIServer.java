@@ -87,13 +87,15 @@ public class RMIServer {
            Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
            mongoLogger.setLevel(Level.SEVERE);
            
+            Registry registry = LocateRegistry.createRegistry(1099);
+           
            //Calling the class for the database 
            DB db = new DB();
            PaymentMethod PaymentMethod1 = new Visa();
            PaymentMethod PaymentMethod2 = new Cash();
            
             AdminInterface adminInterface = new Account();     
-            Registry registry = LocateRegistry.createRegistry(1099);
+        
             registry.bind("AdminInterface", adminInterface);          
             
 
@@ -101,7 +103,7 @@ public class RMIServer {
             registry.bind("AccountInterface", accountInter);  
             
              registry.bind("visa", PaymentMethod1);  
-              registry.bind("cash", PaymentMethod2);  
+             registry.bind("cash", PaymentMethod2);  
             
 //            MedicineInterface medicineinterface = new Medicine();     
 //            // My RMI Registry
@@ -484,7 +486,8 @@ public class RMIServer {
             
       //      Doctor drr= new Doctor();
       //      drr.makeRating(2, "Dr. Ahmed Osama");
-            
+//            MedicalProfile m = new MedicalProfile();
+//            m.reviewMedicalProfile("Hossam Amr");
        
             System.out.println("My facade is ready..."); 
             db.close();

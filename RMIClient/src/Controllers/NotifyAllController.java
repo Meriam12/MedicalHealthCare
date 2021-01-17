@@ -13,13 +13,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.AdminInterface;
 import RMI.NotifyInterface;
+import RMIClient.Login;
 import RMIClient.NotifyAll;
+import java.rmi.registry.LocateRegistry;
 /**
  *
  * @author Toumie
  */
-public class NotifyAllController {
-    NotifyAll gui;
+public class NotifyAllController extends RemoteException{
+    NotifyAll gui = new NotifyAll();
     Registry r;
     
       public NotifyAllController(NotifyAll gui, Registry r)
@@ -30,12 +32,12 @@ public class NotifyAllController {
         gui.getSendButton().addActionListener(new AccountClass() );
     }
         
-      public NotifyAllController()
+      public NotifyAllController() throws RemoteException
     {
-            NotifyAll guia = new NotifyAll();
-            guia.setLocationRelativeTo(null); // This makes the window appears centered
-            guia.setVisible(true); // This shows the gui
-            NotifyAllController gui_controller1 = new NotifyAllController(guia, r);
+            r=LocateRegistry.getRegistry(1099);
+            gui.setLocationRelativeTo(null); // This makes the window appears centered
+            gui.setVisible(true); // This shows the gui
+            NotifyAllController gui_controller1 = new NotifyAllController(gui, r);
     }
       class AccountClass implements ActionListener {
 

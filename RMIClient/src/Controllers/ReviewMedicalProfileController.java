@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMIClient.*;
 import RMI.MedicalProInterface;
+import java.rmi.registry.LocateRegistry;
 
 /**
  *
@@ -22,9 +23,17 @@ import RMI.MedicalProInterface;
  */
 public class ReviewMedicalProfileController {
 
-    ReviewMedicalProfileGUI gui;
+    ReviewMedicalProfileGUI gui = new ReviewMedicalProfileGUI() ;
     Registry r;
 
+    public ReviewMedicalProfileController() throws RemoteException
+    {
+            r=LocateRegistry.getRegistry(1099);
+            gui.setLocationRelativeTo(null); // This makes the window appears centered
+            gui.setVisible(true); // This shows the gui
+            ReviewMedicalProfileController gui_controller2 = new ReviewMedicalProfileController(gui, r);
+           
+    }
     public ReviewMedicalProfileController(ReviewMedicalProfileGUI gui, Registry r) {
         this.gui = gui;
         this.r = r;
@@ -36,18 +45,19 @@ public class ReviewMedicalProfileController {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-                 System.out.println("debug1");
                 
+                 System.out.println("debug1");
+               
                 DoctorMedicalFunctionalities re = (DoctorMedicalFunctionalities) r.lookup("DoctorMedicalFunctionalities");
                                  System.out.println("debug1");
 
                  String name = gui.getjTextField1().getText();
                                  System.out.println("debug1");
 
-                re.reviewMedicalProfile("name").toString();
+                re.reviewMedicalProfile(name);
                 
                 
-                gui.getjLabel3().setText("h");
+               // gui.getjLabel3().setText("h");
                  System.out.println("debug1");
 
             } catch (RemoteException ex) {

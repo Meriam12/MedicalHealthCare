@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import RMI.MedicineInterface;
 import RMIClient.PostMedicineGUI;
 import RMIClient.makeDRRatingGUI;
+import java.rmi.registry.LocateRegistry;
 
 /**
  *
@@ -26,6 +27,15 @@ public class makeDRRatingController {
     makeDRRatingGUI gui;
     Registry r;
     
+    
+    public makeDRRatingController() throws RemoteException
+    {
+           r=LocateRegistry.getRegistry(1099);
+           gui.setLocationRelativeTo(null); // This makes the window appears centered
+           gui.setVisible(true); // This shows the gui
+           makeDRRatingController gui_controller1 = new makeDRRatingController(gui, r);
+    
+    }
     // The constructor takes the gui and the rmi registry as paramaters
     public makeDRRatingController(makeDRRatingGUI gui, Registry r)
     {

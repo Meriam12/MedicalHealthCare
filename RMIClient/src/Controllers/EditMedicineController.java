@@ -9,19 +9,30 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import RMI.MedicineInterface;
 import RMIClient.EditMedicineGUI;
+import java.rmi.registry.LocateRegistry;
 
 /**
  *
  * @author Mariam
  */
-public class EditMedicineController {
+public class EditMedicineController extends RemoteException{
         // We have reference to both the GUI and the rmi registry
-    EditMedicineGUI gui;
+    EditMedicineGUI gui = new EditMedicineGUI();
     Registry r;
+    
+    public EditMedicineController() throws RemoteException
+    {
+           r=LocateRegistry.getRegistry(1099);
+           gui.setLocationRelativeTo(null); // This makes the window appears centered
+           gui.setVisible(true); // This shows the gui
+           EditMedicineController gui_controller1 = new EditMedicineController(gui, r);
+    
+    }
     
     // The constructor takes the gui and the rmi registry as paramaters
     public EditMedicineController(EditMedicineGUI gui, Registry r)
     {
+       
         this.gui = gui;
         this.r = r;
         // This registers the button with our action listener below (the inner class)
